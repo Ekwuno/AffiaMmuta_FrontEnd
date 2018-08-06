@@ -1,0 +1,99 @@
+/* @media screen and (min-width: 768px) */
+.container .jumbotron, .container-fluid .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+}
+.container .jumbotron, .container-fluid .jumbotron {
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+/* @media screen and (min-width: 768px) */
+.jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /* margin-top: 300px; */
+    margin: auto;
+    color: inherit;
+    background-color:white;
+    height: auto;
+    width: 500px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.jumbotron input {
+    border: none;
+    box-shadow: none;
+    border-radius: none;
+    border-bottom: 1px solid black;
+    margin-top: 40px;
+}
+.jumbotron p {
+    font-size: 15px;
+    text-align: center;
+
+}
+.jumbotron h3 {
+    text-align: center;
+    font-weight: bold;
+}
+.jumbotron img {
+    margin-left: 130px;
+}
+.btn .btn-default {
+    background-image: none;
+    background-color: aqua;
+    margin: auto;
+}
+.myName {
+    background-color: #85A64B;
+    background-image: none;
+    border: #85A64B;
+    width: 400px;
+    height: 45px;
+    margin-left: 35px;
+    margin-top: 20px;
+}
