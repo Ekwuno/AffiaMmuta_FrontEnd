@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Jumbotron, Grid, Row, Col, Image, Button, Form, FormGroup, ControlLabel, FormControl, Checkbox } from "react-bootstrap";
 import './SignUpPage.css';
-import logo from './Assets/AffiaMmutaLogo.png';
+import logo from './Assets/Ikenga.png';
 
  export default class SignUpPage extends Component {
   render() {
@@ -10,7 +10,7 @@ import logo from './Assets/AffiaMmutaLogo.png';
       <div >
         <Grid>
             <Jumbotron>
-                 <img src={logo} alt='Logo' height= "auto" width= "200px" />
+                 <img src={logo} alt='Logo' height= "69px" width= "97px" />
                 <h3>Create an Account</h3>
                 <Form>
                     <FormGroup>

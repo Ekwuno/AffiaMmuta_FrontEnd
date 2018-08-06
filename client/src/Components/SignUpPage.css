@@ -20,8 +20,10 @@
     margin: auto;
     color: inherit;
     background-color:white;
-    height: auto;
-    width: 500px;
+    height: 556px;
+    width: 348px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 * {
     -webkit-box-sizing: border-box;
@@ -72,16 +74,17 @@ html {
     margin-top: 40px;
 }
 .jumbotron p {
-    font-size: 15px;
+    font-size: 12px;
     text-align: center;
 
 }
 .jumbotron h3 {
     text-align: center;
+    font-size: 18px;
     font-weight: bold;
 }
 .jumbotron img {
-    margin-left: 130px;
+    margin-left: 106px;
 }
 .btn .btn-default {
     background-image: none;
@@ -92,8 +95,8 @@ html {
     background-color: #85A64B;
     background-image: none;
     border: #85A64B;
-    width: 400px;
-    height: 45px;
-    margin-left: 35px;
+    width: 217px;
+    height: 30px;
+    margin-left: 50px;
     margin-top: 20px;
 }
