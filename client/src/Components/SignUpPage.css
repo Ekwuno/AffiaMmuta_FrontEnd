@@ -9,11 +9,11 @@
 
 }
 /* @media screen and (min-width: 768px) */
-.jumbotron {
+.jumbo {
     padding-top: 48px;
     padding-bottom: 48px;
 }
-.jumbotron {
+.jumbo {
     padding-top: 30px;
     padding-bottom: 30px;
     /* margin-top: 300px; */
@@ -66,24 +66,24 @@ html {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.jumbotron input {
+.jumbo input {
     border: none;
     box-shadow: none;
     border-radius: none;
     border-bottom: 1px solid black;
     margin-top: 40px;
 }
-.jumbotron p {
+.jumbo p {
     font-size: 12px;
     text-align: center;
 
 }
-.jumbotron h3 {
+.jumbo h3 {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
 }
-.jumbotron img {
+.jumbo img {
     margin-left: 106px;
 }
 .btn .btn-default {
