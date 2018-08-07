@@ -1,0 +1,21 @@
+.footer {
+    margin-top: 20px;
+    height: 144px;
+    background-color: #626A71;
+}
+.footer img {
+    margin-left: 46px;
+}
+.rights {
+    margin-top: 20px;
+}
+.rights p {
+    font-size: 13px;
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+}
+.links {
+    font-size: 13px;
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+}
