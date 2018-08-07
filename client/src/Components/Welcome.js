@@ -1,0 +1,20 @@
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import { Jumbotron, Grid, Row, Col, Image, Button } from "react-bootstrap";
+import "./Welcome.css";
+
+ export default class Welcome extends Component {
+  render() {
+    return (
+      <div >
+            <Jumbotron className= "affia-header">
+                <h3>Welcome to AffiaMmuta</h3>
+                <p>Increasing Igbo literacy with Technology</p>
+                <Button className="btn btn-success get-btn" type="submit">
+                    Get Started
+                </Button>
+            </Jumbotron>
+      </div>
+    );
+  }
+}

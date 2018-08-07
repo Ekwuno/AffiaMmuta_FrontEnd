@@ -1,0 +1,29 @@
+.affia-header {
+    margin-top: -20px;
+    height: 305px;
+    background-color: #626A71;
+    text-align: center;
+}
+.affia-header h3 {
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+.affia-header p {
+    font-size: 24px;
+    color: white;
+    margin-top: 25px;
+    font-family: 'Lato', sans-serif;
+}
+.get-btn {
+    width: 250px;
+    height: 40px;
+    border-radius: 8px;
+    background-image: none;
+    background-color: #85A64B;
+    border: #85A64B;
+    color: #E5E5E5;
+    margin-top: 30px;
+    font-family: 'Lato', sans-serif;
+}
