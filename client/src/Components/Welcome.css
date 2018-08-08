@@ -1,8 +1,8 @@
 .affia-header {
     margin-top: -20px;
     height: 305px;
-    background-color: #626A71;
     text-align: center;
+    background-image: url("./Assets/AffiaMmutaWelcome.jpg");
 }
 .affia-header h3 {
     font-size: 48px;
