@@ -38,3 +38,9 @@ img {
     margin-left: 60px;
     cursor: pointer;
 }
+.image {
+    height: 134px; 
+    width: 179px;
+    margin-left: -110px;
+    margin-top: -25px;
+}
