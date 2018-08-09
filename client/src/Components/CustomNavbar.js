@@ -10,10 +10,12 @@ import './CustomNavbar.css';
   render() {
     return (
       <Navbar default collapseOnSelect>
-          <Navbar.Header>
+        <Navbar.Header>
+          <Link to="/">
             <Image src={logo} alt='Logo' className="image" />
-            <Navbar.Toggle />
-          </Navbar.Header>
+          </Link>
+          <Navbar.Toggle />
+        </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight className="nav" >
               <NavItem>
