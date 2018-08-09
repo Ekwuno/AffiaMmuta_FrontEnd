@@ -4,6 +4,7 @@ import { Navbar, Nav, NavItem, Image, Button, FormGroup, FormControl } from "rea
 import logo from './Assets/AffiaMmutaLogo.png';
 import cart from './Assets/Cart.png';
 import search from './Assets/Search.png';
+import logIn from './Assets/LogIn.png';
 import './SignUpPage.css';
 import './CustomNavbar.css';
 
@@ -27,7 +28,10 @@ import './CustomNavbar.css';
               </NavItem>
               <NavItem>
                 <Link to="/Log-in">
-                  <Button className="btn btn-success theButton" id="login-button" type="submit">Login</Button>
+                  <Button className="btn btn-success theButton" id="login-button" type="submit">
+                  <Image src={logIn} alt='Logo' className="log-in-image" />
+                  Login
+                  </Button>
                 </Link>
               </NavItem>
               <Navbar.Form>

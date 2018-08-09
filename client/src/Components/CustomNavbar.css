@@ -24,6 +24,12 @@ img {
     background-color: #626A71;
     margin-right: 15px;
 }
+.log-in-image {
+    width: 30px;
+    height: 40px;
+    margin-left: -15px;
+    margin-right: 25px;
+}
 .image {
     height: 134px; 
     width: 179px;
