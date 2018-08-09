@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavItem, Image, Button, FormGroup, FormControl } from "react-bootstrap";
 import logo from './Assets/AffiaMmutaLogo.png';
+import cart from './Assets/Cart.png';
 import './SignUpPage.css';
 import './CustomNavbar.css';
 
@@ -37,7 +38,7 @@ import './CustomNavbar.css';
               </Button>
               <Link to="/Cart">
                 <Button type="submit" className= "cart">
-                  <i class="fas fa-shopping-cart"></i>
+                  <Image src={cart} alt='Logo' className="cart-img" />
                 </Button>
               </Link>
               </Navbar.Form>
