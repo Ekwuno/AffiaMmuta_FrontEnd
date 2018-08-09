@@ -38,46 +38,42 @@ import logo from './Assets/Ikenga.png';
             <div className="sign-up-background" >
                 <Jumbotron className= "jumbo">
                     <img src={logo} alt='Logo'/>
-                    <h3>Create an Account</h3>
-                    <Row className="sign-up-message" >
-                        <Col className="notify" ></Col>
-                        <Col className="sign-up-text" >
-                            {/* <p>To sign-up succesfully, please make sure the information you enter below is complete and accurate.</p> */}
-                        </Col>
-                    </Row>
+                    <h3>Let's setup your account</h3>
                     <Form onSubmit= {this.handleSubmit}>
                         <FormGroup>
-                        
+                            <Row><p className="p">Pick a username</p></Row>
                             <Row className="input-rows">
-                                <FormControl className="input-styles" id="username" placeholder= "Username" onChange= {this.handleChange}  />
+                                <FormControl className="input-styles" id="username" onChange= {this.handleChange}  />
                             </Row>
                         </FormGroup>
 
                         <FormGroup>
+                            <Row><p>Enter your email</p></Row>
                             <Row className="input-rows">
-                                <FormControl className="input-styles" id="email" placeholder="Email" onChange= {this.handleChange}/>
+                                <FormControl className="input-styles" id="email" onChange= {this.handleChange}/>
                             </Row>
                         </FormGroup>
 
                         <FormGroup>
-                        
+                            <Row><p>Pick a password</p></Row>
                             <Row className="input-rows">
-                                <FormControl className="input-styles" id= "password" type= "password" placeholder="Password" onChange= {this.handleChange}/>
+                                <FormControl className="input-styles" id= "password" type= "password" onChange= {this.handleChange}/>
                             </Row>
                         </FormGroup>
 
                         <FormGroup>
+                            
+                            <Row><p>Confirm your password</p></Row>
                             <Row className="input-rows">
-                                <FormControl className="input-styles" type= "password" placeholder="Confirm Password" onChange= {this.handleChange}/>
+                                <FormControl className="input-styles" type= "password" onChange= {this.handleChange}/>
                             </Row>
                         </FormGroup>
-
                         <FormGroup>
                             <Row>
-                                <Button className="btn btn-success btn-get-started" type="submit">Get Started</Button>
+                                <Button className="btn btn-success btn-get-started" type="submit">Let's Begin</Button>
                             </Row>
                         </FormGroup>
-                        <p className="p" >Already got an account? <Link to="/">Sign In</Link></p>
+                        <p id="log-in" >Already got an account? <Link to="/">Sign In</Link></p>
                     </Form>;
                 </Jumbotron>
         </div>
