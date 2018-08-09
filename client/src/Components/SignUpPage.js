@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Jumbotron, Col, Button, Form, FormGroup, FormControl, } from "react-bootstrap";
+import { Jumbotron, Row, Col, Button, Form, FormGroup, FormControl, } from "react-bootstrap";
 import './SignUpPage.css';
 import logo from './Assets/Ikenga.png';
 
@@ -37,41 +37,47 @@ import logo from './Assets/Ikenga.png';
         return (
             <div className="sign-up-background" >
                 <Jumbotron className= "jumbo">
-                    <img src={logo} alt='Logo' height= "69px" width= "97px" />
+                    <img src={logo} alt='Logo'/>
                     <h3>Create an Account</h3>
+                    <Row className="sign-up-message" >
+                        <Col className="notify" ></Col>
+                        <Col className="sign-up-text" >
+                            {/* <p>To sign-up succesfully, please make sure the information you enter below is complete and accurate.</p> */}
+                        </Col>
+                    </Row>
                     <Form onSubmit= {this.handleSubmit}>
                         <FormGroup>
                         
-                            <Col>
-                                <FormControl id="username" placeholder= "Username" onChange= {this.handleChange}  />
-                            </Col>
+                            <Row className="input-rows">
+                                <FormControl className="input-styles" id="username" placeholder= "Username" onChange= {this.handleChange}  />
+                            </Row>
                         </FormGroup>
 
                         <FormGroup>
-                            <Col>
-                                <FormControl id="email" placeholder="Email" onChange= {this.handleChange}/>
-                            </Col>
+                            <Row className="input-rows">
+                                <FormControl className="input-styles" id="email" placeholder="Email" onChange= {this.handleChange}/>
+                            </Row>
                         </FormGroup>
 
                         <FormGroup>
                         
-                            <Col >
-                                <FormControl id= "password" type= "password" placeholder="Password" onChange= {this.handleChange}/>
-                            </Col>
+                            <Row className="input-rows">
+                                <FormControl className="input-styles" id= "password" type= "password" placeholder="Password" onChange= {this.handleChange}/>
+                            </Row>
                         </FormGroup>
 
                         <FormGroup>
-                            <Col>
-                                <FormControl type= "password" placeholder="Confirm Password" onChange= {this.handleChange}/>
-                            </Col>
+                            <Row className="input-rows">
+                                <FormControl className="input-styles" type= "password" placeholder="Confirm Password" onChange= {this.handleChange}/>
+                            </Row>
                         </FormGroup>
 
                         <FormGroup>
-                            <Col>
-                                <Button className="btn btn-success myName" type="submit">Get Started</Button>
-                            </Col>
+                            <Row>
+                                <Button className="btn btn-success btn-get-started" type="submit">Get Started</Button>
+                            </Row>
                         </FormGroup>
-                        <p>Already got an account? <Link to="/">Sign In</Link></p>
+                        <p className="p" >Already got an account? <Link to="/">Sign In</Link></p>
                     </Form>;
                 </Jumbotron>
         </div>
