@@ -19,21 +19,27 @@ import './CustomNavbar.css';
           <Navbar.Collapse>
             <Nav pullRight className="nav" >
               <NavItem>
+                <Link to="/Market">
                 <Button className="btn btn-success theButton" type="submit">Market</Button>
+                </Link>
               </NavItem>
               <NavItem>
-                <Button className="btn btn-success theButton" id="login-button" type="submit">Login</Button>
+                <Link to="/Log-in">
+                  <Button className="btn btn-success theButton" id="login-button" type="submit">Login</Button>
+                </Link>
               </NavItem>
               <Navbar.Form>
               <FormGroup>
                 <FormControl type="text" placeholder="I am looking for..." className="search" />
               </FormGroup>{' '}
               <Button type="submit" className= "button">
-                <i class="fas fa-search"></i>
+              <i class="fas fa-search"></i>
               </Button>
-              <Button type="submit" className= "cart">
-                <i class="fas fa-shopping-cart"></i>
-              </Button>
+              <Link to="/Cart">
+                <Button type="submit" className= "cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </Button>
+              </Link>
               </Navbar.Form>
             </Nav>
           </Navbar.Collapse>
