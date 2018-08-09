@@ -1,22 +1,13 @@
-/* @media screen and (min-width: 768px) */
-.container .jumbotron, .container-fluid .jumbotron {
-    padding-right: 60px;
-    padding-left: 60px;
-}
-.container .jumbotron, .container-fluid .jumbotron {
-    padding-right: 15px;
-    padding-left: 15px;
-
-}
-/* @media screen and (min-width: 768px) */
-.jumbo {
-    padding-top: 48px;
-    padding-bottom: 48px;
+.sign-up-background {
+    background-color: #E5E5E5;
+    margin-top: -20px;
+    height: 800px;
+    margin: -20px;
+    padding-top: 100px;
 }
 .jumbo {
     padding-top: 30px;
     padding-bottom: 30px;
-    /* margin-top: 300px; */
     margin: auto;
     color: inherit;
     background-color:white;

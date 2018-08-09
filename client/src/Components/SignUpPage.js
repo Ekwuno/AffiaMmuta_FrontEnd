@@ -35,7 +35,7 @@ import logo from './Assets/Ikenga.png';
     
     render() {
         return (
-            <div >
+            <div className="sign-up-background" >
                 <Jumbotron className= "jumbo">
                     <img src={logo} alt='Logo' height= "69px" width= "97px" />
                     <h3>Create an Account</h3>
