@@ -15,7 +15,7 @@
 .affia-header p {
     font-size: 24px;
     color: white;
-    margin-top: 25px;
+    margin-top: 20px;
     font-family: 'Lato', sans-serif;
 }
 .get-btn {
@@ -26,6 +26,6 @@
     background-color: #85A64B;
     border: #85A64B;
     color: #E5E5E5;
-    margin-top: 30px;
+    margin-top: 20px;
     font-family: 'Lato', sans-serif;
 }
