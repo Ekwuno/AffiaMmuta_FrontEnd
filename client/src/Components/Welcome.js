@@ -11,9 +11,11 @@ import "./Welcome.css";
             <Jumbotron reponsive className= "affia-header">
                 <h3>Welcome to AffiaMmuta</h3>
                 <p>Increasing Igbo literacy with Technology</p>
-                <Button className="btn btn-success get-btn" type="submit">
-                    Get Started
-                </Button>
+                <Link to="/Sign-up">
+                  <Button className="btn btn-success get-btn" type="submit">
+                      Get Started
+                  </Button>
+                </Link>
             </Jumbotron>
       </div>
     );
