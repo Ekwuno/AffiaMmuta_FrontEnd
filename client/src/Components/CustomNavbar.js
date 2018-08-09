@@ -5,6 +5,7 @@ import logo from './Assets/AffiaMmutaLogo.png';
 import cart from './Assets/Cart.png';
 import search from './Assets/Search.png';
 import logIn from './Assets/LogIn.png';
+import market from './Assets/Market.png';
 import './SignUpPage.css';
 import './CustomNavbar.css';
 
@@ -23,23 +24,26 @@ import './CustomNavbar.css';
             <Nav pullRight className="nav" >
               <NavItem>
                 <Link to="/Market">
-                <Button className="btn btn-success theButton" type="submit">Market</Button>
+                <Button className="btn btn-success buttons buttons-shadow-market" type="submit">
+                <Image src={market} alt='Logo' className="market-image" />
+                  Market
+                </Button>
                 </Link>
               </NavItem>
               <NavItem>
                 <Link to="/Log-in">
-                  <Button className="btn btn-success theButton" id="login-button" type="submit">
+                  <Button className="btn btn-success buttons buttons-shadow-login" id="login-button" type="submit">
                   <Image src={logIn} alt='Logo' className="log-in-image" />
-                  Login
+                    Login
                   </Button>
                 </Link>
               </NavItem>
               <Navbar.Form>
               <FormGroup>
                 <FormControl type="text" placeholder="I am looking for..." className="search" />
-              </FormGroup>{' '}
+              </FormGroup>
               <Button type="submit" className= "button">
-                <Image src={search} alt='Logo' className="" />
+                <Image src={search} alt='Logo'/>
               </Button>
               <Link to="/Cart">
                 <Button type="submit" className= "cart">
