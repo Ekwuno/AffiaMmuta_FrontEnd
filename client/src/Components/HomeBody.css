@@ -2,6 +2,16 @@
     background-color: white;
     margin-top: -30px;
 }
+.behind {
+    width: 100%;
+    height: 480px;
+    position: absolute;
+    top: 915px;
+    background-color: #258043;
+}
+.above {
+    position: relative;
+}
 .wrapper {
     height: 312px;
     width: 204px;
@@ -20,7 +30,7 @@
 .span {
     height: 18px;
     width: 130px;
-    background-color: #585249;
+    background-color: #000000;
 }
 in-line {
     display: inline-block;
@@ -32,10 +42,17 @@ in-line {
     margin-top: 59px;
 }
 .span-title {
-    color: #585249;
+    color: #000000;
     font-size: 18px;
+    font-weight: bold;
     font-family: 'Lato', sans-serif;
     margin-top: -3px;
+}
+.new-release-color {
+    color: #FFFFFF;
+}
+.new-release-background {
+    background-color: #FFFFFF;
 }
 .head-below {
     margin-top: 70px;
