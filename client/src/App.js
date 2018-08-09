@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import SignUpPage from "./Components/SignUpPage";
+import HomePage from "./Components/HomePage";
 import CustomNavbar from "./Components/CustomNavbar";
+import Footer from "./Components/Footer";
 
 class App extends Component {
   render() {
@@ -10,9 +12,9 @@ class App extends Component {
       <BrowserRouter>
         <div className="body">
           <CustomNavbar />
-          <Route path="/" component={SignUpPage} exact/>
-          {/* <Route  path="/" component={Sign-In} /> */}
-          {/* <Route path="/" component={Cart} /> */}
+            <Route path="/" component={HomePage} exact/>
+           <Route path="/Sign-up" component={SignUpPage}/>
+          <Footer /> 
         </div>
         
       </BrowserRouter>
