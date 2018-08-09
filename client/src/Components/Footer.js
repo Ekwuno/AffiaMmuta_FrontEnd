@@ -16,7 +16,7 @@ import './Footer.css';
                 <Col lg={7} xs={12} sm={12}>
                     <Row className="rights" >
                         <Col lg={5} xs={5} sm={4}>
-                            <p>c 2018 AFFIAMMUTA. All Rights Reserved</p>
+                            <p>&copy; 2018 AFFIAMMUTA. All Rights Reserved</p>
                         </Col>
                         <Col lg={3} xs={3} sm={4}>
                             <Link to ="/" className= "links">
