@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Jumbotron, Grid, Row, Col, Image, Button } from "react-bootstrap";
+import { Jumbotron, Button } from "react-bootstrap";
 import "./Welcome.css";
-// import logo from './Assets/AffiaMmutaWelcome.jpg';
 
  export default class Welcome extends Component {
   render() {
