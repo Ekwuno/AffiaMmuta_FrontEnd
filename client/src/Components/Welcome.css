@@ -1,3 +1,7 @@
+@font-face {
+    font-family: GoodDog;
+    src: url(Assets/GoodDog.woff);
+}
 .affia-header {
     margin-top: -20px;
     height: 305px;
@@ -7,10 +11,10 @@
     background-position: center;
 }
 .affia-header h3 {
-    font-size: 48px;
+    font-size: 68px;
     color: white;
     font-weight: bold;
-    font-family: 'Lato', sans-serif;
+    font-family: GoodDog;
 }
 .affia-header p {
     font-size: 24px;
