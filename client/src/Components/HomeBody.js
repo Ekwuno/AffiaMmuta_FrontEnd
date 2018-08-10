@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Row, Grid, Col, Jumbotron, Image } from "react-bootstrap";
+import { Row, Grid, Col, Jumbotron, Image, Button } from "react-bootstrap";
 import shelf from "./Assets/Shelf.png";
 import tortoise from './Assets/FlyingTortoise.jpg';
 import idioms from './Assets/IgboIdioms.gif';
@@ -9,6 +9,7 @@ import phoenix from './Assets/BookOfPhoenix.jpg';
 import concubine from './Assets/TheConcubine.jpg';
 import fisherman from './Assets/TheFisherman.jpg';
 import udala from './Assets/UnderTheUdalaTree.jpg';
+import cart from './Assets/CustomCart.png';
 import './HomeBody.css';
 
  export default class HomeBody extends Component {
@@ -33,7 +34,18 @@ import './HomeBody.css';
                     <Image src={phoenix} alt='Logo' className="books-jpg" />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
               <Col xs={12} sm={4} className= "wrapper" >
                 <Row className="books-top" >
@@ -41,7 +53,18 @@ import './HomeBody.css';
                     <Image src={idioms} alt='Logo'  />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
               <Col xs={12} sm={4} className= "wrapper" >
                 <Row className="books-top" >
@@ -49,7 +72,18 @@ import './HomeBody.css';
                     <Image src={fisherman} alt='Logo'  />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
               <Col xs={12} sm={4} className= "wrapper" >
                 <Row className="books-top" >
@@ -57,7 +91,18 @@ import './HomeBody.css';
                     <Image src={udala} alt='Logo' />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
               <Col xs={12} sm={4} className= "wrapper" >
                 <Row className="books-top" >
@@ -65,7 +110,18 @@ import './HomeBody.css';
                     <Image src={concubine} alt='Logo'/>
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </Grid>
@@ -81,7 +137,18 @@ import './HomeBody.css';
                     <Image src={phoenix} alt='Logo' />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
               <Col xs={12} sm={4} className= "wrapper new-release-books" >
                 <Row className="books-top" >
@@ -89,7 +156,18 @@ import './HomeBody.css';
                     <Image src={idioms} alt='Logo'/>
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
               <Col xs={12} sm={4} className= "wrapper new-release-books" >
                 <Row className="books-top" >
@@ -97,7 +175,18 @@ import './HomeBody.css';
                     <Image src={fisherman} alt='Logo' />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
               <Col xs={12} sm={4} className= "wrapper new-release-books" >
                 <Row className="books-top" >
@@ -105,7 +194,18 @@ import './HomeBody.css';
                     <Image src={udala} alt='Logo' />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
               <Col xs={12} sm={4} className= "wrapper new-release-books" >
                 <Row className="books-top" >
@@ -113,7 +213,18 @@ import './HomeBody.css';
                     <Image src={concubine} alt='Logo'/>
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
             </Row>
             </Grid>
@@ -129,7 +240,18 @@ import './HomeBody.css';
                     <Image src={idioms} alt='Logo'  />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
                 </Col>
                 <Col xs={12} sm={4} className= "wrapper" >
                   <Row className="books-top" >
@@ -137,7 +259,18 @@ import './HomeBody.css';
                     <Image src={concubine} alt='Logo' />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
                 </Col>
                 <Col xs={12} sm={4} className= "wrapper" >
                   <Row className="books-top" >
@@ -145,7 +278,18 @@ import './HomeBody.css';
                     <Image src={tortoise} alt='Logo' />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
                 </Col>
                 <Col xs={12} sm={4} className= "wrapper" >
                   <Row className="books-top" >
@@ -153,7 +297,18 @@ import './HomeBody.css';
                     <Image src={fisherman} alt='Logo' />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>
                 </Col>
                 <Col xs={12} sm={4} className= "wrapper" >
                   <Row className="books-top" >
@@ -161,13 +316,22 @@ import './HomeBody.css';
                     <Image src={okowa} alt='Logo' />
                   </Col>
                 </Row>
-                <Row className="books-bottom" ></Row>
-                
+                <Row className="books-bottom" >
+                  <Col className="book-title" >
+                  <span className= "title">The Concubine</span>
+                  <span className="author" >Elechi Amadi</span>
+                  <span className="price" >&#8358;3000</span>
+                  </Col>
+                  <Col className="book-price" >
+                    <Button className="book-buttons" type="submit">
+                      <Image src={cart} alt='cart' className="cart-books" />
+                    </Button>
+                  </Col>
+                </Row>        
                 </Col>
             </Row>
           </Grid>
-        </div>
-          
+        </div>    
       </div>
     );
   }
