@@ -73,7 +73,7 @@ import logo from './Assets/Ikenga.png';
                                 <Button className="btn btn-success btn-get-started" type="submit">Let's Begin</Button>
                             </Row>
                         </FormGroup>
-                        <p id="log-in" >Already got an account? <Link to="/">Sign In</Link></p>
+                        <p id="log-in" >Already got an account? <Link to="/Log-in">Sign In</Link></p>
                     </Form>;
                 </Jumbotron>
         </div>
