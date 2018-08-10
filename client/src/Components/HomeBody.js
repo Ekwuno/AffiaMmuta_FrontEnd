@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Grid, Row, Col, Jumbotron, Image, Button } from "react-bootstrap";
+import { Row, Grid, Col, Jumbotron, Image } from "react-bootstrap";
+import shelf from './Assets/Shelf.png';
 import './HomeBody.css';
 
  export default class HomeBody extends Component {
@@ -8,7 +9,9 @@ import './HomeBody.css';
     return (
       <div className="home-books">
         <div>
-          <Jumbotron className="behind"></Jumbotron>
+          <Jumbotron className="behind">
+            <Image src={shelf} alt='Logo' className="shelf" />
+          </Jumbotron>
         </div>
         <div className="above">
           <Row className="head" >
