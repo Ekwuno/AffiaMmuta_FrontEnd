@@ -28,10 +28,6 @@
     border: 1px solid #85A64B;
     background-color: #F2F4F0;
 }
-/* .jumbo p {
-    font-size: 12px;
-    text-align: center;
-} */
 .jumbo h3 {
     text-align: center;
     font-size: 18px;
@@ -73,13 +69,6 @@
     width: 250px;
     height: 40px;
 }
-/* .input-styles {
-    border-radius: 0px;
-    background: none;
-} */
-/*.input-styles::placeholder {
-    font-family: 'Lato', sans-serif;
-}  */
 .form-group p {
     font-family: 'Lato', sans-serif;
     font-weight: bold;
