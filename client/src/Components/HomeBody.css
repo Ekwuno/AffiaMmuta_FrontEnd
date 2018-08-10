@@ -23,6 +23,7 @@
     margin-left: 30px;
     box-shadow: 1px 1px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    background-color: #FFFFFF;
 }
 .wrapper:hover {
     background: rgba(0, 0, 0, 0.25);
@@ -33,6 +34,10 @@
 }
 .new-release-books {
     box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
+.books-jgp {
+    height: 20px;
+    width: 20px;
 }
 .span {
     height: 18px;
@@ -63,4 +68,21 @@ in-line {
 }
 .head-below {
     margin-top: 70px;
+}
+.books-top {
+    width: inherit;
+    height: 80%;
+}
+.books-bottom {
+    height: 20%;
+    width: inherit;
+}
+.image-container {
+    height: 100%;
+    width: 85%;
+    margin: auto;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
 }
