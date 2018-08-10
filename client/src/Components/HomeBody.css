@@ -31,6 +31,9 @@
 .show-grid {
     margin-top: 70px;
 }
+.new-release-books {
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
 .span {
     height: 18px;
     width: 130px;

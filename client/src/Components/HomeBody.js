@@ -43,19 +43,19 @@ import './HomeBody.css';
             </Row>
           <Grid className="grid">  
             <Row className= "show-grid text-center">
-              <Col xs={12} sm={4} className= "wrapper" >
+              <Col xs={12} sm={4} className= "wrapper new-release-books" >
               <p> The grid may just be working</p>
               </Col>
-              <Col xs={12} sm={4} className= "wrapper" >
+              <Col xs={12} sm={4} className= "wrapper new-release-books" >
               <p> The grid may just be working</p>
               </Col>
-              <Col xs={12} sm={4} className= "wrapper" >
+              <Col xs={12} sm={4} className= "wrapper new-release-books" >
               <p> The grid may just be working</p>
               </Col>
-              <Col xs={12} sm={4} className= "wrapper" >
+              <Col xs={12} sm={4} className= "wrapper new-release-books" >
               <p> The grid may just be working</p>
               </Col>
-              <Col xs={12} sm={4} className= "wrapper" >
+              <Col xs={12} sm={4} className= "wrapper new-release-books" >
               <p> The grid may just be working</p>
               </Col>
             </Row>
