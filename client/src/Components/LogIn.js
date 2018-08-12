@@ -27,7 +27,7 @@ export default class LogIn extends Component {
                         </FormGroup>
                         <FormGroup>
                             <Row>
-                                <Button className="btn btn-success btn-get-started" type="submit">Let's Begin</Button>
+                                <Button className="btn btn-success btn-log-in" type="submit">Let's Begin</Button>
                             </Row>
                         </FormGroup>
                     </Form>;
