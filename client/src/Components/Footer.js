@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Navbar,Jumbotron, Col, Row } from "react-bootstrap";
+import { Jumbotron, Col, Row } from "react-bootstrap";
 import logo from './Assets/Ikenga.png';
 import './Footer.css';
 
@@ -9,7 +9,7 @@ import './Footer.css';
   render() {
     return (
         <Jumbotron className="footer">
-            <Row>
+            <Row className="footer-top" >
                 <Col lg={5} xs={12} sm={12}>
                     <img src={logo} alt='Logo' height= "50px" width= "84px" />
                 </Col>
@@ -30,6 +30,8 @@ import './Footer.css';
                         </Col>
                     </Row>
                 </Col>
+            </Row>
+            <Row className="footer-bottom" >
             </Row>
             
         </Jumbotron>   

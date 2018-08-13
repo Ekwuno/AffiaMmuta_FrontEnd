@@ -1,7 +1,7 @@
 .footer {
     margin-top: 20px;
     margin-bottom: -20px ;
-    height: 144px;
+    height: 200px;
     background-color: #626A71;
 }
 .footer img {
@@ -19,4 +19,8 @@
     font-size: 13px;
     color: #FFFFFF;
     font-family: 'Lato', sans-serif;
+}
+.footer-top {
+    height: 149.5px;
+    border-bottom: 1px solid black
 }
