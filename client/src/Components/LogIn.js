@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Jumbotron, Row, Col, Button, Form, FormGroup, FormControl, } from "react-bootstrap";
+import { Jumbotron, Row, Col, Button, Form, FormGroup, FormControl, Image } from "react-bootstrap";
 import axios from "axios";
 import './LogIn.css';
 import logo from './Assets/Ikenga.png';
+import facebook from './Assets/FacebookLogo.png';
 
 
 export default class LogIn extends Component {
@@ -32,12 +33,12 @@ export default class LogIn extends Component {
         })
     }
 
-    
+
   render() {
     return (
         <div className="sign-in-background" >
                 <Jumbotron className= "sign-in-box">
-                    <img src={logo} alt='Logo'/>
+                    <Image src={logo} alt='Logo'/>
                     <h3>Let's setup your account</h3>
                     <Form onSubmit={this.handleSubmit}>
                         <FormGroup>
@@ -58,6 +59,15 @@ export default class LogIn extends Component {
                                 <Button className="btn btn-success btn-log-in" type="submit">Let's Begin</Button>
                             </Row>
                         </FormGroup>
+                        <FormGroup>
+                            <Row>
+                                <Button className="btn btn-success btn-log-in btn-facebook" type="submit">
+                                    <Image src={facebook} alt='Logo' />
+                                    Login with Facebook
+                                </Button>
+                            </Row>
+                        </FormGroup>
+                        <p id="log-in" >You don't have an account? <Link to="/Sign-up">Sign Up</Link></p>
                     </Form>;
                 </Jumbotron>
         </div>
