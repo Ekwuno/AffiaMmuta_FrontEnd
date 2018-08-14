@@ -1,0 +1,45 @@
+.nav-admin>div {
+    display: inline-block;
+    vertical-align: top;
+}
+.logo-container {
+    height: 155px;
+    width: 13%;
+    background-color: #85A64B;
+    border-bottom-right-radius: 25px;
+}
+.navbar-items {
+    height: 100px;
+    width: 87%;
+}
+.navbar-main {
+    height: inherit;
+    background-image: none;
+    height: 100px;
+    padding-top: 10px;
+    background-image: none;
+    background-color: #F2F4F0;
+}
+.admin-logo {
+    width: 136px;
+    height: 84px;
+    margin: 35px 0px 0px 20px;
+}
+#btn-admin-btn {
+    background-image: none;
+    background-color: inherit;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    padding: 0px;
+}
+.dropdown-admin {
+    height: 40px;
+    height: 40px;
+}
+.cart-position {
+    margin: 6px 120px 0px 450px;
+}
+.dropdown-position {
+    margin: 10px 0px 0px 0px;
+}
