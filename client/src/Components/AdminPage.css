@@ -1,3 +1,52 @@
-.admin-height {
+.admin-main {
+    height: 1000px;
+}
+.admin-body {
+    height: 700;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 12% 88%;
+    margin: -55px 0px 0px 0px;
+    position: absolute;
+    z-index: -1;
+}
+.admin-body > div {
     height: 700px;
+}
+.right-filter {
+    background-color: #F2F4F0;
+}
+.nav-lists {
+    margin: 100px 0px 0px 0px;
+}
+.list-style {
+    height: 70px;
+    padding-top: 15px;
+    border: none;
+    background-color: inherit;
+}
+.list-style > p {
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+}
+.list-style span {
+    height: 27px;
+    width: 27px;
+    border-radius: 100%;
+    padding-top: 7px; 
+    font-family: 'Lato', sans-serif;
+    background-color: #626A71;
+}
+.all {
+    margin-left: 77px;
+}
+.edu {
+    margin-left: 6px;
+}
+.folk {
+    margin-left: 26px;
+}
+.comc {
+    margin-left: 41px;
 }
