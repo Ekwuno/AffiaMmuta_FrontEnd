@@ -5,12 +5,13 @@ import { Jumbotron, Row, Col, Button, Form, FormGroup, FormControl, } from "reac
 import './SignUpPage.css';
 import logo from './Assets/Ikenga.png';
 
- export default class SignUpPage extends Component {
-     state = {
+export default class SignUpPage extends Component {
+    state = {
         username: "",
         email: "",
         password: "",
-     }
+        confirmPassword: "",
+    }
 
     handleChange = event => {
         this.setState({
@@ -25,12 +26,17 @@ import logo from './Assets/Ikenga.png';
             password: this.state.password
         }
         console.log(data)
-        axios
-        .post("https://affiammuta.herokuapp.com/users/create", data)
-        .then(res =>{ 
-             alert(JSON.stringify(res.data.message));
-             console.log(res.data)
-         })
+        if(this.state.password !== this.state.confirmPassword){
+            alert('password dont match')
+        }
+        else(
+            axios
+            .post("https://affiammuta.herokuapp.com/users/create", data)
+            .then(res =>{ 
+            alert(JSON.stringify(res.data.message));
+            console.log(res.data)
+            })
+        )
     }
     
     render() {
@@ -65,7 +71,7 @@ import logo from './Assets/Ikenga.png';
                             
                             <Row><p>Confirm your password</p></Row>
                             <Row className="input-rows">
-                                <FormControl className="input-styles" type= "password" onChange= {this.handleChange}/>
+                                <FormControl className="input-styles" id="confirmPassword" type= "password" onChange= {this.handleChange}/>
                             </Row>
                         </FormGroup>
                         <FormGroup>
