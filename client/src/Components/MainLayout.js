@@ -7,8 +7,8 @@ const MainLayout = (props) => {
     return(
         <div>
         <CustomNavbar />
-        {props.children}
-         <Footer/>
+            {props.children}
+        <Footer/>
     </div>
     );
 }
