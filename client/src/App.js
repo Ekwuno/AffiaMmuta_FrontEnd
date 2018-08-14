@@ -1,29 +1,39 @@
 import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter, Route} from 'react-router-dom';
+import MainLayout from "./Components/MainLayout";
+import SecondLayout from "./Components/SecondLayout";
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
 import SignUpPage from "./Components/SignUpPage";
 import HomePage from "./Components/HomePage";
+import AdminPage from "./Components/AdminPage";
 import LogIn from "./Components/LogIn";
 import Market from "./Components/Market";
 import Cart from "./Components/Cart";
-import CustomNavbar from "./Components/CustomNavbar";
-import Footer from "./Components/Footer";
+
+const AppRoute = ({Component, Layout, ...rest}) => (
+        <Route {...rest} render={props=> (
+          <Layout>
+            <Component {...props}/>
+          </Layout>
+        )}/>
+)
 
 class App extends Component {
   render() {
-    return (
-      <BrowserRouter>
-        <div className="body">
-          <CustomNavbar />
-            <Route path="/" component={HomePage} exact/>
-            <Route path="/Sign-up" component={SignUpPage}/>
-            <Route path="/Log-in" component={LogIn}/>
-            <Route path="/Market" component={Market}/>
-            <Route path="/Cart" component={Cart}/>
-          <Footer /> 
-        </div>
-        
-      </BrowserRouter> 
+    return(
+      <Router>
+          <div>
+          <AppRoute exact path="/" Layout={MainLayout} Component={HomePage}/>
+          <AppRoute exact path="/Sign-up" Layout={MainLayout} Component={SignUpPage} />
+          <AppRoute exact path="/Log-in" Layout={MainLayout} Component={LogIn} />
+          <AppRoute exact path="/Market" Layout={MainLayout} Component={Market} />
+          <AppRoute exact path="/Cart" Layout={MainLayout} Component={Cart} />
+          <AppRoute exact path="/admin" Layout={SecondLayout} Component={AdminPage} />
+            </div>
+      </Router>
     );
   }
 }
