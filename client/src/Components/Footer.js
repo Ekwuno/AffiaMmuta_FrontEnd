@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Jumbotron, Col, Row } from "react-bootstrap";
-import logo from './Assets/Ikenga.png';
+import { Jumbotron, Col, Row, Grid, Image } from "react-bootstrap";
+import lfooter from './Assets/AffiaMmutaWhite.png';
+import lfooter2 from './Assets/FooterIcon.png';
+import fbIcon from './Assets/TwitterLogo.png';
+import tIcon from './Assets/FbWhiteLogo.png';
 import './Footer.css';
 
 
@@ -9,31 +12,39 @@ import './Footer.css';
   render() {
     return (
         <Jumbotron className="footer">
-            <Row className="footer-top" >
-                <Col lg={5} xs={12} sm={12}>
-                    <img src={logo} alt='Logo' height= "50px" width= "84px" />
-                </Col>
-                <Col lg={7} xs={12} sm={12}>
-                    <Row className="rights" >
-                        <Col lg={5} xs={5} sm={4}>
-                            <p>&copy; 2018 AFFIAMMUTA. All Rights Reserved</p>
-                        </Col>
-                        <Col lg={3} xs={3} sm={4}>
-                            <Link to ="/" className= "links">
-                                About AffiaMmuta
-                            </Link>
-                        </Col>
-                        <Col lg={4} xs={4} sm={4}>
-                            <Link to ="mailto:affiammuta@gmail.com" className= "links">
-                                Contact AffiaMmuta
-                            </Link>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-            <Row className="footer-bottom" >
-            </Row>
-            
+            <Grid className="footer-grid">
+                <Row className="footer-top" >
+                    <Col lg={4} className="footer-contents" >
+                        <Image src={lfooter} alt='Logo' className="footer-logo" />
+                    </Col>
+                    <Col lg={2} className="footer-contents">
+                        <h5>ABOUT AFFIAMMUTA</h5>
+                        <p>We are commited to massively <br /> increasing Igbo literacy in African <br />diaspora using technology.</p>
+                    </Col>
+                    <Col lg={2} className="footer-contents">
+                        <h5>CONTACT</h5>
+                        <Link to="#">Contact@affiammuta.com</Link>
+                        <p>+23490260717</p>
+                    </Col>
+                    <Col lg={2} className="footer-contents">
+                        <h5>NAVIGATION</h5>
+                        <Link to="#">Terms of use</Link><br />
+                        <Link to="#">Privacy policy</Link>
+                    </Col>
+                    <Col lg={2} className="footer-contents">
+                        <Image src={lfooter2} alt='Logo' className="footer-icon" />
+                    </Col>
+                </Row>
+                <Row className="footer-bottom">
+                    <Col lg={6} md={6} >
+                        <p>&copy; 2018 AFFIAMMUTA. All Rights Reserved</p>
+                    </Col>
+                    <Col lg={6} md={6} className="fb-twitter">
+                        <Image src={fbIcon} alt='Logo' className="footer-icon" />
+                        <Image src={tIcon} alt='Logo' className="footer-icon" />
+                    </Col>
+                </Row>
+            </Grid>    
         </Jumbotron>   
     );
   }

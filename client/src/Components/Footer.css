@@ -4,23 +4,63 @@
     height: 200px;
     background-color: #626A71;
 }
-.footer img {
-    margin-left: 46px;
-}
-.rights {
-    margin-top: 20px;
-}
-.rights p {
-    font-size: 13px;
-    color: #FFFFFF;
-    font-family: 'Lato', sans-serif;
-}
-.links {
-    font-size: 13px;
-    color: #FFFFFF;
-    font-family: 'Lato', sans-serif;
+.footer-grid {
+    width: 100%;
+    margin-top:-49px;
 }
 .footer-top {
     height: 149.5px;
-    border-bottom: 1px solid black
+    border-bottom: 1px solid #2F3337;
+    /* background-color: blue; */
+}
+.footer-bottom {
+    height: 50px;
+}
+.footer-contents {
+    width: 269px;
+    height: 100%;
+    padding: 25px 0px 0px 20px;
+}
+.footer-logo {
+    width: 170px;
+    height: 42.74px;
+    margin: 30px 0px 0px 40px; 
+}
+.footer-contents h5 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #F2F4F0;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 40px;
+}
+.footer-contents p {
+    font-size: 14px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 40px;
+}
+.footer-contents a {
+    color: #FFFFFF;
+    margin-left: 40px;
+}
+.footer-bottom p {
+    font-size: 14px;
+    color: #F2F4F0;
+    font-family: 'Roboto', sans-serif;
+    margin: 15px 0px 0px 64px;
+    margin-left: 40px;
+}
+.footer-icon {
+    height: 146px;
+    width: 260px;
+    margin: -20px 0px 0px -30px;
+}
+.fb-twitter {
+    margin: 25px 0px 0px 0px;
+}
+.fb-twitter img {
+    width: 30px;
+    height: 30px;
+    margin-left: 460px;
+    margin-right: -440px;
 }
