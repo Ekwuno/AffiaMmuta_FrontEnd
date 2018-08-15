@@ -7,14 +7,13 @@
     display: grid;
     grid-template-columns: 12% 88%;
     margin: -55px 0px 0px 0px;
-    position: absolute;
-    z-index: -1;
 }
 .admin-body > div {
     height: 700px;
 }
 .right-filter {
     background-color: #F2F4F0;
+    margin-top: 55px;
 }
 .nav-lists {
     margin: 100px 0px 0px 0px;
@@ -26,7 +25,7 @@
     background-color: inherit;
 }
 .list-style > p {
-    font-size: 18px;
+    font-size: 17px;
     font-family: 'Lato', sans-serif;
     color: #000000;
 }
@@ -34,19 +33,134 @@
     height: 27px;
     width: 27px;
     border-radius: 100%;
-    padding-top: 7px; 
+    padding: 7px 0px 0px 0px; 
     font-family: 'Lato', sans-serif;
+    font-weight: lighter;
     background-color: #626A71;
 }
 .all {
-    margin-left: 77px;
+    margin-left: 81px;
 }
 .edu {
-    margin-left: 6px;
+    margin-left: 13px;
 }
 .folk {
-    margin-left: 26px;
+    margin-left: 32px;
 }
 .comc {
-    margin-left: 41px;
+    margin-left: 46px;
+}
+.search-admin {
+    margin: 100px 0px 0px 80px;
+    width: 100px;
+    height: 50px;
+    background: #F2F4F0;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+}
+.search-admin::placeholder {
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 18px;
+    color: #626A71;
+}
+.button-admin {
+    margin: 101px 0px 0px 0px;
+    height: 50px;
+    width: 50px;
+    background-color: #626A71 !important;
+    border-radius: 0px 2px 2px 0px !important;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+}
+.up-title {
+    border-bottom: 1px solid #C4C4C4;
+}
+.upload-box {
+    width: 490px;
+    height: 615px;
+    background: #F2F4F0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 100px 0px 0px 400px;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+.upload-title {
+    font-weight: 500;
+    font-size: 24px;
+    margin-left: 25px;
+}
+.upload-forms {
+    width: 400px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #7E9E47;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 0px 0px 0px 30px;
+    padding: 7px 0px 0px 20px;
+}
+.upload-t {
+    margin: 20px 0px 0px 30px;
+}
+.bt{
+    width: 70px;
+    height: 20px;
+    background-color: blue;
+    border-radius: 2px;
+    background-image: none;
+}
+.admin-title-row {
+    width: 400px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #7E9E47;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 0px 0px 0px 45px;
+}
+.admin-desc-row {
+    width: 400px;
+    height: 80px;
+    background: #FFFFFF;
+    border: 1px solid #7E9E47;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 0px 0px 0px 45px;
+}
+.admin-price-cat {
+    width: 180px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #7E9E47;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 0px 0px 0px 45px;
+}
+.cat-admin {
+    margin-right: 60px;
+}
+.btn-ad {
+    width: 150px;
+    height: 40px;
+    background: #85A64B;
+    border-radius: 5px;
+    margin: 10px 0px 0px 45px;
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+.admin-labels {
+    margin: 10px 0px 15px 65px;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif
+}
+.cat-margin {
+    margin: 13px 0px 0px 0px;
+}
+.cat-margin-title {
+    margin: 0px 0px 10px 17px;
 }
