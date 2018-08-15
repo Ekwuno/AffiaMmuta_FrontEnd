@@ -46,35 +46,35 @@ export default class SignUpPage extends Component {
                     <img src={logo} alt='Logo'/>
                     <h3>Let's setup your account</h3>
                     <Form onSubmit= {this.handleSubmit}>
-                        <FormGroup>
+                        <FormGroup className="style-formgroups">
                             <Row><p className="p">Pick a username</p></Row>
                             <Row className="input-rows">
                                 <FormControl className="input-styles" id="username" onChange= {this.handleChange}  />
                             </Row>
                         </FormGroup>
 
-                        <FormGroup>
+                        <FormGroup className="style-formgroups">
                             <Row><p>Enter your email</p></Row>
                             <Row className="input-rows">
                                 <FormControl className="input-styles" id="email" onChange= {this.handleChange}/>
                             </Row>
                         </FormGroup>
 
-                        <FormGroup>
+                        <FormGroup className="style-formgroups">
                             <Row><p>Pick a password</p></Row>
                             <Row className="input-rows">
                                 <FormControl className="input-styles" id= "password" type= "password" onChange= {this.handleChange}/>
                             </Row>
                         </FormGroup>
 
-                        <FormGroup>
+                        <FormGroup className="style-formgroups">
                             
                             <Row><p>Confirm your password</p></Row>
                             <Row className="input-rows">
                                 <FormControl className="input-styles" id="confirmPassword" type= "password" onChange= {this.handleChange}/>
                             </Row>
                         </FormGroup>
-                        <FormGroup>
+                        <FormGroup className="style-formgroups">
                             <Row>
                                 <Button className="btn btn-success btn-get-started" type="submit">Let's Begin</Button>
                             </Row>

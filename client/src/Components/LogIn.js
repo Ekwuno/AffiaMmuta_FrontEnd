@@ -47,25 +47,25 @@ render() {
                 <Image src={logo} alt='Logo'/>
                 <h3>Let's setup your account</h3>
                 <Form onSubmit={this.handleSubmit}>
-                    <FormGroup>
+                    <FormGroup className="style-formgroups">
                         <Row><p>Enter your Email address</p></Row>
                         <Row className="sign-in-rows">
                             <FormControl type="email" id="email" onChange={this.handleChange} />
                         </Row>
                     </FormGroup>
-                    <FormGroup>
+                    <FormGroup className="style-formgroups">
                         <Row><p>Enter your password</p></Row>
                         <Row className="sign-in-rows">
                             <FormControl type="password" id="password" onChange={this.handleChange} />
                         </Row>
                     </FormGroup>
-                    <FormGroup>
+                    <FormGroup className="style-formgroups">
                         <Row>
                             <Button className="btn btn-success btn-log-in" type="submit">Let's Begin</Button>
                         </Row>
                     </FormGroup>
                 </Form>
-                    <FormGroup>
+                    <FormGroup className="style-formgroups">
                         <Row>
                             <Button className="btn btn-success btn-log-in btn-facebook" type="submit" onClick={this.facebookLogIn}>
                                 <Image src={facebook} alt='Logo' />
