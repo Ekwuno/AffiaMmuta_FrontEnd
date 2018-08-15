@@ -41,10 +41,10 @@ import './CustomNavbar.css';
               <Navbar.Form>
               <FormGroup>
                 <FormControl type="text" placeholder="I am looking for..." className="search" />
-              </FormGroup>
               <Button type="submit" className= "button">
                 <Image src={search} alt='Logo'/>
               </Button>
+              </FormGroup>
               <Link to="/Cart">
                 <Button type="submit" className= "cart">
                   <Image src={cart} alt='Logo' className="cart-img" />
