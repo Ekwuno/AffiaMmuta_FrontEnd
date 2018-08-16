@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Jumbotron, ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image, Form, Row, DropdownButton, MenuItem, Tabs, Tab } from "react-bootstrap";
+import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image, Form, Row, DropdownButton, MenuItem, Tabs, Tab } from "react-bootstrap";
 import adminSearch from './Assets/Search.png';
 import './AdminPage.css';
 
@@ -9,16 +9,16 @@ import './AdminPage.css';
 export default class AdminPage extends Component {
 
     state = {
-        book: "",
         bookImage: "",
-        bookAuthor: "",
-        bookTitle: "",
-        bookPrice: "",
-        bookCategory: "",
-        bookDescription: "",
+        bookContent: "",
+        author: "",
+        title: "",
+        price: "",
+        // bookCategory: "",
+        // bookDescription: "",
     }
     onChange = (event) => {
-        switch (event.target.id) {
+        switch (event.target.name) {
             case 'selectedFile':
                 this.setState({
                     selectedFile: event.target.files[0]
@@ -26,35 +26,36 @@ export default class AdminPage extends Component {
                 break;
             default:
                 this.setState({
-                    [event.target.id]: event.target.value
+                    [event.target.name]: event.target.value
                 })
         }
 
     }
     handleSubmit = () => {
         const {
-            book,
             bookImage,
-            bookAuthor,
-            bookTitle,
-            bookPrice,
-            bookCategory,
-            bookDescription
+            bookContent,
+            author,
+            title,
+            price,
+            // bookCategory,
+            // bookDescription
         } = this.state
         const files = new FormData()
-        files.append("book", book);
         files.append("bookImage", bookImage);
-        files.append("bookAuthor", bookAuthor);
-        files.append("bookTitle", bookTitle);
-        files.append("bookPrice", bookPrice);
-        files.append("bookCategory", bookCategory);
-        files.append("bookDescription", bookDescription);
+        files.append("bookContent", bookContent);
+        files.append("author", author);
+        files.append("title", title);
+        files.append("price", price);
+        // files.append("bookCategory", bookCategory);
+        // files.append("bookDescription", bookDescription);
         console.log(files)
 
         axios({
                 method: 'post',
                 url: 'https://affiammuta.herokuapp.com/books/addbook',
                 data: files,
+                 
                 config: {
                     headers: {
                         'Content-Type': 'multipart/form-data'
@@ -106,51 +107,51 @@ export default class AdminPage extends Component {
                         </div>
                         <div>
                             <Form action='https://affiammuta.herokuapp.com/books/addbook' method="post" enctype='mulTipart/form-data' onSubmit = {this.handleSubmit}>
-                                <Row className="upload-t"><p>Book File</p></Row>
-                                <Row className="upload-forms">
-                                    <FormControl
-                                    id = "book"
-                                    type = "file"
-                                    label = ""
-                                    className="bt" 
-                                    onChange= {this.handleChange}/
-                                    >
-                                </Row>
                                 <Row className="upload-t"><p>Book Cover</p></Row>
                                 <Row className="upload-forms">
                                     <FormControl
-                                    id = "bookImage"
+                                    name = "bookImage"
                                     type = "file"
-                                    className="bt"
+                                    label = ""
+                                    className="" 
+                                    onChange= {this.handleChange}/
+                                    >
+                                </Row>
+                                <Row className="upload-t"><p>Book File</p></Row>
+                                <Row className="upload-forms">
+                                    <FormControl
+                                    name = "bookContent"
+                                    type = "file"
+                                    className=""
                                     onChange= {this.handleChange}/
                                     >
                                 </Row>
                                 <FormGroup className="style-admin-paragraphs">
                                     <Row>  
                                         <Row><p className="admin-labels">Author</p></Row>
-                                        <FormControl type="text" id="bookAuthor"  className="admin-title-row" onChange= {this.handleChange}/>
+                                        <FormControl type="text" name="author"  className="admin-title-row" onChange= {this.handleChange}/>
                                     </Row>
                                 </FormGroup>
                                 <FormGroup className="style-admin-paragraphs">
                                     <Row>  
                                         <Row><p className="admin-labels">Title</p></Row>
-                                        <FormControl type="text" id="bookTitle"  className="admin-title-row" onChange= {this.handleChange}/>
+                                        <FormControl type="text" name="title"  className="admin-title-row" onChange= {this.handleChange}/>
                                     </Row>
                                 </FormGroup>
-                                <Form inline>
+                                <Form inline action='https://affiammuta.herokuapp.com/books/addbook' method="post" enctype='mulTipart/form-data' onSubmit = {this.handleSubmit}>
                                     <FormGroup>
                                         <Row>  
                                             <Row><p className="admin-labels">Price</p></Row>
-                                            <FormControl type="number" id="bookPrice"  className="admin-price-cat cat-admin" onChange= {this.handleChange}/>
+                                            <FormControl type="number" name="price"  className="admin-price-cat cat-admin" onChange= {this.handleChange}/>
                                         </Row>
                                     </FormGroup>
                                     <FormGroup  className="cat-margin">
                                         <Row>  
                                             <Row><p className="cat-margin-title" >Category</p></Row>
-                                            <DropdownButton 
+                                            {/* <DropdownButton 
                                                 bsStyle
                                                 title="Select Category"
-                                                id="bookCategory"
+                                                name="bookCategory"
                                                 className = "admin-price-cat cat-admin"
                                                 onChange= {this.handleChange}
                                                 >
@@ -158,14 +159,14 @@ export default class AdminPage extends Component {
                                                 <MenuItem eventKey="2">Comics</MenuItem>
                                                 <MenuItem eventKey="2">Folklors</MenuItem>
 
-                                            </DropdownButton>
+                                            </DropdownButton> */}
                                         </Row>
                                     </FormGroup>
                                 </Form>
                                 <FormGroup>
                                     <Row>  
                                         <Row><p className="admin-labels">Description</p></Row>
-                                        <FormControl componentClass="textarea"type="text" id="bookDescription"  className="admin-desc-row" onChange= {this.handleChange}/>
+                                        {/* <FormControl componentClass="textarea"type="text" id="bookDescription"  className="admin-desc-row" onChange= {this.handleChange}/> */}
                                     </Row>
                                 </FormGroup>
                                 <FormGroup>
