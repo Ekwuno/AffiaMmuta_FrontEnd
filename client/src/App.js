@@ -12,6 +12,7 @@ import AdminPage from "./Components/AdminPage";
 import LogIn from "./Components/LogIn";
 import Market from "./Components/Market";
 import Cart from "./Components/Cart";
+import Library from "./Components/Library";
 
 const AppRoute = ({Component, Layout, ...rest}) => (
         <Route {...rest} render={props=> (
@@ -26,13 +27,14 @@ class App extends Component {
     return(
       <Router>
           <div>
-          <AppRoute exact path="/" Layout={MainLayout} Component={HomePage}/>
-          <AppRoute exact path="/Sign-up" Layout={MainLayout} Component={SignUpPage} />
-          <AppRoute exact path="/Log-in" Layout={MainLayout} Component={LogIn} />
-          <AppRoute exact path="/Market" Layout={MainLayout} Component={Market} />
-          <AppRoute exact path="/Cart" Layout={MainLayout} Component={Cart} />
-          <AppRoute exact path="/admin" Layout={SecondLayout} Component={AdminPage} />
-            </div>
+            <AppRoute exact path="/" Layout={MainLayout} Component={HomePage}/>
+            <AppRoute exact path="/Sign-up" Layout={MainLayout} Component={SignUpPage} />
+            <AppRoute exact path="/Log-in" Layout={MainLayout} Component={LogIn} />
+            <AppRoute exact path="/Market" Layout={MainLayout} Component={Market} />
+            <AppRoute exact path="/Cart" Layout={MainLayout} Component={Cart} />
+            <AppRoute exact path="/Admin" Layout={SecondLayout} Component={AdminPage} />
+            <AppRoute exact path="/Library" Layout={MainLayout} Component={Library} />
+          </div>
       </Router>
     );
   }
