@@ -79,7 +79,7 @@
 }
 .upload-box {
     width: 490px;
-    height: 615px;
+    height: 685px;
     background: #F2F4F0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 100px 0px 0px 400px;
@@ -118,7 +118,7 @@
     border: 1px solid #7E9E47;
     box-sizing: border-box;
     border-radius: 8px;
-    margin: 0px 0px 0px 45px;
+    margin: -10px 0px 0px 45px;
 }
 .admin-desc-row {
     width: 400px;
