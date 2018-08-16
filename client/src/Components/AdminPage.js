@@ -13,7 +13,7 @@ export default class AdminPage extends Component {
         bookContent: "",
         author: "",
         title: "",
-        price: "",
+        price: ""
         // bookCategory: "",
         // bookDescription: "",
     }
@@ -138,16 +138,15 @@ export default class AdminPage extends Component {
                                         <FormControl type="text" name="title"  className="admin-title-row" onChange= {this.handleChange}/>
                                     </Row>
                                 </FormGroup>
-                                <Form inline action='https://affiammuta.herokuapp.com/books/addbook' method="post" enctype='mulTipart/form-data' onSubmit = {this.handleSubmit}>
                                     <FormGroup>
                                         <Row>  
                                             <Row><p className="admin-labels">Price</p></Row>
                                             <FormControl type="number" name="price"  className="admin-price-cat cat-admin" onChange= {this.handleChange}/>
                                         </Row>
                                     </FormGroup>
-                                    <FormGroup  className="cat-margin">
-                                        <Row>  
-                                            <Row><p className="cat-margin-title" >Category</p></Row>
+                                    {/* <FormGroup  className="cat-margin"> */}
+                                        {/* <Row>   */}
+                                            {/* <Row><p className="cat-margin-title" >Category</p></Row> */}
                                             {/* <DropdownButton 
                                                 bsStyle
                                                 title="Select Category"
@@ -160,15 +159,14 @@ export default class AdminPage extends Component {
                                                 <MenuItem eventKey="2">Folklors</MenuItem>
 
                                             </DropdownButton> */}
-                                        </Row>
-                                    </FormGroup>
-                                </Form>
-                                <FormGroup>
-                                    <Row>  
-                                        <Row><p className="admin-labels">Description</p></Row>
+                                        {/* </Row> */}
+                                    {/* </FormGroup> */}
+                                {/* <FormGroup> */}
+                                    {/* <Row>   */}
+                                        {/* <Row><p className="admin-labels">Description</p></Row> */}
                                         {/* <FormControl componentClass="textarea"type="text" id="bookDescription"  className="admin-desc-row" onChange= {this.handleChange}/> */}
-                                    </Row>
-                                </FormGroup>
+                                    {/* </Row> */}
+                                {/* </FormGroup> */}
                                 <FormGroup>
                                     <Row>
                                         <Button className="btn btn-success btn-ad" type="submit">Upload</Button>
