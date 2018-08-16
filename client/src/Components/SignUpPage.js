@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Jumbotron, Row, Col, Button, Form, FormGroup, FormControl, } from "react-bootstrap";
+import { Jumbotron, Row, Col, Button, Form, FormGroup, FormControl, InputGroup } from "react-bootstrap";
 import './SignUpPage.css';
 import logo from './Assets/Ikenga.png';
+import user from './Assets/LogIn.png';
+import email from './Assets/EmailLogo.png';
+import lock from './Assets/Padlock.png';
+
+
 
 export default class SignUpPage extends Component {
     state = {
@@ -49,21 +54,37 @@ export default class SignUpPage extends Component {
                         <FormGroup className="style-formgroups">
                             <Row><p className="p">Pick a username</p></Row>
                             <Row className="input-rows">
-                                <FormControl className="input-styles" id="username" onChange= {this.handleChange}  />
+
+                                <InputGroup>
+                                    <InputGroup.Addon>
+                                        <img src={user} alt='Logo' className="form-title-logo"/>
+                                    </InputGroup.Addon>
+                                    <FormControl className="input-styles" id="username" onChange= {this.handleChange}  />
+                                </InputGroup>
                             </Row>
                         </FormGroup>
 
                         <FormGroup className="style-formgroups">
                             <Row><p>Enter your email</p></Row>
                             <Row className="input-rows">
-                                <FormControl className="input-styles" id="email" onChange= {this.handleChange}/>
+                                <InputGroup>
+                                    <InputGroup.Addon>
+                                        <img src={email} alt='Logo' className="form-title-logo"/>
+                                    </InputGroup.Addon>
+                                    <FormControl className="input-styles" id="email" onChange= {this.handleChange}/>
+                                </InputGroup>
                             </Row>
                         </FormGroup>
 
                         <FormGroup className="style-formgroups">
                             <Row><p>Pick a password</p></Row>
                             <Row className="input-rows">
-                                <FormControl className="input-styles" id= "password" type= "password" onChange= {this.handleChange}/>
+                                <InputGroup>
+                                    <InputGroup.Addon>
+                                        <img src={lock} alt='Logo' className="form-title-logo"/>
+                                    </InputGroup.Addon>
+                                    <FormControl className="input-styles" id= "password" type= "password" onChange= {this.handleChange}/>
+                                </InputGroup>
                             </Row>
                         </FormGroup>
 
@@ -71,7 +92,12 @@ export default class SignUpPage extends Component {
                             
                             <Row><p>Confirm your password</p></Row>
                             <Row className="input-rows">
-                                <FormControl className="input-styles" id="confirmPassword" type= "password" onChange= {this.handleChange}/>
+                                <InputGroup>
+                                    <InputGroup.Addon>
+                                        <img src={lock} alt='Logo' className="form-title-logo"/>
+                                    </InputGroup.Addon>
+                                    <FormControl className="input-styles" id="confirmPassword" type= "password" onChange= {this.handleChange}/>
+                                </InputGroup>
                             </Row>
                         </FormGroup>
                         <FormGroup className="style-formgroups">
