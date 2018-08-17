@@ -25,3 +25,60 @@
 .library-contents {
     height: 600px;
 }
+.library-book-container {
+    height: 232px;
+    width: 60%;
+    border: 1px solid black;
+    padding: 20px 0px 0px 0px;
+}
+.library-book-position {
+    width: 356px;
+    height: 192px;
+    display: grid;
+    grid-template-columns: 39% 56%;
+    grid-gap: 5%;
+}
+.library-book-position> div {
+    border: 1px solid black;
+}
+.library-book-image {
+    /* height: inherit;
+    width: 137px;
+    border: 1px solid black; */
+}
+.span-display {
+    display: inline-block;
+}
+.ikenga-container {
+    height: 20px;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 19% 19% 19% 19% 19%;
+    grid-gap: 2%;
+}
+.ikenga-container> span {
+    border: 1px solid black;
+    height: inherit;
+}
+.ikenga-filled {
+    height: 100%;
+    width: 100%;
+}
+.ikenga-empty {
+    height: 100%;
+    width: 100%;
+}
+.library-book-name {
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+}
+.library-book-author {
+    font-style: normal;
+    line-height: normal;
+    font-size: 17px;
+    font-family: 'Lato', sans-serif;
+    margin: -10px 0px 10px 0px;
+}
