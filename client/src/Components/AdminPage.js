@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image, Form, Row, DropdownButton, MenuItem, Tabs, Tab } from "react-bootstrap";
+import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image, Form, Row, ProgressBar } from "react-bootstrap";
 import adminSearch from './Assets/Search.png';
 import './AdminPage.css';
 
@@ -13,9 +13,13 @@ export default class AdminPage extends Component {
         bookContent: "",
         author: "",
         title: "",
-        price: ""
+        price: "",
+        progress: 0
         // bookCategory: "",
         // bookDescription: "",
+    }
+    onUploadProgress=() => {
+        
     }
     onChange = (event) => {
         switch (event.target.name) {
@@ -31,7 +35,8 @@ export default class AdminPage extends Component {
         }
 
     }
-    handleSubmit = () => {
+    handleSubmit = event  => {
+        event.preventDefault();
         const {
             bookImage,
             bookContent,
@@ -60,6 +65,12 @@ export default class AdminPage extends Component {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
+                },
+                OnUploadProgress: (progressEvent) => {
+                    let percentCompleted = Math.round((ProgressEvent.loaded *100) / ProgressEvent.total);
+                    console.log(percentCompleted);
+                    console.log(1)
+                    this.setState({progress: percentCompleted})
                 }
 
             })
@@ -123,7 +134,8 @@ export default class AdminPage extends Component {
                                     name = "bookContent"
                                     type = "file"
                                     className=""
-                                    onChange= {this.handleChange}/
+                                    onChange= {this.handleChange}
+                                    onClick={this.onUploadProgress}/
                                     >
                                 </Row>
                                 <FormGroup className="style-admin-paragraphs">
@@ -170,6 +182,7 @@ export default class AdminPage extends Component {
                                 <FormGroup>
                                     <Row>
                                         <Button className="btn btn-success btn-ad" type="submit">Upload</Button>
+                                        <ProgressBar  now={this.onUploadProgress} />
                                     </Row>
                                 </FormGroup>
                         </Form>
