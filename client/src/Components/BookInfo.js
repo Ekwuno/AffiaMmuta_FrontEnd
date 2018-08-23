@@ -44,7 +44,9 @@ export default class BookInfo extends Component {
                             <div>
                                 <button className="buy-book-btn">Buy</button>
                             </div>
-                            <div></div>
+                            <div>
+                                <p>&#8358;3000</p>
+                            </div>
                         </div>
                     </div>
                 </div>
