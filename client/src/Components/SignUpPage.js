@@ -44,8 +44,6 @@ export default class SignUpPage extends Component {
                 else{
                     alert(JSON.stringify(res.data.message));
                 }
-            // alert(JSON.stringify(res.data.message));
-            // console.log(res.data)
             })
         )
     }
