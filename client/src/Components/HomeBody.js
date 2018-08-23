@@ -21,7 +21,7 @@ import './HomeBody.css';
      }
    }
    componentDidMount(){
-     axios.get("https://affiammuta.herokuapp.com/books")
+     axios.get("https://affiammuta.herokuapp.com/books/latest?count=5")
      .then(res=>{
        this.setState({popularBooks: res.data});
        
