@@ -66,7 +66,7 @@ export default class AdminPage extends Component {
                         'Content-Type': 'multipart/form-data'
                     }
                 },
-                OnUploadProgress: (progressEvent) => {
+                onUploadProgress: progressEvent => {
                     let percentCompleted = Math.round((ProgressEvent.loaded *100) / ProgressEvent.total);
                     console.log(percentCompleted);
                     console.log(1)
@@ -135,7 +135,7 @@ export default class AdminPage extends Component {
                                     type = "file"
                                     className=""
                                     onChange= {this.handleChange}
-                                    onClick={this.onUploadProgress}/
+                                    onClick={this.state.progress}/
                                     >
                                 </Row>
                                 <FormGroup className="style-admin-paragraphs">
