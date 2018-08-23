@@ -13,6 +13,7 @@ import LogIn from "./Components/LogIn";
 import Market from "./Components/Market";
 import Cart from "./Components/Cart";
 import Library from "./Components/Library";
+import BookInfo from './Components/BookInfo';
 
 const AppRoute = ({Component, Layout, ...rest}) => (
         <Route {...rest} render={props=> (
@@ -34,6 +35,7 @@ class App extends Component {
             <AppRoute exact path="/Cart" Layout={MainLayout} Component={Cart} />
             <AppRoute exact path="/Admin" Layout={SecondLayout} Component={AdminPage} />
             <AppRoute exact path="/Library" Layout={MainLayout} Component={Library} />
+            <AppRoute exact path="/Book" Layout={MainLayout} Component={BookInfo} />
           </div>
       </Router>
     );
