@@ -37,7 +37,12 @@ export default class LogIn extends Component {
     facebookLogIn = event => {
         axios.get("https://affiammuta.herokuapp.com/login/facebook")
         .then(res=>{
-            alert(res)
+            if (res.data.message=="Login successful"){
+                    this.props.history.push("/Market")
+                }
+            else{
+                    alert(JSON.stringify(res.data.message));
+                }
 
         })
     }
