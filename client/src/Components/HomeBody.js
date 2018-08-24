@@ -30,25 +30,30 @@ import './HomeBody.css';
   render() {
     
     const popular = this.state.popularBooks.map(item=>
-  <Col xs={12} sm={4} className= "wrapper">
-                <Row className="books-top" >
-                  <Col className="image-container" >
-                    <Image src={item.bookImage} alt='Logo' className="books-jpg" />
-                  </Col>
-                </Row>
-                <Row className="books-bottom" >
-                  <Col className="book-title" >
-                  <span className= "title">{item.title}</span>
-                  <span className="author" >{item.author}</span>
-                  <span className="price" >&#8358;{item.price}</span>
-                  </Col>
-                  <Col className="book-price" >
-                    <Button className="book-buttons" type="submit">
-                      <Image src={cart} alt='cart' className="cart-books" />
-                    </Button>
-                  </Col>
-                </Row>
-              </Col>
+      <Link to={{
+        pathname:`/book/${item._id}`,
+        state: {popularBooks: item._id}
+      }}>
+        <Col xs={12} sm={4} className= "wrapper">
+          <Row className="books-top" >
+            <Col className="image-container" >
+              <Image src={item.bookImage} alt='Logo' className="books-jpg" />
+            </Col>
+          </Row>
+          <Row className="books-bottom" >
+            <Col className="book-title" >
+              <span className= "title">{item.title}</span>
+              <span className="author" >{item.author}</span>
+              <span className="price" >&#8358;{item.price}</span>
+            </Col>
+            <Col className="book-price" >
+              <Button className="book-buttons" type="submit">
+                <Image src={cart} alt='cart' className="cart-books" />
+              </Button>
+            </Col>
+          </Row>
+        </Col>
+      </Link>
   )
     return (
       <div className="home-books">
