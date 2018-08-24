@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import { Navbar, Col, Row, Nav, NavItem, Image, Button, FormGroup, FormControl, DropdownButton, MenuItem } from "react-bootstrap";
+import { Navbar, Col, Nav, Image, Button, DropdownButton, MenuItem } from "react-bootstrap";
 import './AdminNavbar.css';
 import affia from './Assets/AdminLogo.png';
 import cartAdmin from './Assets/Cart.png';

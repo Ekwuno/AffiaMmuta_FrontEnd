@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image, Form, Row, ProgressBar } from "react-bootstrap";
 import adminSearch from './Assets/Search.png';
@@ -15,8 +14,6 @@ export default class AdminPage extends Component {
         title: "",
         price: "",
         progress: 0
-        // bookCategory: "",
-        // bookDescription: "",
     }
     onUploadProgress=() => {
         
