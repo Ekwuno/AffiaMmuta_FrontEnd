@@ -56,7 +56,7 @@ render() {
         <div className="sign-in-background" >
             <Jumbotron className= "sign-in-box">
                 <Image src={logo} alt='Logo'/>
-                <h3>Let's setup your account</h3>
+                <h3>Welcome back!</h3>
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup className="style-formgroups">
                         <Row><p>Enter your Email address</p></Row>
