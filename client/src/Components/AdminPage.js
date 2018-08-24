@@ -153,7 +153,7 @@ export default class AdminPage extends Component {
                                     <FormGroup>
                                         <Row>  
                                             <Row><p className="admin-labels">Price</p></Row>
-                                            <FormControl type="number" name="price"  className="admin-price-cat cat-admin" onChange= {this.handleChange}/>
+                                            <FormControl type="number" name="price" step="100" min="100" className="admin-price-cat cat-admin" onChange= {this.handleChange}/>
                                         </Row>
                                     </FormGroup>
                                     {/* <FormGroup  className="cat-margin"> */}
