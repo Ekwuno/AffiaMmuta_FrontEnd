@@ -38,8 +38,12 @@ export default class SignUpPage extends Component {
             axios
             .post("https://affiammuta.herokuapp.com/users/create", data)
             .then(res =>{ 
-            alert(JSON.stringify(res.data.message));
-            console.log(res.data)
+                if (res.data.message=="user created successfully"){
+                    this.props.history.push("/Market")
+                }
+                else{
+                    alert(JSON.stringify(res.data.message));
+                }
             })
         )
     }

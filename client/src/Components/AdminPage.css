@@ -2,14 +2,13 @@
     height: 1000px;
 }
 .admin-body {
-    height: 700;
     width: 100%;
     display: grid;
     grid-template-columns: 12% 88%;
     margin: -55px 0px 0px 0px;
 }
 .admin-body > div {
-    height: 700px;
+    height: 965px;
 }
 .right-filter {
     background-color: #F2F4F0;
@@ -51,7 +50,7 @@
     margin-left: 46px;
 }
 .search-admin {
-    margin: 100px 0px 0px 80px;
+    margin: 51px 0px 0px 80px;
     width: 100px;
     height: 50px;
     background: #F2F4F0;
@@ -66,7 +65,7 @@
     color: #626A71;
 }
 .button-admin {
-    margin: 101px 0px 0px 0px;
+    margin: 51px 0px 0px 0px;
     height: 50px;
     width: 50px;
     background-color: #626A71 !important;
@@ -82,7 +81,7 @@
     height: 685px;
     background: #F2F4F0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 100px 0px 0px 400px;
+    margin: 60px 0px 0px 400px;
     display: grid;
     grid-template-rows: 10% 90%;
 }
@@ -152,7 +151,7 @@
     font-size: 18px;
 }
 .admin-labels {
-    margin: 10px 0px 15px 65px;
+    margin: 30px 0px 15px 65px;
     font-weight: 500;
     line-height: normal;
     font-size: 14px;
@@ -163,4 +162,12 @@
 }
 .cat-margin-title {
     margin: 0px 0px 10px 17px;
+}
+.progress {
+    margin: 10px 0px 0px 30px;
+    width: 90%;
+}
+.progress-bar {
+    background-color: #85A64B;
+    background-image: none;
 }
