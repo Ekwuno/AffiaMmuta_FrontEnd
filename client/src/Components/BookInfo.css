@@ -8,10 +8,8 @@
     display: grid;
     grid-template-columns: 40% 60%;
     grid-gap: 2.5%; 
+    margin: 0px 0px 70px 0px;
 }
-/* .current-book > div {
-    border: 1px solid black;
-} */
 .read-cover {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     height: inherit;
@@ -113,4 +111,7 @@
     font-weight: 800;
     line-height: normal;
     font-size: 15px;
+}
+.book-tabs {
+    width: 50%;
 }
