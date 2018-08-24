@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Jumbotron, Row, Col, Button, Form, FormGroup, FormControl, InputGroup } from "react-bootstrap";
+import { Jumbotron, Row, Button, Form, FormGroup, FormControl, InputGroup } from "react-bootstrap";
 import './SignUpPage.css';
 import logo from './Assets/Ikenga.png';
 import user from './Assets/LogIn.png';
@@ -38,7 +38,7 @@ export default class SignUpPage extends Component {
             axios
             .post("https://affiammuta.herokuapp.com/users/create", data)
             .then(res =>{ 
-                if (res.data.message=="user created successfully"){
+                if (res.data.message==="user created successfully"){
                     this.props.history.push("/Market")
                 }
                 else{

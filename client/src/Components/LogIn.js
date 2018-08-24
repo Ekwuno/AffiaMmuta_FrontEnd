@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Jumbotron, Row, Col, Button, Form, FormGroup, FormControl, Image, InputGroup } from "react-bootstrap";
+import { Jumbotron, Row, Button, Form, FormGroup, FormControl, Image, InputGroup } from "react-bootstrap";
 import axios from "axios";
 import './LogIn.css';
 import logo from './Assets/Ikenga.png';
@@ -30,7 +30,7 @@ export default class LogIn extends Component {
         axios
         .post("https://affiammuta.herokuapp.com/login", data)
         .then(res =>{ 
-            if (res.data.message=="Login successful"){
+            if (res.data.message==="Login successful"){
                 this.props.history.push("/Market")
             }
             else{
@@ -41,7 +41,7 @@ export default class LogIn extends Component {
     facebookLogIn = event => {
         axios.get("https://affiammuta.herokuapp.com/login/facebook")
         .then(res=>{
-            if (res.data.message=="Login successful"){
+            if (res.data.message==="Login successful"){
                 this.props.history.push("/Market")
             }
             else{
