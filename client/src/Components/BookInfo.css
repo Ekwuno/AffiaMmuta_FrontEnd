@@ -1,38 +1,49 @@
-.info-body {
-    height: 800px;
-    display: grid;
-    grid-template-columns: 65% 20%;
-    grid-gap: 15%;
-    padding: 0px 0px 0px 15%;
+.info-main {
+    width: 80%;
+    margin: 50px 0px 0px 200px;
 }
 .current-book {
-    height: 264px;
-    width: 94%;
+    height: 450px;
+    width: 64%;
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 45% 60%;
     grid-gap: 2.5%; 
 }
-.current-book > div {
+/* .current-book > div {
     border: 1px solid black;
+} */
+.read-cover {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 450px;
+}
+.read-cover img {
+    height: 100%;
+    width: 100%;
 }
 .read-des {
     margin: 0px 0px 0px 0px;
 }
 .read-des h2 {
     font-family: 'Lato', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    line-height: normal;
-    font-size: 24px;
-    margin: 0px 0px 3px 0px;
+    font-size: 42px;
+    margin: 0px 0px 10px 0px;
     color: #000000;
 }
 .rate-title {
     font-family: 'Lato', sans-serif;
     font-style: normal;
     line-height: normal;
-    font-size: 16px;
+    font-size: 22px;
     color: #000000;
+}
+.rate-price {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    font-size: 27px;
+    color: #7E9E47;
+    margin: 30px 0px 30px 0px;
 }
 .book-reviews {
     width: 100%;
@@ -68,38 +79,26 @@
     font-size: 12px;
     margin-top: 10px;
 }
-.ikenga-review {
-    display: grid;
-    grid-template-columns: 19% 19% 19% 19% 19%;
-    grid-gap: 2%;
-}
-.ikenga-review span {
-    border: 1px solid black;
-}
 .book-des {
     font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: normal;
     line-height: normal;
-    font-size: 14px;
+    font-size: 16px;
     color: #000000;
     margin: 20px 0px 0px 0px;
 }
-.read-button-price {
-    height: 33px;
-    width: 50%;
-    border: 1px solid black;
-    display: grid;
-    grid-template-columns: 70% 25%;
-    margin: 10px 0px 0px 0px;
-}
-.read-button-price div {
-    border: 1px solid black;
-}
 .buy-book-btn {
-    width: 130px;
-    height: 30px;
+    width: 125px;
+    height: 45px;
     background: #85A64B;
-    border-radius: 5px;
-    border: 1px solid #85A64B;
+    border-radius: 8px;
+    border: none;
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    font-size: 15px;
+    margin: 0px 0px 30px 0px;
 }
