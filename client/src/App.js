@@ -30,7 +30,7 @@ class App extends Component {
       <Router>
           <div>
             <AppRoute exact path="/" Layout={MainLayout} Component={HomePage}/>
-            <AppRoute exact path="/sign-up" Layout={MainLayout} Component={SignUpPage} />
+            <AppRoute exact path="/signup" Layout={MainLayout} Component={SignUpPage} />
             <AppRoute exact path="/login" Layout={MainLayout} Component={LogIn} />
             <AppRoute exact path="/market" Layout={MainLayout} Component={Market} />
             <AppRoute exact path="/cart" Layout={MainLayout} Component={Cart} />
