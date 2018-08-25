@@ -14,11 +14,11 @@ export default class MarketTitle extends Component {
                         <InputGroup.Addon className="market-btn-addon">
                                     {/* <img src={} alt='Logo' className="form-title-logo"/> */}
                         </InputGroup.Addon>
-                        <DropdownButton title="select a category">
-                            <MenuItem eventKey="1">Action</MenuItem>
-                            <MenuItem eventKey="2">Another action</MenuItem>
+                        <DropdownButton title="sort books by">
+                            <MenuItem eventKey="1">Most Recent</MenuItem>
+                            <MenuItem eventKey="2">Popular Books</MenuItem>
                             <MenuItem eventKey="3">
-                                Active Item
+                                Comics
                             </MenuItem>
                         </DropdownButton>
                     </InputGroup>
