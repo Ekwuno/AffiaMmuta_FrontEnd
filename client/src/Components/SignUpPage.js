@@ -42,7 +42,7 @@ export default class SignUpPage extends Component {
                     this.props.history.push("/Market")
                 }
                 else{
-                    alert(JSON.stringify(res.data.message));
+                    alert("Something went wrong, try again");
                 }
             })
         )
@@ -59,7 +59,7 @@ export default class SignUpPage extends Component {
                             <Row><p className="p">Pick a username</p></Row>
                             <Row className="input-rows">
 
-                                <InputGroup>
+                                <InputGroup className="login-input-group">
                                     <InputGroup.Addon>
                                         <img src={user} alt='Logo' className="form-title-logo"/>
                                     </InputGroup.Addon>
@@ -71,7 +71,7 @@ export default class SignUpPage extends Component {
                         <FormGroup className="style-formgroups">
                             <Row><p>Enter your email</p></Row>
                             <Row className="input-rows">
-                                <InputGroup>
+                                <InputGroup className="login-input-group">
                                     <InputGroup.Addon>
                                         <img src={email} alt='Logo' className="form-title-logo"/>
                                     </InputGroup.Addon>
@@ -83,7 +83,7 @@ export default class SignUpPage extends Component {
                         <FormGroup className="style-formgroups">
                             <Row><p>Pick a password</p></Row>
                             <Row className="input-rows">
-                                <InputGroup>
+                                <InputGroup className="login-input-group">
                                     <InputGroup.Addon>
                                         <img src={lock} alt='Logo' className="form-title-logo"/>
                                     </InputGroup.Addon>
@@ -96,7 +96,7 @@ export default class SignUpPage extends Component {
                             
                             <Row><p>Confirm your password</p></Row>
                             <Row className="input-rows">
-                                <InputGroup>
+                                <InputGroup className="login-input-group">
                                     <InputGroup.Addon>
                                         <img src={lock} alt='Logo' className="form-title-logo"/>
                                     </InputGroup.Addon>
@@ -109,10 +109,10 @@ export default class SignUpPage extends Component {
                                 <Button className="btn btn-success btn-get-started" type="submit">Let's Begin</Button>
                             </Row>
                         </FormGroup>
-                        <p id="log-in" >Already got an account? <Link to="/Log-in">Sign In</Link></p>
-                    </Form>;
+                        <p id="log-in" >Already got an account? <Link to="/login">Sign In</Link></p>
+                    </Form>
                 </Jumbotron>
         </div>
-    );
+    )
   }
 }
