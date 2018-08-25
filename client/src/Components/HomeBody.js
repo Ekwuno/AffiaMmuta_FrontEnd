@@ -13,11 +13,11 @@ import udala from './Assets/UnderTheUdalaTree.jpg';
 import cart from './Assets/CustomCart.png';
 import './HomeBody.css';
 
- export default class HomeBody extends Component {
-   constructor(){
-     super();
-     this.state = {
-       popularBooks: []
+  export default class HomeBody extends Component {
+    constructor(){
+      super();
+      this.state = {
+      popularBooks: []
      }
    }
    componentDidMount(){
