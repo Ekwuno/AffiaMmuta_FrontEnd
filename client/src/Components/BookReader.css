@@ -1,0 +1,15 @@
+.reader-container {
+    background: #F2F4F0;
+    width: 100%;
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+.reader-container > div {
+    border: 1px solid black;
+} 
+canvas {
+    height: 100% !important;
+    width: 100% !important;
+    overflow: auto;
+}
