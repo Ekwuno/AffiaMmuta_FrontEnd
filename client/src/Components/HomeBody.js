@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { Row, Grid, Col, Jumbotron, Image, Button } from "react-bootstrap";
 import shelf from "./Assets/Shelf.png";
-import tortoise from './Assets/FlyingTortoise.jpg';
-import idioms from './Assets/IgboIdioms.gif';
-import okowa from './Assets/Okowaokwu.jpg';
-import phoenix from './Assets/BookOfPhoenix.jpg';
-import concubine from './Assets/TheConcubine.jpg';
-import fisherman from './Assets/TheFisherman.jpg';
-import udala from './Assets/UnderTheUdalaTree.jpg';
-import cart from './Assets/CustomCart.png';
 import './HomeBody.css';
 import HomePopular from './HomePopular';
+import HomeNew from './HomeNew';
+import HomeComics from './HomeComics';
+// import tortoise from './Assets/FlyingTortoise.jpg';
+// import idioms from './Assets/IgboIdioms.gif';
+// import okowa from './Assets/Okowaokwu.jpg';
+// import phoenix from './Assets/BookOfPhoenix.jpg';
+// import concubine from './Assets/TheConcubine.jpg';
+// import fisherman from './Assets/TheFisherman.jpg';
+// import udala from './Assets/UnderTheUdalaTree.jpg';
+// import cart from './Assets/CustomCart.png';
+
 
   export default class HomeBody extends Component {
     
@@ -33,8 +36,9 @@ import HomePopular from './HomePopular';
           <Row className="head head-below" >
               <Col lg={6} xs={6} sm={4} className="span new-release-background"></Col>
               <Col lg={6} xs={6} sm={4} className= "span-title new-release-color">NEW RELEASES</Col>
-            </Row>
-          <Grid className="grid">  
+          </Row>
+          <HomeNew/>
+          {/* <Grid className="grid">  
             <Row className= "show-grid text-center">
               <Col xs={12} sm={4} className= "wrapper new-release-books" >
                 <Row className="books-top" >
@@ -132,12 +136,13 @@ import HomePopular from './HomePopular';
                 </Row>
               </Col>
             </Row>
-            </Grid>
+            </Grid> */}
             <Row className="head head-below" >
               <Col lg={6} xs={6} sm={4} className="span"></Col>
               <Col lg={6} xs={6} sm={4} className= "span-title">COMICS</Col>
             </Row>
-            <Grid className= "grid">
+            <HomeComics/>
+            {/* <Grid className= "grid">
               <Row className= "show-grid text-center">
                 <Col xs={12} sm={4} className= "wrapper" >
                 <Row className="books-top" >
@@ -235,7 +240,7 @@ import HomePopular from './HomePopular';
                 </Row>        
                 </Col>
             </Row>
-          </Grid>
+          </Grid> */}
         </div>    
       </div>
     );
