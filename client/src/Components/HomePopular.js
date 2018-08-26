@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Col, Row, Image, Grid, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import cart from './Assets/CustomCart.png';
 
 
 export default class HomePopular extends Component {
@@ -39,7 +38,7 @@ export default class HomePopular extends Component {
                 </Col>
                 <Col className="book-price" >
                 <Button className="book-buttons" type="submit">
-                    <Image src={cart} alt='cart' className="cart-books" />
+                    <p>Buy</p>
                 </Button>
                 </Col>
             </Row>
