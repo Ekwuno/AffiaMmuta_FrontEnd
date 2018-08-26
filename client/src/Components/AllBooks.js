@@ -3,7 +3,6 @@ import { Col, Row, Image, Grid, Button } from "react-bootstrap";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import axios from "axios";
 import cart from './Assets/CustomCart.png';
-import './AllBooks.css';
 
 
 export default class AllBooks extends Component {

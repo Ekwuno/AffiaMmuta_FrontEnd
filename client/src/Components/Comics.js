@@ -3,7 +3,6 @@ import { Col, Row, Image, Grid, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import cart from './Assets/CustomCart.png';
-import './AllBooks.css';
 
 
 export default class Comics extends Component {
