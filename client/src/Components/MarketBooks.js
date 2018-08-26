@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Tabs, Tab } from "react-bootstrap";
 import AllBooks from './AllBooks';
 import './MarketBooks.css';
+import Popular from './Popular';
+import MostRead from './MostRead';
+import Comics from './Comics';
 
 export default class MarketBooks extends Component {
   render() {
@@ -14,13 +17,13 @@ export default class MarketBooks extends Component {
                         <AllBooks />
                     </Tab>
                     <Tab eventKey={2}title="POPULAR BOOKS" className="right-tab">
-                        Tab 2 content
+                        <Popular />
                     </Tab>
                     <Tab eventKey={3} title="MOST READ BOOKS" className="right-tab">
-                        Tab 3 content
+                        <MostRead />
                     </Tab>
                     <Tab eventKey={4} title="COMIC BOOKS" className="right-tab">
-                        Tab 4 content
+                        <Comics/>
                     </Tab>
                 </Tabs>
             </div>
