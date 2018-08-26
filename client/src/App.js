@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MainLayout from "./Components/MainLayout";
 import SecondLayout from "./Components/SecondLayout";
+import ReadLayout from './Components/ReadLayout';
 import {
   BrowserRouter as Router,
   Route
@@ -37,7 +38,7 @@ class App extends Component {
             <AppRoute exact path="/admin" Layout={SecondLayout} Component={AdminPage} />
             <AppRoute exact path="/library" Layout={MainLayout} Component={Library} />
             <AppRoute exact path="/book/:id" Layout={MainLayout} Component={BookInfo} />
-            <AppRoute exact path="/read" Layout={MainLayout} Component={BookReader} />
+            <AppRoute exact path="/read" Layout={ReadLayout} Component={BookReader} />
           </div>
       </Router>
     );
