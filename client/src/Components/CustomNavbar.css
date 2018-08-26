@@ -1,4 +1,4 @@
-.navbar-default {
+.general-navbar {
     background-image: none;
     height: 100px;
     padding-top: 10px;
@@ -50,7 +50,7 @@ img {
     margin-right: 100px;
     margin-top: -31px;
 }
-.nav {
+.general-navbar-nav {
     min-width: 800px;
 }
 .search {

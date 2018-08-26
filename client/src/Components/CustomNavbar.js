@@ -13,7 +13,7 @@ import './CustomNavbar.css';
  class CustomNavbar extends Component {
   render() {
     return (
-      <Navbar default collapseOnSelect>
+      <Navbar default collapseOnSelect className="general-navbar">
         <Navbar.Header>
           <Link to="/">
             <Image src={logo} alt='Logo' className="image" />
@@ -21,7 +21,7 @@ import './CustomNavbar.css';
           <Navbar.Toggle />
         </Navbar.Header>
           <Navbar.Collapse>
-            <Nav pullRight className="nav" >
+            <Nav pullRight className="general-navbar-nav" >
               <NavItem>
                 <Link to="/Market">
                 <Button className="btn btn-success buttons buttons-shadow-market" type="submit">
