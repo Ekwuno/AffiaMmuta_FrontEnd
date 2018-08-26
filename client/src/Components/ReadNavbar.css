@@ -1,0 +1,21 @@
+.read-navbar {
+    height: 70px;
+    width: 100%;
+    background: #85A64B;
+    background-image: none;
+    margin: 0px;
+}
+.read-right-navs {
+    margin-left: 400px;
+}
+.nav-cancel {
+    margin-left: 470px;
+}
+.read-navbar h5 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+}
