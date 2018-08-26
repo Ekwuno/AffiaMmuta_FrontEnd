@@ -10,7 +10,7 @@ import "./Welcome.css";
             <Jumbotron reponsive className= "affia-header">
                 <h3>Welcome to AffiaMmuta</h3>
                 <p>We make learning fun and interactive</p>
-                <Link to="/Sign-up">
+                <Link to="/signup">
                   <Button className="btn btn-success get-btn" type="submit">
                       Get Started
                   </Button>
