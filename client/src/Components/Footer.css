@@ -2,65 +2,83 @@
     margin-top: 20px;
     margin-bottom: -20px ;
     height: 200px;
-    background-color: #626A71;
-}
-.footer-grid {
     width: 100%;
-    margin-top:-49px;
+    background-color: #626A71;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    padding: 0
 }
-.footer-top {
-    height: 149.5px;
-    border-bottom: 1px solid #2F3337;
-    /* background-color: blue; */
-}
-.footer-bottom {
-    height: 50px;
-}
-.footer-contents {
-    width: 269px;
+.footer-top-contents {
+    width: 100%;
     height: 100%;
-    padding: 25px 0px 0px 20px;
+    display: grid;
+    grid-template-columns: 23% 18% 18% 18% 23%
 }
 .footer-logo {
     width: 170px;
     height: 42.74px;
-    margin: 30px 0px 0px 40px; 
+    margin: 50px 0px 0px 100px;
 }
-.footer-contents h5 {
+.footer-icon {
+    height: 146px;
+    width: 260px;
+    margin: 0px 0px 0px 0px;
+}
+.footer-top-contents h5 {
     font-size: 16px;
     font-weight: bold;
     color: #F2F4F0;
     font-family: 'Roboto', sans-serif;
     margin-left: 40px;
 }
-.footer-contents p {
+.footer-top-contents p {
     font-size: 14px;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
     margin-left: 40px;
 }
-.footer-contents a {
+.footer-top-contents a {
     color: #FFFFFF;
     margin-left: 40px;
 }
-.footer-bottom p {
+.footer-bottom-contents {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-top: 1px solid #2F3337;
+}
+.fb-twitter img {
+    width: 25px;
+    height: 27px;
+    margin-left: 20px;
+}
+.footer-bottom-contents p {
     font-size: 14px;
     color: #F2F4F0;
     font-family: 'Roboto', sans-serif;
     margin: 15px 0px 0px 64px;
     margin-left: 40px;
 }
-.footer-icon {
-    height: 146px;
-    width: 260px;
-    margin: -20px 0px 0px -30px;
+.about-footer {
+    padding: 27px 0px 0px 5px;
+}
+.contact-footer {
+    padding: 27px 0px 0px 30px;
+}
+.contact-no {
+    margin-top: 15px;
+}
+.nav-footer {
+    padding: 27px 0px 0px 90px;
+}
+.nav-footer a {
+    margin-top: 30px;
+}
+.footer-bottom-copy {
+    padding: 10px 0px 5px 50px;
+}
+.footer-bottom-copy >p {
+    margin: 0
 }
 .fb-twitter {
-    margin: 25px 0px 0px 0px;
-}
-.fb-twitter img {
-    width: 30px;
-    height: 30px;
-    margin-left: 460px;
-    margin-right: -440px;
+    padding: 5px 0px 0px 440px;
 }
