@@ -8,13 +8,13 @@ import "./Welcome.css";
     return (
       <div >
             <Jumbotron reponsive className= "affia-header">
-                <h3>Welcome to AffiaMmuta</h3>
-                <p>We make learning fun and interactive</p>
-                <Link to="/signup">
-                  <Button className="btn btn-success get-btn" type="submit">
-                      Get Started
-                  </Button>
-                </Link>
+                  <h3>Welcome to AffiaMmuta</h3>
+                  <p>We make learning fun and interactive</p>
+                  <Link to="/signup">
+                    <Button className="btn btn-success get-btn" type="submit">
+                        Get Started
+                    </Button>
+                  </Link>
             </Jumbotron>
       </div>
     );
