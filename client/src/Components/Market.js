@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import { Jumbotron } from "react-bootstrap";
+import MarketTitle from './MarketTitle';
+import MarketBooks from './MarketBooks';
+import './Market.css';
 
 
 export default class Market extends Component {
   render() {
     return (
         <div>
-            <Jumbotron>
-                <h1>Market page coming soon...</h1>
-            </Jumbotron>
+            <div className="market-margin">
+                <MarketTitle />
+                <MarketBooks />
+            </div>
         </div>
     );
   }

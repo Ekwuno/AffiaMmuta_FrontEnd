@@ -14,7 +14,7 @@ export default class AdminNavbar extends Component {
             </Col>
             <Col className="navbar-items">
                 <Navbar default className="navbar-main">
-                    <Nav pullRight>
+                    <Nav pullRight className="general-navbar-nav">
                        <Button type="submit" className= "cart  cart-position">
                             <Image src={cartAdmin} alt='Logo' className="cart-img" />
                         </Button>
@@ -23,6 +23,7 @@ export default class AdminNavbar extends Component {
                             title={<Image src={popImage} alt='Logo' className="dropdown-admin" />}
                             id="btn-admin-btn"
                             className = "dropdown-position"
+                            noCaret
                             >
                             <MenuItem eventKey="1">Profile</MenuItem>
                             <MenuItem eventKey="2">Sign Out</MenuItem>

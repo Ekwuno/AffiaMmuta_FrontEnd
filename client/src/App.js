@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MainLayout from "./Components/MainLayout";
 import SecondLayout from "./Components/SecondLayout";
+import ReadLayout from './Components/ReadLayout';
 import {
   BrowserRouter as Router,
   Route
@@ -30,14 +31,14 @@ class App extends Component {
       <Router>
           <div>
             <AppRoute exact path="/" Layout={MainLayout} Component={HomePage}/>
-            <AppRoute exact path="/sign-up" Layout={MainLayout} Component={SignUpPage} />
+            <AppRoute exact path="/signup" Layout={MainLayout} Component={SignUpPage} />
             <AppRoute exact path="/login" Layout={MainLayout} Component={LogIn} />
             <AppRoute exact path="/market" Layout={MainLayout} Component={Market} />
             <AppRoute exact path="/cart" Layout={MainLayout} Component={Cart} />
             <AppRoute exact path="/admin" Layout={SecondLayout} Component={AdminPage} />
             <AppRoute exact path="/library" Layout={MainLayout} Component={Library} />
             <AppRoute exact path="/book/:id" Layout={MainLayout} Component={BookInfo} />
-            <AppRoute exact path="/read" Layout={MainLayout} Component={BookReader} />
+            <AppRoute exact path="/read" Layout={ReadLayout} Component={BookReader} />
           </div>
       </Router>
     );

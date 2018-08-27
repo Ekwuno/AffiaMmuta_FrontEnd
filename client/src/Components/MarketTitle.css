@@ -1,0 +1,61 @@
+.market-title-dropdown {
+    display: grid;
+    grid-template-columns: 25% 25%;
+    grid-column-gap: 50%;
+    margin: 50px 0px 30px 0px;
+}
+.market-title-dropdown > h1 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 36px;
+    color: #000000;
+    margin: 0
+}
+.market-btn-group {
+    margin: 2px 0px 0px 40px;
+}
+.market-btn-group button {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 18px;
+    color: #000000;
+    width: 208px;
+    height: 40px;
+    background-image: none;
+    border: 1px solid #626A71;
+    box-sizing: border-box;
+    border-radius: 0px 8px 8px 0px;
+}
+.market-btn-group button > .caret {
+    margin-left: 20px; 
+}
+.market-btn-addon {
+    width: 42px;
+    height: 40.5px;
+    background: #626A71;
+    border-radius: 8px 0px 0px 8px;
+}
+.market-interact-container {
+    height: 269px;
+    background: linear-gradient(0deg, rgba(98, 106, 113, 0.4), rgba(98, 106, 113, 0.4)), url();
+    border-radius: 8px;
+}
+.market-interact {
+    width: 349px;
+    height: 124px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 0px 0px 20px;
+    margin: 60px 0px 0px 90px;
+}
+.market-interact > h1 {
+    font-family: GoodDog;
+    line-height: normal;
+    font-size: 50px;
+    color: #FFFFFF;
+    font-weight: lighter;
+    margin: 0
+}

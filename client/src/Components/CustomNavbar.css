@@ -1,4 +1,4 @@
-.navbar-default {
+.general-navbar {
     background-image: none;
     height: 100px;
     padding-top: 10px;
@@ -50,7 +50,7 @@ img {
     margin-right: 100px;
     margin-top: -31px;
 }
-.nav {
+.general-navbar-nav {
     min-width: 800px;
 }
 .search {
@@ -97,4 +97,16 @@ img {
     width: 30px;
     height: 30px;
     margin: -1px 0px 0px -6px;
+}
+#dropdown-user {
+    height: 43px;
+    width: 43px;
+    background: #626A71;
+    border-radius: 50%;
+    margin: 0px 0px -10px 80px
+}
+#dropdown-user img {
+    height: 100%;
+    width: 25px;
+    margin: 0px 5px 0px -3px;
 }

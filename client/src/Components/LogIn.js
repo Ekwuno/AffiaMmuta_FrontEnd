@@ -45,7 +45,7 @@ export default class LogIn extends Component {
                 this.props.history.push("/Market")
             }
             else{
-                alert(JSON.stringify(res.data.message));
+                alert("Something went wrong, try again");
             }
 
         })
@@ -61,7 +61,7 @@ render() {
                     <FormGroup className="style-formgroups">
                         <Row><p>Enter your Email address</p></Row>
                         <Row className="sign-in-rows">
-                            <InputGroup>
+                            <InputGroup className="login-input-group">
                                     <InputGroup.Addon>
                                         <img src={email} alt='Logo' className="form-title-logo"/>
                                     </InputGroup.Addon>
@@ -72,7 +72,7 @@ render() {
                     <FormGroup className="style-formgroups">
                         <Row><p>Enter your password</p></Row>
                         <Row className="sign-in-rows">
-                                <InputGroup>
+                                <InputGroup className="login-input-group">
                                     <InputGroup.Addon>
                                         <img src={lock} alt='Logo' className="form-title-logo"/>
                                     </InputGroup.Addon>
@@ -94,9 +94,9 @@ render() {
                             </Button>
                         </Row>
                     </FormGroup>
-                    <p id="log-in" >You don't have an account? <Link to="/Sign-up">Sign Up</Link></p>
+                    <p id="log-in" >You don't have an account? <Link to="/signup">Sign Up</Link></p>
             </Jumbotron>
         </div>
-    );
+    )
   }
 }
