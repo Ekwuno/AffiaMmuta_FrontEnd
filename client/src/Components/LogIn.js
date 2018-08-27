@@ -30,8 +30,8 @@ export default class LogIn extends Component {
         axios
         .post("https://affiammuta.herokuapp.com/login", data)
         .then(res =>{ 
-            if (res.data.message==="Login successful"){
-                this.props.history.push("/Market")
+            if (res.data.message=="Login successful."){
+                this.props.history.push("/market")
             }
             else{
                 alert(JSON.stringify(res.data.message));

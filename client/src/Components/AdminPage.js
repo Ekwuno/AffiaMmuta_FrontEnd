@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image, Form, Row, ProgressBar } from "react-bootstrap";
+import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image, Form, Row, ProgressBar, MenuItem, DropdownButton } from "react-bootstrap";
 import adminSearch from './Assets/Search.png';
 import './AdminPage.css';
 
@@ -13,6 +13,8 @@ export default class AdminPage extends Component {
         author: "",
         title: "",
         price: "",
+        category: "",
+        description: "",
         progress: 0
     }
     onUploadProgress=() => {
@@ -33,15 +35,14 @@ export default class AdminPage extends Component {
 
     }
     handleSubmit = event  => {
-        event.preventDefault();
         const {
             bookImage,
             bookContent,
             author,
             title,
             price,
-            // bookCategory,
-            // bookDescription
+            category,
+            description
         } = this.state
         const files = new FormData()
         files.append("bookImage", bookImage);
@@ -49,8 +50,8 @@ export default class AdminPage extends Component {
         files.append("author", author);
         files.append("title", title);
         files.append("price", price);
-        // files.append("bookCategory", bookCategory);
-        // files.append("bookDescription", bookDescription);
+        files.append("category", category);
+        files.append("description", description);
         console.log(files)
 
         axios({
@@ -62,17 +63,22 @@ export default class AdminPage extends Component {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
-                },
-                onUploadProgress: progressEvent => {
-                    let percentCompleted = Math.round((ProgressEvent.loaded *100) / ProgressEvent.total);
-                    console.log(percentCompleted);
-                    console.log(1)
-                    this.setState({progress: percentCompleted})
-                }
+                 },
+                // onUploadProgress: progressEvent => {
+                //     let percentCompleted = Math.round((ProgressEvent.loaded *100) / ProgressEvent.total);
+                //     console.log(percentCompleted);
+                //     console.log(1)
+                //     this.setState({progress: percentCompleted})
+                // }
 
             })
             .then(res => {
-                console.log(res)
+                alert(JSON.stringify(res.data.message));
+                if (res.data.message == "book created successfully") {
+                    this.props.history.push("/")
+                } else {
+                    alert(JSON.stringify(res.data.message));
+                }
             })
 
     }
@@ -96,7 +102,7 @@ export default class AdminPage extends Component {
                         <ListGroupItem href="#link1" className="list-style">
                             <p >Comics <Badge className="comc">10</Badge></p> 
                         </ListGroupItem>
-                        </ListGroup>
+                    </ListGroup>
                 </div>
                 <div className="left-body">
                     <div>
@@ -122,8 +128,7 @@ export default class AdminPage extends Component {
                                     type = "file"
                                     label = ""
                                     className="" 
-                                    onChange= {this.handleChange}/
-                                    >
+                                    onChange= {this.handleChange}/>
                                 </Row>
                                 <Row className="upload-t"><p>Book File</p></Row>
                                 <Row className="upload-forms">
@@ -132,7 +137,7 @@ export default class AdminPage extends Component {
                                     type = "file"
                                     className=""
                                     onChange= {this.handleChange}
-                                    onClick={this.state.progress}/
+                                    /
                                     >
                                 </Row>
                                 <FormGroup className="style-admin-paragraphs">
@@ -154,9 +159,11 @@ export default class AdminPage extends Component {
                                         </Row>
                                     </FormGroup>
                                     {/* <FormGroup  className="cat-margin"> */}
-                                        {/* <Row>   */}
-                                            {/* <Row><p className="cat-margin-title" >Category</p></Row> */}
-                                            {/* <DropdownButton 
+                                        <Row> 
+                                            <Row><p className="admin-labels">Category</p></Row>
+                                            <FormControl type="text" name="category" className="admin-price-cat cat-admin" onChange= {this.handleChange}/> 
+                                            {/* <Row><p className="cat-margin-title" >Category</p></Row>
+                                            <DropdownButton 
                                                 bsStyle
                                                 title="Select Category"
                                                 name="bookCategory"
@@ -165,15 +172,15 @@ export default class AdminPage extends Component {
                                                 >
                                                 <MenuItem eventKey="1">Educational</MenuItem>
                                                 <MenuItem eventKey="2">Comics</MenuItem>
-                                                <MenuItem eventKey="2">Folklors</MenuItem>
+                                                <MenuItem eventKey="3">Folklors</MenuItem>
 
                                             </DropdownButton> */}
-                                        {/* </Row> */}
+                                        </Row>
                                     {/* </FormGroup> */}
                                 {/* <FormGroup> */}
                                     {/* <Row>   */}
-                                        {/* <Row><p className="admin-labels">Description</p></Row> */}
-                                        {/* <FormControl componentClass="textarea"type="text" id="bookDescription"  className="admin-desc-row" onChange= {this.handleChange}/> */}
+                                        <Row><p className="admin-labels">Description</p></Row>
+                                        <FormControl componentClass="textarea"type="text" name="description"  className="admin-desc-row" onChange= {this.handleChange}/>
                                     {/* </Row> */}
                                 {/* </FormGroup> */}
                                 <FormGroup>
