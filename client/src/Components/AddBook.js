@@ -42,8 +42,6 @@ import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image,
         files.append("price", price);
         files.append("category", category);
         files.append("description", description);
-        console.log(files);
-
         axios({
                 method: 'post',
                 url: 'https://affiammuta.herokuapp.com/books/addbook',
@@ -61,7 +59,7 @@ import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image,
             })
             .then(res => {
                 if (res.data.message == "book created successfully") {
-                    this.props.history.push("/")
+                    this.props.history.push("/adminhome")
                 } else {
                     alert(JSON.stringify(res.data.message));
                 }
