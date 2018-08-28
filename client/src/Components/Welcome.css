@@ -6,19 +6,24 @@
     margin-top: -20px;
     height: 305px;
     text-align: center;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./Assets/AffiaMmutaWelcome.jpg");
-
-    background-position: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url("./Assets/WelcomeHome.png");
+    background-size: center;
+}
+.affia-header-text {
+    background: #585249;
+    height: 205px;
+    width: 576px;
+    margin: auto;
 }
 .affia-header h3 {
     font-size: 70px;
     color: white;
     font-family: GoodDogCool;
+    margin-bottom: 10px;
 }
 .affia-header p {
     font-size: 24px;
     color: white;
-    margin-top: 20px;
     font-family: 'Lato', sans-serif;
 }
 .get-btn {
@@ -26,10 +31,10 @@
     height: 40px;
     border-radius: 3px;
     background-image: none;
-    background-color: #85A64B;
+    background: #85A64B;;
     border: #85A64B;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     color: #E5E5E5;
-    margin-top: 20px;
     font-family: 'Lato', sans-serif;
+    margin-top: 20px;
 }

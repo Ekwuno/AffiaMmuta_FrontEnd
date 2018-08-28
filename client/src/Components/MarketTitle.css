@@ -41,7 +41,9 @@
 }
 .market-interact-container {
     height: 269px;
-    background: linear-gradient(0deg, rgba(98, 106, 113, 0.4), rgba(98, 106, 113, 0.4)), url();
+    background: url("./Assets/MarketWelcome.png");
+    background-position: center;
+    background-size: 100%;
     border-radius: 8px;
 }
 .market-interact {
