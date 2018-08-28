@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Tabs, Tab, Image, FormGroup } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Tabs, Tab } from "react-bootstrap";
 import './AdminHome.css';
 import AdminFilters from './AdminFilters';
-import AdminSearch from './AdminSearch';
-import addbook from './Assets/AddBook.png';
+import AdminBooks from './AdminBooks';
 
  export default class AdminHome extends Component {
   render() {
@@ -20,18 +18,7 @@ import addbook from './Assets/AddBook.png';
                   Videos
                 </Tab>
                 <Tab eventKey={2}title="Books">
-                  <div className="admin-search-add">
-                    <div className="admin-home-search">
-                      <AdminSearch/>
-                    </div>
-                    <div className="admin-add">
-                        <span>Add book</span>
-                        <Link to="/admin">
-                          <Image src={addbook} alt=""/>
-                        </Link>
-                    </div>
-                  </div>
-                  
+                  <AdminBooks/>
                 </Tab>
                 <Tab eventKey={3} title="Comics">
                   Comics
