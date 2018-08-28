@@ -13,3 +13,74 @@ canvas {
     width: 100% !important;
     overflow: auto;
 }
+
+.previous-btn{
+    width: 100px;
+    height: 100px;
+    margin-left: 1%;
+    margin-top: 12%;
+    border-radius: 50px;
+    position: fixed;
+    background: #7E9E47;
+    cursor: pointer;
+}
+
+.next-btn{
+    width: 100px;
+    height: 100px;
+    margin-left: 1%;
+    margin-top: 12%;
+    border-radius: 50px;
+    position: fixed;
+    background: #7E9E47;
+    cursor: pointer;
+}
+
+.next-btn:active{
+    background: rgb(36, 56, 2);
+}
+
+.previous-btn:active{
+    background: rgb(36, 56, 2);
+}
+
+.ikenga-btn{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #000;
+    margin-left: 1.5%;
+    margin-top: 23%;
+    border-radius: 50px;
+    position: fixed;
+    cursor: pointer;
+}
+
+.comment-btn{
+    width: 70px;
+    height: 70px;
+    margin-left: 2%;
+    margin-top: 32%;
+    border-radius: 50px;
+    position: fixed;
+}
+
+.comment-image{
+    width: 60%;
+    height: 60%;
+    margin: 14px 0px 0px 12px;
+    cursor: pointer;
+}
+
+.comment-image:active{
+    display: none;
+} 
+ .prev-arrow{
+    width: 50%;
+    height: 50%;
+    margin: 24px 0px 0px 18px;
+  }
+ .next-arrow{
+    width: 50%;
+    height: 50%;
+    margin: 24px 0px 0px 28px;
+  }

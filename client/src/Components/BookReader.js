@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Document, Page } from 'react-pdf';
+import { Image } from 'react-bootstrap';
 import './BookReader.css';
+import comment from './Assets/Comment.png';
+import next from './Assets/Next.png';
+import previous from './Assets/Previous.png';
 
 export default class BookReader extends Component {
     state = {
@@ -38,7 +42,15 @@ export default class BookReader extends Component {
         const { pageNumber, numPages } = this.state;
         return (
             <div onKeyDown={this.handleKeyDown} className="reader-container">
-                <div></div>
+                <div>
+                    <div className="previous-btn" onClick={this.handlePrevious}>
+                        <Image src={previous} alt='Previous' className="prev-arrow" />
+                    </div>
+                    <div className="ikenga-btn"></div>
+                    <div className="comment-btn">
+                    <Image src={comment} alt='Comment' className="comment-image" />
+                    </div>
+                </div>
                 <div>
                     <Document
                         file="http://res.cloudinary.com/debugger/image/upload/v1534499878/bsaa015qd43pjh4igala.pdf"
@@ -51,7 +63,11 @@ export default class BookReader extends Component {
                     {/* <button onClick={this.increaseIkenga}>Ikenga</button> */}
                     {/* <p>Page {pageNumber} of {numPages}</p> */}
                 </div>
-                <div></div>
+                <div>
+                    <div onClick={this.handleNext} className="next-btn">
+                        <Image src={next} alt='Next' className="next-arrow" />
+                    </div>
+                </div>
             </div>
         );
     }

@@ -71,6 +71,7 @@ html{
  }
  
     /*Responsiveness*/
+
  @media (min-width: 320px){
     .footer{
         height: 650px;
@@ -107,12 +108,14 @@ html{
  
     @media (min-width: 540px){
  
+
     }
  }
  
  
  
  @media (min-width: 750px){
+
     .footer{
         height: 430px;
     }

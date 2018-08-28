@@ -45,13 +45,14 @@
     background-position: center;
     background-size: 100%;
     border-radius: 8px;
+    margin: none !important;
 }
 .market-interact {
     width: 349px;
     height: 124px;
     background: rgba(0, 0, 0, 0.5);
     padding: 5px 0px 0px 20px;
-    margin: 60px 0px 0px 90px;
+    margin: 60px 0px 0px 34px;
 }
 .market-interact > h1 {
     font-family: GoodDog;
