@@ -38,3 +38,21 @@
     font-family: 'Lato', sans-serif;
     margin-top: 20px;
 }
+
+@media (min-width: 320px){
+    .affia-header{
+        margin-top: -78px;
+    }
+    .affia-header p {
+        margin-top: -16px;
+    }
+    .get-btn {
+        margin-top: 5px;
+    }
+}
+
+@media (min-width: 561px){
+    .affia-header{
+        margin-top: -20px;
+    }
+}
