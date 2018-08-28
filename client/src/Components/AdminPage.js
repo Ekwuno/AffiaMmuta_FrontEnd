@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import { FormGroup, FormControl, Button, Image, Form, } from "react-bootstrap";
-import adminSearch from './Assets/Search.png';
 import './AdminPage.css';
 import AdminFilters from './AdminFilters';
 import AddBook from './AddBook';
