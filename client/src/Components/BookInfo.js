@@ -3,6 +3,7 @@ import { Badge, Tabs, Tab } from "react-bootstrap";
 import './BookInfo.css';
 import filled from './Assets/IkengaFilled.png';
 import axios from 'axios';
+import RelatedBooks from './RelatedBooks';
 
 
 export default class BookInfo extends Component {
@@ -79,7 +80,7 @@ export default class BookInfo extends Component {
                             Tab 1 content
                         </Tab>
                         <Tab eventKey={2} title="RELATED BOOKS" className="right-tab">
-                            Tab 2 content
+                            <RelatedBooks/>
                         </Tab>
                     </Tabs>
                 </div>
