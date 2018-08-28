@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { Navbar, Nav, NavItem, Image, Button, FormGroup, FormControl, DropdownButton, MenuItem } from "react-bootstrap";
 import logo from './Assets/AffiaMmutaLogo.png';
-import cart from './Assets/Cart.png';
 import search from './Assets/Search.png';
 import logIn from './Assets/LogIn.png';
 import market from './Assets/Market.png';
@@ -11,6 +10,12 @@ import './CustomNavbar.css';
 
 
  class CustomNavbar extends Component {
+    logOut = event => {
+      sessionStorage.removeItem("user")
+      this.props.history.push("/login")
+    }
+
+
   render() {
     return (
       <Navbar default collapseOnSelect className="general-navbar ">
@@ -94,8 +99,8 @@ import './CustomNavbar.css';
       //         </Navbar.Form>
       //       </Nav>
       //     </Navbar.Collapse>
-      // </Navbar>        
+      // </Navbar>
     );
   }
 }
-export default CustomNavbar;
+export default withRouter(CustomNavbar);
