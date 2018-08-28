@@ -39,7 +39,7 @@ export default class Comics extends Component {
                 </Col>
                 <Col className="book-price" >
                 <Button className="book-buttons" type="submit">
-                    <Image src={cart} alt='cart' className="cart-books" />
+                    <p>Buy</p>
                 </Button>
                 </Col>
             </Row>

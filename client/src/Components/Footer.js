@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Jumbotron, Image } from "react-bootstrap";
+import { Jumbotron, Col, Row, Grid, Image } from "react-bootstrap";
 import lfooter from './Assets/AffiaMmutaWhite.png';
 import lfooter2 from './Assets/FooterIcon.png';
 import fbIcon from './Assets/TwitterLogo.png';
@@ -47,7 +47,6 @@ import './Footer.css';
                     </Col>
                 </Row>
             </Grid>    
-
         </Jumbotron>   
     );
   }

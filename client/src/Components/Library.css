@@ -21,20 +21,20 @@
     font-family: 'Lato', sans-serif;
 }
 .library-contents {
-    height: 600px;
+    height: auto;
 }
 .library-book-container {
-    height: 252px;
-    width: 60%;
+    height: 300px;
+    width: 70%;
     border-bottom: 1px solid #626A71;
     transform: rotate(-0.08deg);
     padding: 25px 0px 0px 0px;
 }
 .library-book-position {
-    width: 356px;
+    width: 60%;
     height: 192px;
     display: grid;
-    grid-template-columns: 39% 56%;
+    grid-template-columns: 35% 76%;
     grid-gap: 5%;
 }
 .lib-cover-img {
@@ -42,15 +42,16 @@
     width: 100%;
 }
 .ikenga-container {
-    height: 20px;
+    height: 35px;
     width: 70%;
-    display: grid;
-    grid-template-columns: 19% 19% 19% 19% 19%;
-    grid-gap: 2%;
-    margin: 30px 0px 20px 0px;
+    margin-bottom: 10px;
+}
+.ikenga-container > img {
+    height: 100%;
+    width: 25%;
 }
 .ikenga-container> span {
-    height: inherit;
+    margin: 17px 0px 0px -23px;
 }
 .ikenga-filled {
     height: 100%;
@@ -62,7 +63,7 @@
 }
 .library-book-name {
     font-style: normal;
-    font-weight: bold;
+    font-weight: bolder;
     line-height: normal;
     font-size: 18px;
     font-family: 'Lato', sans-serif;
@@ -72,7 +73,7 @@
     line-height: normal;
     font-size: 17px;
     font-family: 'Lato', sans-serif;
-    margin: -5px 0px 20px 0px;
+    margin: 0px 0px 30px 0px;
 }
 .library-book-date {
     font-family: 'Lato', sans-serif;
@@ -85,13 +86,10 @@
 }
 .button-connect {
     height: 30px;
-    width: 85%;
+    width: 100%;
     display: grid;
-    grid-template-columns: 54% 18% 18%;
+    grid-template-columns: 28% 28% 28%;
     grid-gap: 5%;
-}
-.button-connect div {
-    border: 1px solid black;
 }
 .library-button {
     background: #7E9E47;
@@ -106,4 +104,22 @@
     font-size: 18px;
     color: #FFFFFF;
 
+}
+.fb-library {
+    background: #3B5998;
+    font-family: 'Lato', sans-serif;
+}
+.tw-library {
+    background: #55ACEE;
+    font-family: 'Lato', sans-serif;
+}
+.fb-library > img {
+    height: 80%;
+    width: 25%;
+    margin: 0px 10px 2px -10px;
+}
+.tw-library>img {
+    height: 80%;
+    width: 25%;
+    margin: 0px 10px 2px -10px;
 }
