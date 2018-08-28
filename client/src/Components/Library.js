@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { Badge, Image } from "react-bootstrap";
 import './Library.css';
 import image from './Assets/UnderTheUdalaTree.jpg';
-import empty from './Assets/IkengaEmpty.png';
+import fbIcon from './Assets/TwitterLogo.png';
+import tIcon from './Assets/FbWhiteLogo.png';
 import filled from './Assets/IkengaFilled.png';
 
 
@@ -25,11 +27,8 @@ export default class Library extends Component {
                                 <p className="library-book-name">Under the Udala Tree</p>
                                 <p className="library-book-author">by Chinelo Okparanta</p>
                                 <div className="ikenga-container">
-                                    <span><img src={filled} className="ikenga-filled" alt=""/></span>
-                                    <span><img src={filled} className="ikenga-filled" alt=""/></span>
-                                    <span><img src={filled} className="ikenga-filled" alt=""/></span>
-                                    <span><img src={filled} className="ikenga-filled" alt=""/></span>
-                                    <span><img src={empty} className="ikenga-empty" alt=""/></span>
+                                    <Image src={filled} alt="ratings" />
+                                    <Badge className="badge-rate">3</Badge>
                                 </div>
                                 <p className="library-book-date">20/10/2018</p>
                                 <div className="button-connect">
@@ -38,8 +37,22 @@ export default class Library extends Component {
                                         <button className="library-button">Read</button>
                                         </Link>
                                     </div>
-                                    <div></div>
-                                    <div></div>
+                                    <div>
+                                        <Link to="#">
+                                            <button className="library-button fb-library">
+                                            <Image src={fbIcon} alt='Logo' />
+                                            Share
+                                            </button>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <Link to="#">
+                                        <button className="library-button tw-library">
+                                            <Image src={tIcon} alt='Logo' />
+                                            Tweet
+                                        </button>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
