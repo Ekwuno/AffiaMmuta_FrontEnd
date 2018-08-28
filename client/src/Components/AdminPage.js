@@ -5,6 +5,7 @@ import adminSearch from './Assets/Search.png';
 import './AdminPage.css';
 import AdminFilters from './AdminFilters';
 import AddBook from './AddBook';
+import AdminSearch from './AdminSearch';
 
 
 class AdminPage extends Component {
@@ -19,14 +20,7 @@ class AdminPage extends Component {
                 </div>
                 <div className="left-body">
                     <div>
-                        <Form inline>
-                            <FormGroup>
-                                <FormControl type="text" placeholder="Find a book..." className="search search-admin" />
-                                <Button type="submit" className= "button button-admin">
-                                    <Image src={adminSearch} alt='Logo'/>
-                                </Button>
-                            </FormGroup>
-                        </Form>
+                        <AdminSearch/>
                     </div>
                         <AddBook/>
                 </div>
