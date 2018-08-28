@@ -18,6 +18,44 @@ import './CustomNavbar.css';
 
   render() {
     return (
+      <Navbar default collapseOnSelect className="general-navbar ">
+        <Navbar.Header>
+          <Link to="/">
+            <Image src={logo} alt='Logo' className="image" />
+          </Link>
+          <Navbar.Toggle />
+        </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav pullRight className="general-navbar-nav nav-bar-right" >
+              <NavItem>
+                <Link to="/Market">
+                <Button className="btn btn-success buttons buttons-shadow-market market-btn" type="submit">
+                <Image src={market} alt='Logo' className="market-image" />
+                  Market
+                </Button>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/Log-in">
+                  <Button className="btn btn-success buttons buttons-shadow-login login-btn" id="login-button" type="submit">
+                  <Image src={logIn} alt='Logo' className="log-in-image" />
+                    Login
+                  </Button>
+                </Link>
+              </NavItem>
+              <Navbar.Form>
+              <FormGroup>
+                <FormControl type="text" placeholder="I am looking for..." className="search search-default" />
+              <Button type="submit" className= "button">
+                <Image src={search} alt='Logo'/>
+              </Button>
+              </FormGroup>
+              </Navbar.Form>
+            </Nav>
+          </Navbar.Collapse>
+      </Navbar>
+      
+      
       // <Navbar default collapseOnSelect className="general-navbar">
       //   <Navbar.Header>
       //     <Link to="/">
@@ -39,7 +77,7 @@ import './CustomNavbar.css';
       //           <Link to="/Log-in">
       //             <Button className="btn btn-success buttons buttons-shadow-login" id="login-button" type="submit">
       //             <Image src={logIn} alt='Logo' className="log-in-image" />
-      //               Login
+      //               Library
       //             </Button>
       //           </Link>
       //         </NavItem>
@@ -50,61 +88,18 @@ import './CustomNavbar.css';
       //           <Image src={search} alt='Logo'/>
       //         </Button>
       //         </FormGroup>
-      //         <Link to="/Cart">
-      //           <Button type="submit" className= "cart">
-      //             <Image src={cart} alt='Logo' className="cart-img" />
-      //           </Button>
-      //         </Link>
+      //         <DropdownButton 
+      //           bsStyle
+      //           title={<Image src={logIn} alt='Logo'/>}
+      //           id = "dropdown-user"
+      //           noCaret
+      //           >
+      //             <MenuItem eventKey="1">Log out</MenuItem>
+      //           </DropdownButton>
       //         </Navbar.Form>
       //       </Nav>
       //     </Navbar.Collapse>
       // </Navbar>
-      
-      
-      <Navbar default collapseOnSelect className="general-navbar">
-        <Navbar.Header>
-          <Link to="/">
-            <Image src={logo} alt='Logo' className="image" />
-          </Link>
-          <Navbar.Toggle />
-        </Navbar.Header>
-          <Navbar.Collapse>
-            <Nav pullRight className="general-navbar-nav" >
-              <NavItem>
-                <Link to="/Market">
-                <Button className="btn btn-success buttons buttons-shadow-market" type="submit">
-                <Image src={market} alt='Logo' className="market-image" />
-                  Market
-                </Button>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/Log-in">
-                  <Button className="btn btn-success buttons buttons-shadow-login" id="login-button" type="submit">
-                  <Image src={logIn} alt='Logo' className="log-in-image" />
-                    Library
-                  </Button>
-                </Link>
-              </NavItem>
-              <Navbar.Form>
-              <FormGroup>
-                <FormControl type="text" placeholder="I am looking for..." className="search" />
-              <Button type="submit" className= "button">
-                <Image src={search} alt='Logo'/>
-              </Button>
-              </FormGroup>
-              <DropdownButton 
-                bsStyle
-                title={<Image src={logIn} alt='Logo'/>}
-                id = "dropdown-user"
-                noCaret
-                >
-                  <MenuItem eventKey="1"onClick={this.logOut}>Log out</MenuItem>
-                </DropdownButton>
-              </Navbar.Form>
-            </Nav>
-          </Navbar.Collapse>
-      </Navbar>        
     );
   }
 }
