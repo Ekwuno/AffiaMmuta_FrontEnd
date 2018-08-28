@@ -10,6 +10,7 @@ import {
 import SignUpPage from "./Components/SignUpPage";
 import HomePage from "./Components/HomePage";
 import AdminPage from "./Components/AdminPage";
+import AdminHome from "./Components/AdminHome";
 import LogIn from "./Components/LogIn";
 import Market from "./Components/Market";
 import Library from "./Components/Library";
@@ -35,6 +36,7 @@ class App extends Component {
             <AppRoute exact path="/login" Layout={MainLayout} Component={LogIn} />
             <AppRoute exact path="/market" Layout={MainLayout} Component={Market} />
             <AppRoute exact path="/admin" Layout={SecondLayout} Component={AdminPage} />
+            <AppRoute exact path="/adminhome" Layout={SecondLayout} Component={AdminHome} />
             <UserRoute exact path="/library" Layout={MainLayout} Component={Library} />
             <AppRoute exact path="/book/:id" Layout={MainLayout} Component={BookInfo} />
             <AppRoute exact path="/read" Layout={ReadLayout} Component={BookReader} />

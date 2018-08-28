@@ -1,0 +1,6 @@
+.adminhome-layout {
+    display: grid;
+    grid-template-columns: 12% 88%;
+    height: 900px;
+    margin: -55px 0px 0px 0px;
+}
