@@ -31,33 +31,39 @@ export default class BookInfo extends Component {
     }
 
     payWithPaystack = event => {
-        const userId =sessionStorage.getItem("user")
-        axios.get(`http://affiammuta.herokuapp.com/users/search?_id=${userId}`) 
-            .then(res=>{
-                this.setState({email: res.data[0].email})
-                const PaystackPop = window.PaystackPop;
-                var handler = PaystackPop.setup({
-                    key: 'pk_test_643b16d2cc562281510d64a3afc5a76fbb8dfaa7',
-                    email: this.state.email,
-                    amount: this.state.price * 100,
-                    ref: '' + Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-                    metadata: {
-                        custom_fields: [{
-                            display_name: "Mobile Number",
-                            variable_name: "mobile_number",
-                            value: "+2348012345678"
-                        }]
-                    },
-                    callback: function (response) {
-                        
-                        alert('success. transaction ref is ' + response.reference);
-                    },
-                    onClose: function () {
-                        alert('Thanks for using AffiaMmuta');
-                    }
-                });
-                handler.openIframe();
-            })
+        if(sessionStorage.getItem("user")){
+            const userId =sessionStorage.getItem("user")
+            axios.get(`http://affiammuta.herokuapp.com/users/search?_id=${userId}`) 
+                .then(res=>{
+                    this.setState({email: res.data[0].email})
+                    const PaystackPop = window.PaystackPop;
+                    var handler = PaystackPop.setup({
+                        key: 'pk_test_643b16d2cc562281510d64a3afc5a76fbb8dfaa7',
+                        email: this.state.email,
+                        amount: this.state.price * 100,
+                        ref: '' + Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+                        metadata: {
+                            custom_fields: [{
+                                display_name: "Mobile Number",
+                                variable_name: "mobile_number",
+                                value: "+2348012345678"
+                            }]
+                        },
+                        callback: function (response) {
+                            
+                            alert('success. transaction ref is ' + response.reference);
+                        },
+                        onClose: function () {
+                            alert('Thanks for using AffiaMmuta');
+                        }
+                    });
+                    handler.openIframe();
+                })
+        }
+        else {
+            this.props.history.push("/login")
+        }
+        
         
     }
     render() {
