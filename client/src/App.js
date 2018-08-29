@@ -18,6 +18,7 @@ import BookInfo from './Components/BookInfo';
 import BookReader from './Components/BookReader';
 import UserRoute from './Components/UserRoute';
 import PrivacyPolicy from './Components/PrivacyPolicy';
+import About from './Components/About';
 
 const AppRoute = ({Component, Layout, ...rest}) => (
         <Route {...rest} render={props=> (
@@ -42,6 +43,7 @@ class App extends Component {
             <AppRoute exact path="/book/:id" Layout={MainLayout} Component={BookInfo} />
             <AppRoute exact path="/read" Layout={ReadLayout} Component={BookReader} />
             <AppRoute exact path="/policy" Layout={MainLayout} Component={PrivacyPolicy} />
+            <AppRoute exact path="/about" Layout={MainLayout} Component={About} />
           </div>
       </Router>
     );
