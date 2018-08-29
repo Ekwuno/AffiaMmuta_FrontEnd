@@ -1,3 +1,8 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
 .general-navbar {
     background-image: none;
     height: 100px;
@@ -119,8 +124,17 @@ img {
 
     /*Responsiveness */
 
-@media (max-width: 767px){
-    
+@media (max-width: 320px){
+    .form-control {
+        display: inline-block !important;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+    }
+    .button{
+        margin-top: -6px;
+    }
 }
 
 @media (min-width: 768px) {

@@ -47,7 +47,7 @@ import './CustomNavbar.css';
                   </NavItem>
                   <Navbar.Form>
                   <FormGroup>
-                    <FormControl type="text" placeholder="I am looking for..." className="search" />
+                    <FormControl type="text" id="search" placeholder="I am looking for..." className="search second-search" />
                   <Button type="submit" className= "button">
                     <Image src={search} alt='Logo'/>
                   </Button>
