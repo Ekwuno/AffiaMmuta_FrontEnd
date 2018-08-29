@@ -29,8 +29,8 @@ class Footer extends Component {
                    </Col>
                    <Col sm={2} className="footer-contents">
                        <h5>NAVIGATION</h5>
-                       <Link to="#">Terms of use</Link><br />
-                       <Link to="#">Privacy policy</Link>
+                       <Link to="/about">About Us</Link><br />
+                       <Link to="/policy">Privacy policy</Link>
                    </Col>
                    </div>
                    <Col lg={2} className="footer-contents">
