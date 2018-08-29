@@ -17,6 +17,7 @@
     height: 100%;
     width: 21.5%;
     margin-right: 3.5%;
+    margin-bottom: 40px;
     padding: 0px;
     display: grid;
     grid-template-rows: 80% 20%;
@@ -47,6 +48,5 @@
     height: 60%;
     width: 70%;
     margin: 10px 0px 0px 5px;
-}
-.admin-delete {
+    cursor: pointer;
 }

@@ -20,7 +20,7 @@ import remove from './Assets/Delete.png';
     };
     
   render() {
-      const adminBooks= this.state.adminBooks.map(item=>
+    const adminBooks= this.state.adminBooks.map(item=>
         <Col xs={12} sm={4} className="adminbook-container">
             <div className="adminbook-img-cont">
                 <Image src={item.bookImage} alt='Logo' />
@@ -43,24 +43,24 @@ import remove from './Assets/Delete.png';
         </Col>
     )
     return (
-      <div>
-        <div className="admin-search-add">
-            <div className="admin-home-search">
-                <AdminSearch/>
+        <div>
+            <div className="admin-search-add">
+                <div className="admin-home-search">
+                    <AdminSearch/>
+                </div>
+                <div className="admin-add">
+                    <span>Add book</span>
+                    <Link to="/admin">
+                        <Image src={addbook} alt=""/>
+                    </Link>
+                </div>
             </div>
-            <div className="admin-add">
-                <span>Add book</span>
-                <Link to="/admin">
-                    <Image src={addbook} alt=""/>
-                </Link>
-            </div>
-        </div>
-        <Grid className="adminbooks-grid">
-            <Row className="adminbooks-row">
-                {adminBooks}
-            </Row>
-            
-        </Grid>
+            <Grid className="adminbooks-grid">
+                <Row className="adminbooks-row">
+                    {adminBooks}
+                </Row>
+                
+            </Grid>
       </div>
     );
   }
