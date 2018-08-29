@@ -48,13 +48,13 @@ import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image,
                 data: files,
                 headers: {
                     'Content-Type': 'mulTipart/form-data'
+                },
+                onUploadProgress: ProgressEvent => {
+                    let percentCompleted = Math.round((ProgressEvent.loaded *100) / ProgressEvent.total);
+                    console.log(percentCompleted);
+                    console.log(1)
+                    this.setState({progress: percentCompleted})
                 }
-                // onUploadProgress: progressEvent => {
-                //     let percentCompleted = Math.round((ProgressEvent.loaded *100) / ProgressEvent.total);
-                //     console.log(percentCompleted);
-                //     console.log(1)
-                //     this.setState({progress: percentCompleted})
-                // }
 
             })
             .then(res => {
@@ -139,7 +139,7 @@ import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image,
                             <FormGroup>
                                 <Row>
                                     <Button  className="btn btn-success btn-ad" type="submit">Upload</Button>
-                                    {/* <ProgressBar  now={this.onUploadProgress} /> */}
+                                    <ProgressBar  now={this.state.progress} />
                                 </Row>
                             </FormGroup>
                     </Form>
