@@ -1,3 +1,7 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
 .home-books {
     background-color: white;
     margin-top: -30px;
@@ -136,4 +140,18 @@ in-line {
 .price {
     color: #7E9E47;
     font-size: 14px;
+}
+
+/* Responsiveness */
+
+@media (max-width: 1345px){
+    .behind{
+        display: none;
+    }
+    .new-release-color {
+        color: #000;
+    }
+    .new-release-background {
+        background-color: #000;
+    }
 }
