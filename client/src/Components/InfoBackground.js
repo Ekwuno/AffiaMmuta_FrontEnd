@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListGroup, ListGroupItem, Badge, Jumbotron } from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
 import './PrivacyPolicy.css';
 
  export default class InfoBackground extends Component {
