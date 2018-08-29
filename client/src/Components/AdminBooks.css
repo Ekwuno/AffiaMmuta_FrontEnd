@@ -1,0 +1,52 @@
+.adminbooks-grid {
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 600px;
+    margin-top: 50px;
+    padding: 0
+}
+.adminbooks-row {
+    width: 100%;
+    height: 269px;
+    /* border: 1px solid black; */
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px;
+}
+.adminbook-container {
+    height: 100%;
+    width: 21.5%;
+    margin-right: 3.5%;
+    padding: 0px;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25);
+}
+.adminbook-img-cont > img {
+    height: 100%;
+    width: 100%;
+}
+.adminbook-bottom-contents {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+.adminbook-bottom-contents h5 {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000;
+    margin: 6px 0px 2px 10px;
+}
+.adminbook-bottom-contents p {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: #000000;
+    margin: 0px 0px 0px 10px;
+}
+.admin-delete img {
+    height: 60%;
+    width: 70%;
+    margin: 10px 0px 0px 5px;
+}
+.admin-delete {
+}
