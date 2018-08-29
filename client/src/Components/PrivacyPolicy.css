@@ -3,6 +3,7 @@
     height: 250px;
     margin-top: -20px;
     background: url("./Assets/InfoHeader.svg");
+    background-position: center;
     background-size: 100%;
 }
 .info-background > h2 {
@@ -11,9 +12,20 @@
     font-style: normal;
     font-weight: bold;
     line-height: normal;
-    font-size: 60px;
     color: #FFFFFF;
     margin-top: 40px; 
+}
+.info-background > p {
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    color: #FFFFFF;
+    margin-top: 0px;
+}
+.info-background > img {
+    margin-left: 500px;
 }
 .privacy-policy-contents {
     width: 75%;
