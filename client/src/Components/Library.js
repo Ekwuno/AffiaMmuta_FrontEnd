@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Badge, Image } from "react-bootstrap";
 import './Library.css';
-import image from './Assets/UnderTheUdalaTree.jpg';
+import axios from "axios";
 import fbIcon from './Assets/TwitterLogo.png';
 import tIcon from './Assets/FbWhiteLogo.png';
 import filled from './Assets/IkengaFilled.png';
@@ -10,25 +10,32 @@ import filled from './Assets/IkengaFilled.png';
 
 
 export default class Library extends Component {
+    state = {
+        userLibrary: []
+    }
+    
+    componentDidMount(){
+        const user = sessionStorage.getItem("user");
+        axios.get(`https://affiammuta.herokuapp.com/profile/library?user=${user}`)
+    .then(res=>{
+       this.setState({userLibrary: res.data.library.books});
+       console.log(res.data)
+     })
+    }
   render() {
-    return (
-        <div className="library-background">
-            <div className="library-layout">
-                <div className="library-header">
-                    <h2>Library</h2>
-                </div>
-                <div className="library-contents">
+      const userLibrary = this.state.userLibrary.map(item =>
+           <div className="library-contents">
                     <div className="library-book-container">
                         <div className="library-book-position">
                             <div className="library-book-image">
-                                <img src={image} className ="lib-cover-img" alt="" />
+                                <img src={item.bookImage} className ="lib-cover-img" alt="" />
                             </div>
                             <div className="library-book-des">
-                                <p className="library-book-name">Under the Udala Tree</p>
-                                <p className="library-book-author">by Chinelo Okparanta</p>
+                                <p className="library-book-name">{item.title}</p>
+                                <p className="library-book-author">{item.author}</p>
                                 <div className="ikenga-container">
                                     <Image src={filled} alt="ratings" />
-                                    <Badge className="badge-rate">3</Badge>
+                                    <Badge className="badge-rate">{item.ikenga}</Badge>
                                 </div>
                                 <p className="library-book-date">20/10/2018</p>
                                 <div className="button-connect">
@@ -58,6 +65,14 @@ export default class Library extends Component {
                         </div>
                     </div>
                 </div>
+    )
+    return (
+        <div className="library-background">
+            <div className="library-layout">
+                <div className="library-header">
+                    <h2>Library</h2>
+                </div>
+                {userLibrary}
             </div>
         </div>
     );
