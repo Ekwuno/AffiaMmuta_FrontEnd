@@ -105,14 +105,14 @@ import { FormGroup, FormControl, Button, Image, Form, Row, ProgressBar } from "r
                         </FormGroup>
                         <FormGroup className="style-admin-paragraphs">
                             <Row>  
-                                <Row><p className="admin-labels">Title</p></Row>
-                                <FormControl inputRef={(ref) => {this.title = ref}} type="text" name="title"  className="admin-title-row" />
+                                <Row><p className="admin-labels" id="title-input">Title</p></Row>
+                                <FormControl inputRef={(ref) => {this.title = ref}} type="text" name="title" className="admin-title-row" />
                             </Row>
                         </FormGroup>
                         <Form inline>
                         <FormGroup>
                             <Row>  
-                                    <span className="admin-labels">Price</span>
+                                    <span className="admin-labels price-head">Price</span>
                                 </Row>
                                 <FormControl inputRef={(ref) => {this.price = ref}} type="number" name="price" step="100" min="100" className="admin-price-cat cat-admin" />
                         </FormGroup>
@@ -127,15 +127,15 @@ import { FormGroup, FormControl, Button, Image, Form, Row, ProgressBar } from "r
                             </Form>
                             <FormGroup>
                                 <Row>  
-                                    <Row><p className="admin-labels">Description</p></Row>
+                                    <Row><p className="admin-labels des-label">Description</p></Row>
                                     <FormControl inputRef={(ref) => {this.description = ref}} componentClass="textarea" type="text" name="description"  className="admin-desc-row" s/>
                                 </Row>
                             </FormGroup>
                             <FormGroup>
-                                <Row>
+                                <div className="button-progress-admin">
                                     <Button  className="btn btn-success btn-ad" type="submit">Upload</Button>
-                                    <ProgressBar  now={this.state.progress} />
-                                </Row>
+                                    <ProgressBar className="admin-progress" now={this.state.progress} />
+                                </div>
                             </FormGroup>
                     </Form>
             </div>
