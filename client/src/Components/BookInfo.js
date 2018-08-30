@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
 import { Badge, Tabs, Tab } from "react-bootstrap";
 import './BookInfo.css';
 import filled from './Assets/IkengaFilled.png';
 import axios from 'axios';
 import RelatedBooks from './RelatedBooks';
 
-
-export default class BookInfo extends Component {
+class BookInfo extends Component {
     state = {
         author: "",
         title: "",
@@ -32,7 +32,8 @@ export default class BookInfo extends Component {
 
     payWithPaystack = event => {
         if(sessionStorage.getItem("user")){
-            const userId =sessionStorage.getItem("user")
+            const userId =sessionStorage.getItem("user");
+            const book = this.props.match.params.id;
             axios.get(`http://affiammuta.herokuapp.com/users/search?_id=${userId}`) 
                 .then(res=>{
                     this.setState({email: res.data[0].email})
@@ -50,8 +51,18 @@ export default class BookInfo extends Component {
                             }]
                         },
                         callback: function (response) {
-                            
-                            alert('success. transaction ref is ' + response.reference);
+                            const data = {
+                                paystackRef: response.reference,
+                                user: userId,
+                                bookId: book
+                            }
+                            console.log(data)
+                            axios
+                            .post("https://affiammuta.herokuapp.com/payment/create", data)
+                            .then(res=>{
+                                this.props.history.push("/library")
+                            })
+
                         },
                         onClose: function () {
                             alert('Thanks for using AffiaMmuta');
@@ -102,3 +113,6 @@ export default class BookInfo extends Component {
     );
   }
 }
+
+
+export default withRouter(BookInfo)
