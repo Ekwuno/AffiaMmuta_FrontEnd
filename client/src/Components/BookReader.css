@@ -34,7 +34,13 @@ canvas {
     width: 80%;
     height: 50px;
     position: fixed;
-    bottom: 2px;
+    bottom: -7px;
+    background: #fff;
+}
+.book-bar{
+    margin: -5px 0px 0px 4px;
+    width: 99%;
+    height: 10px;
 }
 
 .pageNumber{
@@ -54,12 +60,6 @@ canvas {
     height: 15px;
     border-radius: 8px;
     background: #C4C4C4;
-}
-#myBar{
-    height: inherit;
-    width: 50%;
-    background: #7E9E47;
-    border-radius: 8px 0px 0px 8px;
 }
 .previous-btn{
     width: 90px;

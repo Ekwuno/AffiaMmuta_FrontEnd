@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Document, Page } from 'react-pdf';
-import { Image } from 'react-bootstrap';
+import { Image, ProgressBar } from 'react-bootstrap';
 import './BookReader.css';
 import comment from './Assets/Comment.png';
 import next from './Assets/Next.png';
@@ -11,7 +11,8 @@ export default class BookReader extends Component {
     state = {
         numPages: null,
         pageNumber: 1,
-        ikenga: 1
+        ikenga: 0,
+        bookProgress: 0
     }
     onDocumentLoad = ({ numPages }) => {
         this.setState({ numPages });
@@ -19,18 +20,35 @@ export default class BookReader extends Component {
     handleNext =() => {
         if (this.state.pageNumber<this.state.numPages){
             this.setState({pageNumber: this.state.pageNumber + 1})
+            this.pageProgress();
         }
     }
     handlePrevious =() => {
         if(this.state.pageNumber > 1){
-            this.setState({pageNumber: this.state.pageNumber - 1})
+            this.setState({pageNumber: this.state.pageNumber - 1});
+            this.pageProgress();
         }
     }
-    increaseIkenga =() => { 
+    increaseIkenga =(props) => { 
+        let ikengaCounter = document.getElementsByClassName("counter")[0];
         if(this.state.ikenga < 10) {
-            this.setState({ikenga: this.state.ikenga + 1})
+            this.setState({ikenga: this.state.ikenga + 1});            
         }
-        console.log(this.state.ikenga)
+        console.log(this.state.ikenga);
+        console.log(ikengaCounter);
+    }
+
+    counterShow=()=>{
+        if (this.state.ikenga=0) {
+            ikengaCounter.style.display = "none";
+        }else{
+            ikengaCounter.style.display = "block";
+        }
+    }
+
+    pageProgress=()=>{
+            let percentCompleted = Math.round((this.state.pageNumber/this.state.numPages) *100);
+            this.setState({progress: percentCompleted});
     }
     handleKeyDown =(e)=> {
         if (e.key === "ArrowRight") {
@@ -40,6 +58,7 @@ export default class BookReader extends Component {
         }
     }
     render() {
+        document.body.onload.counterShow();
         const { pageNumber, numPages } = this.state;
         return (
             <div onKeyDown={this.handleKeyDown} className="reader-container">
@@ -47,9 +66,9 @@ export default class BookReader extends Component {
                     <div className="previous-btn" onClick={this.handlePrevious}>
                         <Image src={previous} alt='Previous' className="prev-arrow" />
                     </div>
-                    <div className="counter">+5</div>
+                    <div className="counter">+{this.state.ikenga}</div>
                     <div className="ikenga-btn">
-                    <Image src={ikenga} alt='Ikenga' className="ikenga" />
+                    <Image src={ikenga} alt='Ikenga' className="ikenga" onClick={this.increaseIkenga}/>
                     </div>
                     <div className="comment-btn">
                     <Image src={comment} alt='Comment' className="comment-image" />
@@ -65,10 +84,8 @@ export default class BookReader extends Component {
                     {/* <button onClick={this.increaseIkenga}>Ikenga</button> */}
                     {/* <p>Page {pageNumber} of {numPages}</p> */}
                     <div className="bookProgress">
-                        <div className="pageNumber">Page {pageNumber} of {numPages} {(pageNumber/numPages)*100}</div>
-                        <div className="progressBar">
-                            <div id="myBar"></div>
-                        </div>
+                        <div className="pageNumber">Page {pageNumber} of {numPages} ({this.state.progress}%)</div>
+                        <ProgressBar className="book-bar" now={this.state.progress} />
                         </div>
                     </div>
                 <div>
