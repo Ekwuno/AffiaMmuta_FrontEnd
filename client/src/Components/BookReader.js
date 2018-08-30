@@ -5,6 +5,7 @@ import './BookReader.css';
 import comment from './Assets/Comment.png';
 import next from './Assets/Next.png';
 import previous from './Assets/Previous.png';
+import ikenga from './Assets/ikengaHead.png'
 
 export default class BookReader extends Component {
     state = {
@@ -46,23 +47,30 @@ export default class BookReader extends Component {
                     <div className="previous-btn" onClick={this.handlePrevious}>
                         <Image src={previous} alt='Previous' className="prev-arrow" />
                     </div>
-                    <div className="ikenga-btn"></div>
+                    <div className="counter">+5</div>
+                    <div className="ikenga-btn">
+                    <Image src={ikenga} alt='Ikenga' className="ikenga" />
+                    </div>
                     <div className="comment-btn">
                     <Image src={comment} alt='Comment' className="comment-image" />
                     </div>
                 </div>
-                <div>
+                <div className="readScreen">
                     <Document
                         file="http://res.cloudinary.com/debugger/image/upload/v1534499878/bsaa015qd43pjh4igala.pdf"
                         onLoadSuccess={this.onDocumentLoad}
                     >
                         <Page pageNumber={pageNumber} />
                     </Document>
-                    <button onClick={this.handlePrevious}>previous</button>
-                    <button onClick={this.handleNext}>next</button>
                     {/* <button onClick={this.increaseIkenga}>Ikenga</button> */}
                     {/* <p>Page {pageNumber} of {numPages}</p> */}
-                </div>
+                    <div className="bookProgress">
+                        <div className="pageNumber">Page {pageNumber} of {numPages} {(pageNumber/numPages)*100}</div>
+                        <div className="progressBar">
+                            <div id="myBar"></div>
+                        </div>
+                        </div>
+                    </div>
                 <div>
                     <div onClick={this.handleNext} className="next-btn">
                         <Image src={next} alt='Next' className="next-arrow" />
