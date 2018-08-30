@@ -15,7 +15,12 @@ export default class BookReader extends Component {
         bookProgress: 0
     }
     onDocumentLoad = ({ numPages }) => {
+        let ikengaCounter = document.getElementById("count");
         this.setState({ numPages });
+        if (this.state.ikenga==0) {
+            ikengaCounter.style.display = "none";
+        }
+
     }
     handleNext =() => {
         if (this.state.pageNumber<this.state.numPages){
@@ -29,21 +34,16 @@ export default class BookReader extends Component {
             this.pageProgress();
         }
     }
-    increaseIkenga =(props) => { 
-        let ikengaCounter = document.getElementsByClassName("counter")[0];
+    increaseIkenga =() => { 
+        let ikengaCounter = document.getElementById("count");
         if(this.state.ikenga < 10) {
-            this.setState({ikenga: this.state.ikenga + 1});            
+            this.setState({ikenga: this.state.ikenga + 1});           
         }
-        console.log(this.state.ikenga);
-        console.log(ikengaCounter);
-    }
-
-    counterShow=()=>{
-        if (this.state.ikenga=0) {
-            ikengaCounter.style.display = "none";
-        }else{
+        if (this.state.ikenga >= 0) {
             ikengaCounter.style.display = "block";
         }
+        // console.log(this.state.ikenga);
+        
     }
 
     pageProgress=()=>{
@@ -58,7 +58,7 @@ export default class BookReader extends Component {
         }
     }
     render() {
-        document.body.onload.counterShow();
+        
         const { pageNumber, numPages } = this.state;
         return (
             <div onKeyDown={this.handleKeyDown} className="reader-container">
@@ -66,7 +66,7 @@ export default class BookReader extends Component {
                     <div className="previous-btn" onClick={this.handlePrevious}>
                         <Image src={previous} alt='Previous' className="prev-arrow" />
                     </div>
-                    <div className="counter">+{this.state.ikenga}</div>
+                    <div className="counter" id="count">+{this.state.ikenga}</div>
                     <div className="ikenga-btn">
                     <Image src={ikenga} alt='Ikenga' className="ikenga" onClick={this.increaseIkenga}/>
                     </div>
