@@ -50,17 +50,22 @@ class BookInfo extends Component {
                                 value: "+2348012345678"
                             }]
                         },
-                        callback: function (response) {
+                        callback: (response) =>{
                             const data = {
-                                paystackRef: response.reference,
+                                referenceId: response.reference,
                                 user: userId,
-                                bookId: book
+                                book: book
                             }
                             console.log(data)
                             axios
                             .post("https://affiammuta.herokuapp.com/payment/create", data)
                             .then(res=>{
-                                this.props.history.push("/library")
+                                if(res.data.message == "book added successfully to user library"){
+                                    this.props.history.push("/library")
+                                }
+                                else {
+                                    alert(JSON.stringify(res.data.message));
+                                }
                             })
 
                         },
