@@ -62,3 +62,20 @@
     font-weight: lighter;
     margin: 0
 }
+@media (min-width: 250px){
+        .market-interact {
+            width: 308px;
+            height: 124px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 0px 0px 7px;
+            margin: 45px 0px 0px 10px;
+        }
+        .market-interact > h1 {
+            font-family: GoodDog;
+            line-height: normal;
+            font-size: 36px;
+            color: #FFFFFF;
+            font-weight: lighter;
+            margin: 0;
+    }
+}

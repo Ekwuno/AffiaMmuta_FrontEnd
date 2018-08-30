@@ -1,3 +1,8 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
 .general-navbar {
     background-image: none;
     height: 100px;
@@ -57,7 +62,7 @@ img {
     margin-top: -31px;
 }
 .general-navbar-nav {
-    min-width: 800px;
+    min-width: auto;
 }
 .search {
     width: 250px;
@@ -119,8 +124,34 @@ img {
 
     /*Responsiveness */
 
-@media (max-width: 767px){
+ @media (min-width: 250px){
     
+    .form-control {
+        width: 164px;
+        display: inline-block !important;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #000;
+    }
+    .general-navbar {
+        min-width: 550px;
+    }
+}
+@media (min-width: 320px){
+    .form-control {
+        display: inline-block !important;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+    }
+    .button{
+        margin-top: -6px;
+    }
+    .general-navbar {
+        min-width: 550px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -175,6 +206,16 @@ img {
         border-radius: 50%;
         margin: 0px 0px -10px 30px;
     }
+    .navbar-form {
+        width: 483px;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-right: 0;
+        margin-left: 0;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
 }
 
 @media (min-width: 910px) {
@@ -186,7 +227,9 @@ img {
         background-image: none;
         background-color: #F2F4F0;
     }
-
+    .navbar-form{
+        width: 578px;
+    }
     .buttons {
         background-color: #85A64B;
         background-image: none;
@@ -213,10 +256,10 @@ img {
         height: auto;
     }
 
-    .navbar-default .navbar-collapse{
-        min-width: 915px;
-        margin-left: 166px;
-        padding-right: 123px;
+    .navbar-default .navbar-collapse{  
+     min-width: 605px;
+     margin-left: 214px;
+     padding-right: 30px;
     }
     .search {
         width: 140px !important;
@@ -239,6 +282,7 @@ img {
 @media (min-width: 991px) {
 
 	.general-navbar {
+        width: 1100px;
         background-image: none;
         height: 100px;
         padding-top: 10px;
@@ -273,9 +317,9 @@ img {
     }
 
     .navbar-default .navbar-collapse{
-        min-width: 1150px;
-        margin-left: 166px;
-        padding-right: 237px;
+        min-width: 584px;
+        margin-left: 315px;
+        padding-right: 4px;
     }
     .search {
         max-width: 216px !important;
@@ -308,21 +352,23 @@ img {
         margin-top: 10px;
     }
     .search-default{
-        width: 260px !important;
+        width: 180px !important;
         height: 40px;
         background-color: rgba(98, 106, 113, 0.45);
         border: none;
         border-radius: 2px;
-        margin-left: 60px;
+        margin-left: 25px;
         margin-top: 10px;
     }
     
     .nav-bar-right {
         float: right!important;
         margin-right: -20px;
+        margin-top: 18px;
     }
 
     .general-navbar {
+        width: 104%;
         background-image: none;
         height: 100px;
         padding-top: 10px;
@@ -355,14 +401,18 @@ img {
 
     .container>.navbar-collapse{
         height: auto;
-        margin-left: 250px !important;
+        margin-left: 498px !important;
         padding-right: 60px;
     }
 
     .navbar-default .navbar-collapse{
-        min-width: 966px;
+        min-width: 605px;
+        margin-left: 214px;
+        padding-right: 30px;
     }
-
+    .navbar-form{
+        width: 738px;
+    }
     #dropdown-user {
         height: 43px;
         width: 43px;
