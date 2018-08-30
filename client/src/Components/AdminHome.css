@@ -1,0 +1,38 @@
+.adminhome-layout {
+    display: grid;
+    grid-template-columns: 12% 88%;
+    height: auto;
+    margin: -55px 0px 0px 0px;
+}
+.admin-home-tabs-position {
+    width: 75%;
+    margin: 20px 0px 0px 70px;
+}
+.admin-home-search {
+    padding-top: 4px; 
+}
+.admin-search-add {
+    height: 60px;
+    display: grid;
+    grid-template-columns: 50% 50%; 
+    margin-top: 30px; 
+}
+.admin-search-add input {
+    margin: 0 !important;
+}
+.admin-search-add button {
+    margin: 0 !important
+}
+.admin-add {
+    display: inline-block;
+    padding: 8px 0px 0px 316px
+}
+.admin-add span {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 18px;
+    color: #000000;
+    margin-right: 10px;
+}

@@ -1,0 +1,68 @@
+.info-background {
+    width: 100%;
+    height: 250px;
+    margin-top: -20px;
+    background: url("./Assets/InfoHeader.svg");
+    background-position: center;
+    background-size: 100%;
+}
+.info-background > h2 {
+    text-align: center;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    color: #FFFFFF;
+    margin-top: 40px; 
+}
+.info-background > p {
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    color: #FFFFFF;
+    margin-top: 0px;
+}
+.info-background > img {
+    margin-left: 500px;
+}
+.privacy-policy-contents {
+    width: 75%;
+    height: auto;
+    margin: auto;
+}
+.privacy-policy-contents  h1   {
+    color: #484545;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+.privacy-policy-contents p {
+    color: #484545;
+    font-size: 13px;
+    font-family: 'Lato', sans-serif;
+}
+.privacy-policy-contents a {
+    color: #484545;
+    font-size: 13px;
+    font-family: 'Lato', sans-serif;
+}
+.privacy-policy-contents h2 {
+    color: #484545;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+.privacy-policy-contents  h3   {
+    color: #484545;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+.privacy-policy-contents h4 {
+    color: #484545;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
