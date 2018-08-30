@@ -15,12 +15,8 @@ export default class BookReader extends Component {
         bookProgress: 0
     }
     onDocumentLoad = ({ numPages }) => {
-        let ikengaCounter = document.getElementById("count");
         this.setState({ numPages });
-        if (this.state.ikenga==0) {
-            ikengaCounter.style.display = "none";
-        }
-
+        this.removeCounter();
     }
     handleNext =() => {
         if (this.state.pageNumber<this.state.numPages){
@@ -34,18 +30,31 @@ export default class BookReader extends Component {
             this.pageProgress();
         }
     }
-    increaseIkenga =() => { 
-        let ikengaCounter = document.getElementById("count");
+    increaseIkenga =() => {
         if(this.state.ikenga < 10) {
-            this.setState({ikenga: this.state.ikenga + 1});           
+            this.setState({ikenga: this.state.ikenga + 1});
+            this.showCounter();
+                     
         }
-        if (this.state.ikenga >= 0) {
-            ikengaCounter.style.display = "block";
-        }
+        
         // console.log(this.state.ikenga);
         
     }
 
+    removeCounter=()=>{
+        let ikengaCounter = document.getElementById("count");
+        if (this.state.ikenga==0) {
+            ikengaCounter.style.display = "none";
+        }
+    }
+
+    showCounter=()=>{
+        let ikengaCounter = document.getElementById("count");
+        if (this.state.ikenga >= 0) {
+            ikengaCounter.style.display = "block";  
+        }
+        setTimeout(()=>{ikengaCounter.style.display = "none"}, 2000);
+    }
     pageProgress=()=>{
             let percentCompleted = Math.round((this.state.pageNumber/this.state.numPages) *100);
             this.setState({progress: percentCompleted});
