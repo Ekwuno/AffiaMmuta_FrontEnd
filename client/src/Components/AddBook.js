@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image, Form, Row, ProgressBar, MenuItem, DropdownButton } from "react-bootstrap";
+import { FormGroup, FormControl, Button, Image, Form, Row, ProgressBar } from "react-bootstrap";
 
  class AddBook extends Component {
     state = {
         bookImage: "",
         bookContent: "",
+        category: "",
         progress: 0
     }
     onUploadProgress=() => {
         
+    }
+    handleChange =(event)=> {
+        this.setState({category: event.target.value});
     }
     handleFile = (event) => {
         switch (event.target.name) {
@@ -25,16 +29,15 @@ import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image,
             default:
                 null;
         }
-        // console.log(this.state)
     }
     handleSubmit = event  => {
         let author = this.author.value;
         let title = this.title.value;  
         let price = this.price.value;  
-        let category = this.category.value;        
+        let category = this.state.category;        
         let description = this.description.value;
-        console.log(this.title.category)
-        event.preventDefault()
+        console.log(category);
+        event.preventDefault();
         const files = new FormData()
         files.append("bookImage", this.state.bookImage);
         files.append("bookContent", this.state.bookContent);
@@ -59,7 +62,8 @@ import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image,
             .then(res => {
                 if (res.data.message == "book created successfully") {
                     this.props.history.push("/adminhome")
-                } else {
+                } 
+                else {
                     alert(JSON.stringify(res.data.message));
                 }
             });
@@ -96,38 +100,37 @@ import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image,
                         <FormGroup className="style-admin-paragraphs">
                             <Row>  
                                 <Row><p className="admin-labels">Author</p></Row>
-                                <FormControl inputRef={(ref) => {this.author = ref}} type="text" name="author"  className="admin-title-row" onChange= {this.handleChange}/>
+                                <FormControl inputRef={(ref) => {this.author = ref}} type="text" name="author"  className="admin-title-row" />
                                 </Row>
                         </FormGroup>
                         <FormGroup className="style-admin-paragraphs">
                             <Row>  
                                 <Row><p className="admin-labels">Title</p></Row>
-                                <FormControl inputRef={(ref) => {this.title = ref}} type="text" name="title"  className="admin-title-row" onChange= {this.handleChange}/>
+                                <FormControl inputRef={(ref) => {this.title = ref}} type="text" name="title"  className="admin-title-row" />
                             </Row>
                         </FormGroup>
+                        <Form inline>
                         <FormGroup>
                             <Row>  
-                                <Row><p className="admin-labels">Price</p></Row>
-                                <FormControl inputRef={(ref) => {this.price = ref}} type="number" name="price" step="100" min="100" className="admin-price-cat cat-admin" onChange= {this.handleChange}/>
-                            </Row>
+                                    <span className="admin-labels">Price</span>
+                                </Row>
+                                <FormControl inputRef={(ref) => {this.price = ref}} type="number" name="price" step="100" min="100" className="admin-price-cat cat-admin" />
                         </FormGroup>
                         <FormGroup  className="cat-margin">
-                                <Row> 
                                     {/* <FormControl inputRef={(ref) => {this.category = ref}} type="text" name="category" className="admin-price-cat cat-admin" onChange= {this.handleChange}/>  */}
-                                    {/* <select >
-                                        <option value="comics"inputRef={(ref) => {this.category = ref}} name="category">Comics</option>
-                                        <option value="educational"inputRef={(ref) => {this.category = ref}} name="category">Educational</option>
-                                        <option value="folklores"inputRef={(ref) => {this.category = ref}} name="category">Folklores</option>
-                                    </select> */}
-                                    
+                                    <select className="admin-select-cat" value={this.state.category} onChange={this.handleChange} label="category">
+                                        <option value="Comics">Comics</option>
+                                        <option value="Educational">Educational</option>
+                                        <option value="Folklores">Folklores</option>
+                                    </select>
+                            </FormGroup>
+                            </Form>
+                            <FormGroup>
+                                <Row>  
+                                    <Row><p className="admin-labels">Description</p></Row>
+                                    <FormControl inputRef={(ref) => {this.description = ref}} componentClass="textarea" type="text" name="description"  className="admin-desc-row" s/>
                                 </Row>
                             </FormGroup>
-                            {/* <FormGroup> */}
-                                {/* <Row>   */}
-                                    <Row><p className="admin-labels">Description</p></Row>
-                                    <FormControl inputRef={(ref) => {this.description = ref}} componentClass="textarea"type="text" name="description"  className="admin-desc-row" onChange= {this.handleChange}/>
-                                {/* </Row> */}
-                            {/* </FormGroup> */}
                             <FormGroup>
                                 <Row>
                                     <Button  className="btn btn-success btn-ad" type="submit">Upload</Button>

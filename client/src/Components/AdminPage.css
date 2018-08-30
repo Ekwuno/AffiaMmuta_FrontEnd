@@ -139,10 +139,18 @@ html, body{
     border: 1px solid #7E9E47;
     box-sizing: border-box;
     border-radius: 8px;
-    margin: 0px 0px 0px 45px;
+    margin: 0px 25px 0px 30px;
 }
 .cat-admin {
-    margin-right: 60px;
+}
+.admin-select-cat {
+    background: #FFFFFF;
+    border: 1px solid #7E9E47;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 180px;
+    height: 40px;
+    margin-top: 5px;
 }
 .btn-ad {
     width: 150px;
