@@ -5,6 +5,7 @@ import './BookInfo.css';
 import filled from './Assets/IkengaFilled.png';
 import axios from 'axios';
 import RelatedBooks from './RelatedBooks';
+import BookComments from './BookComments';
 
 class BookInfo extends Component {
     state = {
@@ -107,7 +108,7 @@ class BookInfo extends Component {
                 <div className="book-tabs">
                     <Tabs defaultActiveKey={1} >
                         <Tab eventKey={1} title="REVIEWS (3)">
-                            Tab 1 content
+                            <BookComments/>
                         </Tab>
                         <Tab eventKey={2} title="RELATED BOOKS" className="right-tab">
                             <RelatedBooks/>
