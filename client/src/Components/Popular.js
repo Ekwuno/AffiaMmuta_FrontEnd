@@ -13,7 +13,7 @@ export default class PopularBooks extends Component {
         }
     }
     componentDidMount(){
-        axios.get("https://affiammuta.herokuapp.com/books/latest")
+        axios.get("https://affiammuta.herokuapp.com/books/")
     .then(res=>{
        this.setState({popularBooks: res.data});
        
