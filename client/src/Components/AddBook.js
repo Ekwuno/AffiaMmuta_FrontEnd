@@ -33,6 +33,7 @@ import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image,
         let price = this.price.value;  
         let category = this.category.value;        
         let description = this.description.value;
+        console.log(this.title.category)
         event.preventDefault()
         const files = new FormData()
         files.append("bookImage", this.state.bookImage);
@@ -51,8 +52,6 @@ import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image,
                 },
                 onUploadProgress: ProgressEvent => {
                     let percentCompleted = Math.round((ProgressEvent.loaded *100) / ProgressEvent.total);
-                    console.log(percentCompleted);
-                    console.log(1)
                     this.setState({progress: percentCompleted})
                 }
 
@@ -112,24 +111,17 @@ import { ListGroup, ListGroupItem, Badge, FormGroup, FormControl, Button, Image,
                                 <FormControl inputRef={(ref) => {this.price = ref}} type="number" name="price" step="100" min="100" className="admin-price-cat cat-admin" onChange= {this.handleChange}/>
                             </Row>
                         </FormGroup>
-                        {/* <FormGroup  className="cat-margin"> */}
+                        <FormGroup  className="cat-margin">
                                 <Row> 
-                                    <Row><p className="admin-labels">Category</p></Row>
-                                    <FormControl inputRef={(ref) => {this.category = ref}} type="text" name="category" className="admin-price-cat cat-admin" onChange= {this.handleChange}/> 
-                                    {/* <Row><p className="cat-margin-title" >Category</p></Row>
-                                    <DropdownButton 
-                                    bsStyle
-                                    title="Select Category"
-                                    name="bookCategory"
-                                    className = "admin-price-cat cat-admin"
-                                    onChange= {this.handleChange}
-                                    >
-                                        <MenuItem eventKey="1">Educational</MenuItem>
-                                        <MenuItem eventKey="2">Comics</MenuItem>
-                                        <MenuItem eventKey="3">Folklors</MenuItem>
-                                    </DropdownButton> */}
+                                    {/* <FormControl inputRef={(ref) => {this.category = ref}} type="text" name="category" className="admin-price-cat cat-admin" onChange= {this.handleChange}/>  */}
+                                    {/* <select >
+                                        <option value="comics"inputRef={(ref) => {this.category = ref}} name="category">Comics</option>
+                                        <option value="educational"inputRef={(ref) => {this.category = ref}} name="category">Educational</option>
+                                        <option value="folklores"inputRef={(ref) => {this.category = ref}} name="category">Folklores</option>
+                                    </select> */}
+                                    
                                 </Row>
-                            {/* </FormGroup> */}
+                            </FormGroup>
                             {/* <FormGroup> */}
                                 {/* <Row>   */}
                                     <Row><p className="admin-labels">Description</p></Row>
