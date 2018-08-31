@@ -2,8 +2,6 @@
     background: #F2F4F0;
     width: 100%;
     padding-top: 50px;
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
 }
 /* .react-pdf__Document{
     width: 100%;
@@ -18,20 +16,25 @@
 } */
 
 .readScreen{
-    width: 100% !important;
+    width: 50% !important;
     height: 100% !important;
     background: #fff !important;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 20% 60% 20%; 
 }
-
+.readscreen>divs{
+    border: 1px solid #000;
+}
 canvas {
     height: 100% !important;
-    width: 90% !important;
+    width: 100% !important;
     box-shadow: 1px -2px 7px rgba(0, 0, 0, 0.1);
     overflow: auto;
     margin: auto;
 }
 .bookProgress {
-    width: 80%;
+    width: 60%;
     height: 50px;
     position: fixed;
     bottom: -7px;
@@ -62,10 +65,10 @@ canvas {
     background: #C4C4C4;
 }
 .previous-btn{
-    width: 90px;
-    height: 90px;
-    margin-left: 1%;
-    margin-top: 20%;
+    width: 45px;
+    height: 45px;
+    margin-left: 3%;
+    margin-top: 13%;
     border-radius: 50px;
     position: fixed;
     background: #7E9E47;
@@ -74,10 +77,10 @@ canvas {
 }
 
 .next-btn{
-    width: 90px;
-    height: 90px;
+    width: 45px;
+    height: 45px;
     margin-left: 3%;
-    margin-top: 20%;
+    margin-top: 13%;
     border-radius: 50px;
     position: fixed;
     background: #7E9E47;
@@ -86,15 +89,15 @@ canvas {
 }
 
 .next-btn:active{
-    width: 83px;
-    height: 83px;
-    margin-left: 2.5%;
+    width: 40px;
+    height: 40px;
+    margin-left: 1.5%;
     box-shadow: 0px 2px 5px rgb(89, 117, 39);
 }
 
 .previous-btn:active{
-    width: 83px;
-    height: 83px;
+    width: 40px;
+    height: 40px;
     margin-left: 2.5%;
     box-shadow: 0px 2px 5px rgb(89, 117, 39);
 }
@@ -102,24 +105,24 @@ canvas {
 .comment-btn{
     width: 70px;
     height: 70px;
-    margin-left: 1%;
-    margin-top: 36%;
+    margin-left: 1.4%;
+    margin-top: 29%;
     border-radius: 50px;
     position: fixed;
 }
 .ikenga{
     width: 47px;
     height: 35.94px;
-    margin: 8px 0px 0px 5px;
+    margin: 5px 0px 0px 0px;
     cursor: pointer;
 }
 
 .ikenga-btn{
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     border: 2px solid rgba(126, 158, 71, 0.77);
-    margin-left: 21px;
-    margin-top: 32%;
+    margin-left: 35px;
+    margin-top: 23%;
     border-radius: 35px;
     position: fixed;
     cursor: pointer;
@@ -139,14 +142,14 @@ canvas {
     line-height: 2.5;
     border-radius: 20px;
     position: fixed;
-    margin-top: 29%;
+    margin-top: 20%;
     margin-left: 36px;
     background: #7E9E47;
 }
 .comment-image{
-    width: 50px;
-    height: 49.99px;
-    margin: 14px 0px 0px 12px;
+    width: 39px;
+    height: 40.99px;
+    margin: 14px 0px 0px 23px;
     cursor: pointer;
 }
 
@@ -154,16 +157,112 @@ canvas {
     display: none;
 } 
 .prev-arrow{
-    width: 30px;
-    height: 54.28px;
-    margin: 18px 0px 0px 24px;
+    width: 17px;
+    height: 25.28px;
+    margin: 10px 0px 0px 11px;
+    cursor: pointer;
 }
 .next-arrow{
-    width: 30px;
-    height: 54.28px;
-    margin: 18px 0px 0px 36px;
+    width: 17px;
+    height: 25.28px;
+    margin: 11px 0px 0px 17px;
+    cursor: pointer;
 }
-   
+
+
+
+
+/* Modal */
+
+.modal-dialog {
+    width: 364px;
+    margin: 200px auto;
+    background-image: none;
+    background: rgb(202, 202, 201);
+}
+
+.modalText{
+    width: 334px;
+    border-radius: 4px;
+}
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.modal-header {
+    padding: 15px;
+    height: 81px;
+    border: none;
+}
+.modal-title {
+    margin: 0;
+    line-height: 1.428571;
+    text-align: center;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+}
+.submit{
+    width: 145px;
+    height: 37px;
+    padding-top: 8px;
+    margin-right: 40px;
+    background-image: none;
+    border-radius: none;
+    border: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 0px;
+    background-color: #85A64B;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 15px;
+    color: #FFFFFF;
+    box-shadow: 0px 3px rgb(24, 94, 7);
+}
+.closeBtn{
+    width: 145px;
+    height: 37px;
+    padding-top: 8px;
+    background-image: none;
+    border-radius: none;
+    border: none;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-right: -4px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 0px;
+    background-color: #626A71;
+    box-shadow: 0px 3px #3B4044;
+}
+.modal-backdrop{
+    background-color: none;
+}
+.ikengaModal{
+    width: 65.22px;
+    height: 52.71px;
+}
+.logo-container{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    background: none;
+}
+
+
+
+
+
     /* Add Animation */
     @-webkit-keyframes animatetop {
         from {opacity:0} 
@@ -175,35 +274,6 @@ canvas {
         to {opacity:1}
     }
     
-    /* The Close Button */
-    .close {
-        color: white;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-    
-    .close:hover,
-    .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    
-    .modal-header {
-        padding: 2px 16px;
-        background-color: #5cb85c;
-        color: white;
-    }
-    
-    .modal-body {padding: 2px 16px;}
-    
-    .modal-footer {
-        padding: 2px 16px;
-        background-color: #5cb85c;
-        color: white;
-    }
-
   /* animation */
 
 
