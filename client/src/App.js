@@ -39,7 +39,7 @@ class App extends Component {
             <AppRoute exact path="/market" Layout={MainLayout} Component={Market} />
             <AppRoute exact path="/admin" Layout={SecondLayout} Component={AdminPage} />
             <AppRoute exact path="/adminhome" Layout={SecondLayout} Component={AdminHome} />
-            <UserRoute exact path="/library" Layout={MainLayout} Component={Library} />
+            <UserRoute exact path="/library/:id" Layout={MainLayout} Component={Library} />
             <AppRoute exact path="/book/:id" Layout={MainLayout} Component={BookInfo} />
             <AppRoute exact path="/read" Layout={ReadLayout} Component={BookReader} />
             <AppRoute exact path="/policy" Layout={MainLayout} Component={PrivacyPolicy} />

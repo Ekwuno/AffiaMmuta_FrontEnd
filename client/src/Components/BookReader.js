@@ -6,6 +6,7 @@ import comment from './Assets/Comment.png';
 import next from './Assets/Next.png';
 import previous from './Assets/Previous.png';
 import ikenga from './Assets/ikengaHead.png'
+import axios from 'axios';
 
 export default class BookReader extends Component {
     constructor(props, context) {
@@ -17,7 +18,8 @@ export default class BookReader extends Component {
             pageNumber: 1,
             ikenga: 0,
             bookProgress: 0,
-            show: false
+            show: false,
+            comment: ''
         }
     }
     handleClose() {
@@ -80,6 +82,29 @@ export default class BookReader extends Component {
             this.handlePrevious();
         }
     }
+    getComment = event =>{
+        this.setState({
+            comment: event.target.value
+        });
+        console.log(this.state.comment);
+        
+    }
+
+    sendComment = () =>{
+        const bookId=this.props.match.params.id;
+        const user=sessionStorage.getItem("user");
+        const data={
+            user: user,
+            commentBody: this.state.comment,
+            book: bookId
+        }
+        console.log(data);
+        
+        axios.post(`https://affiammuta.herokuapp.com/books/book/${bookId}/create`, data)
+        .then(res =>{
+            alert(res.data.message)
+        })
+    }
     render() {
 
         const { pageNumber, numPages } = this.state;
@@ -107,10 +132,10 @@ export default class BookReader extends Component {
                                 <Modal.Title>Comment on this book</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                                <textarea className="modalText" cols="40" rows="10"></textarea>
+                                <textarea className="modalText" id="modalText" cols="40" rows="10" onChange={this.getComment}></textarea>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button className="submit">Submit</Button>
+                                <Button className="submit" onClick={this.sendComment}>Submit</Button>
                                 <Button className="closeBtn" onClick={this.handleClose}>Close</Button>
                             </Modal.Footer>
                         </Modal>

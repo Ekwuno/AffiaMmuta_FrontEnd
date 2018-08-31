@@ -34,7 +34,7 @@ canvas {
     margin: auto;
 }
 .bookProgress {
-    width: 60%;
+    width: 50%;
     height: 50px;
     position: fixed;
     bottom: -7px;
@@ -91,14 +91,12 @@ canvas {
 .next-btn:active{
     width: 40px;
     height: 40px;
-    margin-left: 1.5%;
     box-shadow: 0px 2px 5px rgb(89, 117, 39);
 }
 
 .previous-btn:active{
     width: 40px;
     height: 40px;
-    margin-left: 2.5%;
     box-shadow: 0px 2px 5px rgb(89, 117, 39);
 }
 
