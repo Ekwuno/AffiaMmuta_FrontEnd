@@ -66,3 +66,126 @@
     font-size: 16px;
     font-family: 'Lato', sans-serif;
 }
+.mission-container {
+    display: grid;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    grid-template-columns: 20% 55%;
+    grid-gap: 20%;
+}
+.mission-container h2 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #7E9E47;
+    text-align: center;
+}
+.mission-container {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 24px;
+    color: #484545;
+    text-align: justify;
+}
+.location {
+    width: 100%;
+    height: 340px;
+    background: #F2F4F0;
+}
+.our-team-container {
+    height: 470px;
+    width: 100%;
+    padding-top: 20px;
+}
+.our-team-container h2 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 30px;
+    color: #7E9E47;
+    text-align: center;
+}
+.profiles {
+    border: 1px solid black;
+    height: 65%;
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-column-gap: 12%;
+}
+.profiles >div {
+    border: 1px solid black;
+}
+.profile-image-container {
+    
+}
+.location-position {
+    width: 45%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 40% 55%;
+    grid-gap: 5%;
+    padding-top: 50px; 
+}
+.location-position img {
+    width: 227.78px;
+    height: 225.56px;
+}
+.location-position h2 {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #7E9E47;
+}
+.location-position p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 18px;
+    color: #484545;
+}
+.get-in-touch {
+    height: 261px;
+    width: 100%;
+    background: #585249;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: -20px;  
+}
+.get-in-touch h2 {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+}
+.get-in-touch button {
+    width: 200px;
+    height: 40px;
+    padding-top: 2px; 
+    background: rgba(88, 82, 73, 0.5);
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    font-style: normal;
+    line-height: normal;
+    font-size: 24px;
+    color: #FFFFFF;
+}

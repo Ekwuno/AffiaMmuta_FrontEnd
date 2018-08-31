@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
 import { Badge, Tabs, Tab } from "react-bootstrap";
 import './BookInfo.css';
 import filled from './Assets/IkengaFilled.png';
 import axios from 'axios';
 import RelatedBooks from './RelatedBooks';
+import BookComments from './BookComments';
+import Loader from './Loader';
 
-
-export default class BookInfo extends Component {
+class BookInfo extends Component {
     state = {
         author: "",
         title: "",
         price: "",
         bookImage: "",
         ikenga: 0, 
-        email: ""
+        email: "", 
+        isLoadingBook: true
     }
     componentDidMount(){
         const book = this.props.match.params.id
@@ -26,13 +29,15 @@ export default class BookInfo extends Component {
             bookImage: res.data.book.bookImage,
             description: res.data.book.description,
             ikenga: res.data.book.ikenga,
+            isLoadingBook: false
             })
         })
     }
 
     payWithPaystack = event => {
         if(sessionStorage.getItem("user")){
-            const userId =sessionStorage.getItem("user")
+            const userId =sessionStorage.getItem("user");
+            const book = this.props.match.params.id;
             axios.get(`http://affiammuta.herokuapp.com/users/search?_id=${userId}`) 
                 .then(res=>{
                     this.setState({email: res.data[0].email})
@@ -49,9 +54,24 @@ export default class BookInfo extends Component {
                                 value: "+2348012345678"
                             }]
                         },
-                        callback: function (response) {
-                            
-                            alert('success. transaction ref is ' + response.reference);
+                        callback: (response) =>{
+                            const data = {
+                                referenceId: response.reference,
+                                user: userId,
+                                book: book
+                            }
+                            console.log(data)
+                            axios
+                            .post("https://affiammuta.herokuapp.com/payment/create", data)
+                            .then(res=>{
+                                if(res.data.message == "book added successfully to user library"){
+                                    this.props.history.push("/library")
+                                }
+                                else {
+                                    alert(JSON.stringify(res.data.message));
+                                }
+                            })
+
                         },
                         onClose: function () {
                             alert('Thanks for using AffiaMmuta');
@@ -67,7 +87,13 @@ export default class BookInfo extends Component {
         
     }
     render() {
-        return (
+        if (this.state.isLoadingBook==true) {
+            return (
+                <Loader/>
+            )
+        }
+        else {
+            return (
             <div className="info-main">
                 <div className="current-book">
                     <div className="read-cover">
@@ -91,7 +117,7 @@ export default class BookInfo extends Component {
                 <div className="book-tabs">
                     <Tabs defaultActiveKey={1} >
                         <Tab eventKey={1} title="REVIEWS (3)">
-                            Tab 1 content
+                            <BookComments/>
                         </Tab>
                         <Tab eventKey={2} title="RELATED BOOKS" className="right-tab">
                             <RelatedBooks/>
@@ -100,5 +126,10 @@ export default class BookInfo extends Component {
                 </div>
             </div>
     );
+        }
+        
   }
 }
+
+
+export default withRouter(BookInfo)
