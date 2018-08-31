@@ -40,7 +40,10 @@ export default class Library extends Component {
                                 <p className="library-book-date">20/10/2018</p>
                                 <div className="button-connect">
                                     <div>
-                                        <Link to="/read">
+                                    <Link to={{
+                                        pathname:`/read/${item._id}`,
+                                        state: {Library: item._id}
+                                            }}>
                                         <button className="library-button">Read</button>
                                         </Link>
                                     </div>

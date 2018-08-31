@@ -41,7 +41,7 @@ class App extends Component {
             <AppRoute exact path="/adminhome" Layout={SecondLayout} Component={AdminHome} />
             <UserRoute exact path="/library" Layout={MainLayout} Component={Library} />
             <AppRoute exact path="/book/:id" Layout={MainLayout} Component={BookInfo} />
-            <AppRoute exact path="/read" Layout={ReadLayout} Component={BookReader} />
+            <AppRoute exact path="/read/:id" Layout={ReadLayout} Component={BookReader} />
             <AppRoute exact path="/policy" Layout={MainLayout} Component={PrivacyPolicy} />
             <AppRoute exact path="/about" Layout={MainLayout} Component={About} />
           </div>

@@ -100,14 +100,6 @@ import './CustomNavbar.css';
                     <Image src={search} alt='Logo'/>
                   </Button>
                   </FormGroup>
-                  <DropdownButton 
-                    bsStyle
-                    title={<Image src={logIn} alt='Logo'/>}
-                    id = "dropdown-user"
-                    noCaret
-                    >
-                      <MenuItem eventKey="1" onClick={this.logOut}>Log out</MenuItem>
-                    </DropdownButton>
                   </Navbar.Form>
                 </Nav>
               </Navbar.Collapse>
