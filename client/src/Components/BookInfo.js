@@ -116,7 +116,7 @@ class BookInfo extends Component {
                 </div>
                 <div className="book-tabs">
                     <Tabs defaultActiveKey={1} >
-                        <Tab eventKey={1} title="REVIEWS (3)">
+                        <Tab eventKey={1} title="REVIEWS">
                             <BookComments/>
                         </Tab>
                         <Tab eventKey={2} title="RELATED BOOKS" className="right-tab">
