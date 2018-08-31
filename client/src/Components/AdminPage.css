@@ -81,11 +81,11 @@ html, body{
     border-bottom: 1px solid #C4C4C4;
 }
 .upload-box {
-    width: 490px;
-    height: 685px;
+    width: 405px;
+    height: 605px;
     background: #F2F4F0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 60px 0px 0px 400px;
+    margin: 20px 0px 0px 350px;
     display: grid;
     grid-template-rows: 10% 90%;
 }
@@ -95,17 +95,17 @@ html, body{
     margin-left: 25px;
 }
 .upload-forms {
-    width: 400px;
-    height: 40px;
+    width: 340px;
+    height: 35px;
     background: #FFFFFF;
     border: 1px solid #7E9E47;
     box-sizing: border-box;
     border-radius: 8px;
     margin: 0px 0px 0px 30px;
-    padding: 7px 0px 0px 20px;
+    padding: 5px 0px 0px 20px;
 }
 .upload-t {
-    margin: 20px 0px 0px 30px;
+    margin: 10px 0px 0px 30px;
 }
 .bt{
     width: 70px;
@@ -115,8 +115,8 @@ html, body{
     background-image: none;
 }
 .admin-title-row {
-    width: 400px;
-    height: 40px;
+    width: 340px;
+    height: 35px;
     background: #FFFFFF;
     border: 1px solid #7E9E47;
     box-sizing: border-box;
@@ -124,52 +124,76 @@ html, body{
     margin: -10px 0px 0px 45px;
 }
 .admin-desc-row {
-    width: 400px;
-    height: 80px;
+    width: 340px;
+    height: 70px;
     background: #FFFFFF;
     border: 1px solid #7E9E47;
     box-sizing: border-box;
     border-radius: 8px;
-    margin: 0px 0px 0px 45px;
+    margin: -10px 0px 0px 45px;
 }
 .admin-price-cat {
-    width: 180px;
-    height: 40px;
+    width: 160px !important;
+    height: 35px;
     background: #FFFFFF;
     border: 1px solid #7E9E47;
     box-sizing: border-box;
     border-radius: 8px;
-    margin: 0px 0px 0px 45px;
+    margin: 10px 25px 0px 25px;
 }
-.cat-admin {
-    margin-right: 60px;
+.admin-select-cat {
+    background: #FFFFFF;
+    border: 1px solid #7E9E47;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 160px;
+    height: 35px;
+    margin-top: 14px;
+}
+#title-input {
+    margin-top: -6px 
+}
+.price-head {
+    margin-left: 50px !important
+}
+.des-label {
+    margin-top: -10 
 }
 .btn-ad {
-    width: 150px;
-    height: 40px;
+    width: 100%;
+    height: 35px;
     background: #85A64B;
     border-radius: 5px;
-    margin: 10px 0px 0px 45px;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
     color: #FFFFFF;
     font-family: 'Lato', sans-serif;
     font-size: 18px;
 }
+.button-progress-admin {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 340px;
+    margin: auto;
+}
 .admin-labels {
-    margin: 30px 0px 15px 65px;
+    margin: 10px 0px 23px 65px;
     font-weight: 500;
     line-height: normal;
     font-size: 14px;
     font-family: 'Lato', sans-serif
 }
 .cat-margin {
-    margin: 13px 0px 0px 0px;
+    margin: 11px 0px 0px 0px;
 }
 .cat-margin-title {
-    margin: 0px 0px 10px 17px;
+    margin: 0px 0px 0px 17px;
 }
-.progress {
-    margin: 10px 0px 0px 30px;
-    width: 90%;
+.admin-progress {
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: none;
 }
 .progress-bar {
     background-color: #85A64B;

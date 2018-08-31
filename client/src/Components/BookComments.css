@@ -1,0 +1,26 @@
+.comment-margin {
+    padding-top: 30px; 
+}
+.comment-box {
+    height: auto;
+    width: 100%;
+    padding: 30px 0px 0px 3%;
+    border-bottom: 1px solid #C4C4C4;
+}
+.comment-box > h2 {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 14px;
+    color: #000000;
+}
+.comment-box >p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #000000;
+}
