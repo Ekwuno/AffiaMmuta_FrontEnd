@@ -55,7 +55,7 @@ export default class SignUpPage extends Component {
                     <img src={logo} alt='Logo'/>
                     <h3>Let's setup your account</h3>
                     <Form onSubmit= {this.handleSubmit}>
-                        <FormGroup className="style-formgroups">
+                        <FormGroup className="style-formgroups" >
                             <Row><p className="p">Pick a username</p></Row>
                             <Row className="input-rows">
 

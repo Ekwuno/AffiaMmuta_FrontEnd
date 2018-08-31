@@ -11,6 +11,15 @@
     background: linear-gradient(0deg, rgba(242, 244, 240, 0.45), rgba(242, 244, 240, 0.45)), url("./Assets/BackgroundImage.jpg");
     background-size: 100% 100%;
 }
+#username {
+    width: 200px !important;
+}
+#password {
+    width: 200px !important;
+}
+#confirmPassword {
+    width: 200px !important;
+}
 .jumbo {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -65,6 +74,9 @@
     background-color: #627B37;
     border-radius: 3px;
 
+}
+#email {
+    width: 200px !important;
 }
 .input-rows {
     margin: -25px 0px 0px 45px;
