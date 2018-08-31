@@ -6,6 +6,7 @@ import filled from './Assets/IkengaFilled.png';
 import axios from 'axios';
 import RelatedBooks from './RelatedBooks';
 import BookComments from './BookComments';
+import Loader from './Loader';
 
 class BookInfo extends Component {
     state = {
@@ -14,7 +15,8 @@ class BookInfo extends Component {
         price: "",
         bookImage: "",
         ikenga: 0, 
-        email: ""
+        email: "", 
+        isLoadingBook: true
     }
     componentDidMount(){
         const book = this.props.match.params.id
@@ -27,6 +29,7 @@ class BookInfo extends Component {
             bookImage: res.data.book.bookImage,
             description: res.data.book.description,
             ikenga: res.data.book.ikenga,
+            isLoadingBook: false
             })
         })
     }
@@ -84,7 +87,13 @@ class BookInfo extends Component {
         
     }
     render() {
-        return (
+        if (this.state.isLoadingBook==true) {
+            return (
+                <Loader/>
+            )
+        }
+        else {
+            return (
             <div className="info-main">
                 <div className="current-book">
                     <div className="read-cover">
@@ -117,6 +126,8 @@ class BookInfo extends Component {
                 </div>
             </div>
     );
+        }
+        
   }
 }
 
