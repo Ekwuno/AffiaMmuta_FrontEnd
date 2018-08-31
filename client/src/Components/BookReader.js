@@ -19,9 +19,11 @@ export default class BookReader extends Component {
             ikenga: 0,
             bookProgress: 0,
             show: false,
-            comment: ''
+            comment: '',
+            bookLocation: ''
         }
     }
+
     handleClose() {
         this.setState({ show: false });
     }
@@ -32,17 +34,28 @@ export default class BookReader extends Component {
 
     onDocumentLoad = ({ numPages }) => {
         this.setState({ numPages });
+        console.log(this.state.numPages);
+        if (sessionStorage.getItem(this.props.match.params.id)){
+             this.setState({ pageNumber: Number.parseInt(sessionStorage.getItem(this.props.match.params.id))})
+            console.log(sessionStorage.getItem(this.props.match.params.id));
+        }
+          else {
+             sessionStorage.setItem(this.props.match.params.id, this.state.pageNumber);
+     }
+        this.pageProgress();
         this.removeCounter();
     }
     handleNext = () => {
         if (this.state.pageNumber < this.state.numPages) {
             this.setState({ pageNumber: this.state.pageNumber + 1 })
+            sessionStorage.setItem(this.props.match.params.id, this.state.pageNumber+1);
             this.pageProgress();
         }
     }
     handlePrevious = () => {
         if (this.state.pageNumber > 1) {
             this.setState({ pageNumber: this.state.pageNumber - 1 });
+            sessionStorage.setItem(this.props.match.params.id, this.state.pageNumber-1);
             this.pageProgress();
         }
     }
@@ -82,28 +95,36 @@ export default class BookReader extends Component {
             this.handlePrevious();
         }
     }
-    getComment = event =>{
+    getComment = event => {
         this.setState({
             comment: event.target.value
         });
         console.log(this.state.comment);
-        
+
     }
 
-    sendComment = () =>{
-        const bookId=this.props.match.params.id;
-        const user=sessionStorage.getItem("user");
-        const data={
+    componentDidMount() {
+        axios.get(`https://affiammuta.herokuapp.com/books/book/${this.props.match.params.id}`)
+            .then(res => {
+                this.setState({ bookLocation: res.data.book.bookContent });
+            })
+    }
+
+    sendComment = () => {
+        const bookId = this.props.match.params.id;
+        const user = sessionStorage.getItem("user");
+        const data = {
             user: user,
             commentBody: this.state.comment,
             book: bookId
         }
         console.log(data);
-        
+
         axios.post(`https://affiammuta.herokuapp.com/books/book/${bookId}/create`, data)
-        .then(res =>{
-            alert(res.data.message)
-        })
+            .then(res => {
+                this.handleClose();
+                alert(res.data.message);
+            })
     }
     render() {
 
@@ -113,7 +134,7 @@ export default class BookReader extends Component {
                 <div className="readScreen">
                     <div>
                         <div className="previous-btn" onClick={this.handlePrevious}>
-                            <Image src={previous} alt='Previous' className="prev-arrow" onClick={this.handlePrevious}/>
+                            <Image src={previous} alt='Previous' className="prev-arrow" onClick={this.handlePrevious} />
                         </div>
                         <div className="counter" id="count">+{this.state.ikenga}</div>
                         <div className="ikenga-btn">
@@ -142,7 +163,7 @@ export default class BookReader extends Component {
 
 
                         <Document
-                            file="http://res.cloudinary.com/debugger/image/upload/v1534499878/bsaa015qd43pjh4igala.pdf"
+                            file={this.state.bookLocation}
                             onLoadSuccess={this.onDocumentLoad}>
                             <Page pageNumber={pageNumber} />
                         </Document>
@@ -153,7 +174,7 @@ export default class BookReader extends Component {
                     </div>
                     <div>
                         <div className="next-btn" onClick={this.handleNext}>
-                            <Image src={next} alt='Next' className="next-arrow" onClick={this.handleNext}/>
+                            <Image src={next} alt='Next' className="next-arrow" onClick={this.handleNext} />
                         </div>
                     </div>
                 </div>
