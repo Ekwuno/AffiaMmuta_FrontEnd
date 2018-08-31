@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Row, Image, Grid, Button } from "react-bootstrap";
-import InfiniteScroll from 'react-infinite-scroll-component';
+import { Link } from "react-router-dom";
 import axios from "axios";
-import cart from './Assets/CustomCart.png';
 
 
 export default class AllBooks extends Component {
@@ -19,6 +18,10 @@ export default class AllBooks extends Component {
         
     render() {
         const allbooks = this.state.allBooks.map(item =>
+            <Link to={{
+            pathname:`/book/${item._id}`,
+            state: {homePopular: item._id}
+            }}>
             <Col xs={12} sm={4} className= "wrapper market-wrapper">
                 <Row className="books-top" >
                     <Col className="image-container" >
@@ -38,6 +41,7 @@ export default class AllBooks extends Component {
                     </Col>
                 </Row>
             </Col>
+            </Link>
         )
     return (
         <div>
