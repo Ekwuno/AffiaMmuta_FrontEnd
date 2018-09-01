@@ -32,10 +32,25 @@ import { Link } from 'react-router-dom';
           <div className="profiles">
             <div>
               <div className="profile-image-container"></div>
-              <div className="profile-description-container"></div>
+              <div className="profile-description-container">
+                <p>Ositadinma Nwangwu</p>
+                <h5>FOUNDER & CEO</h5>
+              </div>
             </div>
-            <div></div>
-            <div></div>
+            <div>
+              <div className="profile-image-container"></div>
+              <div className="profile-description-container">
+                <p>Ositadinma Nwangwu</p>
+                <h5>FOUNDER & CEO</h5>
+              </div>
+            </div>
+            <div>
+              <div className="profile-image-container"></div>
+              <div className="profile-description-container">
+                <p>Ositadinma Nwangwu</p>
+                <h5>FOUNDER & CEO</h5>
+              </div>
+            </div>
           </div>
         </div>
         <div className="location">
