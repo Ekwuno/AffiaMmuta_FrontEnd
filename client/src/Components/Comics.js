@@ -13,7 +13,7 @@ export default class Comics extends Component {
         }
     }
     componentDidMount(){
-        axios.get("https://affiammuta.herokuapp.com/books/latest")
+        axios.get("https://affiammuta.herokuapp.com/books/Comics")
     .then(res=>{
        this.setState({comics: res.data});
        
