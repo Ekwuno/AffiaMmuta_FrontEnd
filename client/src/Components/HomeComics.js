@@ -12,7 +12,7 @@ export default class HomeComics extends Component {
         }
     }
     componentDidMount(){
-        axios.get("https://affiammuta.herokuapp.com/books/latest?count=5")
+        axios.get("https://affiammuta.herokuapp.com/books/Comics?count=5")
     .then(res=>{
        this.setState({homeComics: res.data});
        
