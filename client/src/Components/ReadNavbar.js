@@ -16,7 +16,7 @@ export default class ReadNavbar extends Component {
                         Content
                     </Button>
                 </NavItem>
-                <NavItem>
+                <NavItem className="read-header-text-positon">
                         <h5>The title of the book</h5>
                 </NavItem>
                 <NavItem className="nav-cancel">
