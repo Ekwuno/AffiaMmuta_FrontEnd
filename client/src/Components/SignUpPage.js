@@ -39,7 +39,7 @@ export default class SignUpPage extends Component {
             .post("https://affiammuta.herokuapp.com/users/create", data)
             .then(res =>{ 
                 if (res.data.message==="user created successfully"){
-                    this.props.history.push("/Market")
+                    this.props.history.push("/login")
                 }
                 else{
                     alert("Something went wrong, try again");

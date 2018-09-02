@@ -23,6 +23,10 @@
     display: grid;
     grid-template-columns: 20% 60% 20%; 
 }
+.read-seek {
+    width: 40px !important;
+    margin-top: 10px;
+}
 .readscreen>divs{
     border: 1px solid #000;
 }

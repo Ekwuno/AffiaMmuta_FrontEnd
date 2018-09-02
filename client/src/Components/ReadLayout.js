@@ -4,7 +4,7 @@ import ReadNavbar from "./ReadNavbar";
 const ReadLayout = (props) => {
     return(
         <div>
-        <ReadNavbar />
+        {/* <ReadNavbar /> */}
             {props.children}
     </div>
     );
