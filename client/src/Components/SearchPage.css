@@ -1,0 +1,32 @@
+.search-header {
+    width: 83%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.search-header h1 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 36px;
+    color: #000000;
+}
+.search-header > div {
+    width: 600px;
+    height: 40px;
+    padding: 0;
+    margin-top: 25px;
+    padding-top: 7px;
+}
+.search-description {
+    text-align: center;
+}
+.search-description p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 18px;
+    color: #000000;
+}

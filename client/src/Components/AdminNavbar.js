@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Navbar, Col, Nav, Image, Button, DropdownButton, MenuItem } from "react-bootstrap";
+import { Navbar, Col, Nav, Image, DropdownButton, MenuItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './AdminNavbar.css';
 import affia from './Assets/AdminLogo.png';
-import cartAdmin from './Assets/Cart.png';
 import popImage from './Assets/PopImage.png';
 
 export default class AdminNavbar extends Component {

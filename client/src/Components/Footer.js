@@ -15,7 +15,7 @@ class Footer extends Component {
            <Grid className="footer-grid">
                <Row className="footer-top footer-rows" >
                    <Col sm={4} className="footer-contents" >
-                       <Image src={lfooter} alt='Logo' className="footer-logo" />
+                        <Link to="/review"><Image src={lfooter} alt='Logo' className="footer-logo" /></Link>
                    </Col>
                    <Col sm={2} className="footer-contents">
                        <h5>ABOUT AFFIAMMUTA</h5>

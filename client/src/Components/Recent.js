@@ -5,22 +5,22 @@ import axios from "axios";
 import cart from './Assets/CustomCart.png';
 
 
-export default class PopularBooks extends Component {
+export default class Recent extends Component {
     constructor(){
         super();
         this.state = {
-        popularBooks: []
+        recent: []
         }
     }
     componentDidMount(){
-        axios.get("https://affiammuta.herokuapp.com/books/")
+        axios.get("https://affiammuta.herokuapp.com/books/latest")
     .then(res=>{
-       this.setState({popularBooks: res.data});
+       this.setState({recent: res.data});
        
      })
     }
     render() {
-        const popular = this.state.popularBooks.map(item=>
+        const recent = this.state.recent.map(item=>
         <Link to={{
             pathname:`/book/${item._id}`,
             state: {popularBooks: item._id}
@@ -39,7 +39,7 @@ export default class PopularBooks extends Component {
                 </Col>
                 <Col className="book-price" >
                 <Button className="book-buttons" type="submit">
-                    <Image src={cart} alt='cart' className="cart-books" />
+                    <p>Buy</p>
                 </Button>
                 </Col>
             </Row>
@@ -50,7 +50,7 @@ export default class PopularBooks extends Component {
         <div>
             <Grid className= "grid">
                 <Row className= "show-grid text-center">
-                {popular}          
+                {recent}          
                 </Row>
             </Grid>
         </div>

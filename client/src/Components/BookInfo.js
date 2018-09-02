@@ -16,9 +16,12 @@ class BookInfo extends Component {
         bookImage: "",
         ikenga: 0, 
         email: "", 
-        isLoadingBook: true
+        isLoadingBook: true,
+        comment: [],
+        commentCount: 0
     }
     componentDidMount(){
+        const bookId = this.props.match.params.id
         const book = this.props.match.params.id
         axios.get(`https://affiammuta.herokuapp.com/books/book/${book}`)
         .then(res =>{
@@ -28,10 +31,18 @@ class BookInfo extends Component {
             price: res.data.book.price,
             bookImage: res.data.book.bookImage,
             description: res.data.book.description,
+            commentCount: res.data.book.commentCount,
             ikenga: res.data.book.ikenga,
             isLoadingBook: false
             })
         })
+        axios.get(`https://affiammuta.herokuapp.com/books/book/${bookId}/comments`)
+            .then(res => {
+                this.setState({
+                    comment: res.data
+                })
+                console.log(res.data)
+            })
     }
 
     payWithPaystack = event => {
@@ -87,6 +98,12 @@ class BookInfo extends Component {
         
     }
     render() {
+        const comment = this.state.comment.map(item=>
+        <div className="comment-box">
+            <h2>{item.user.username}</h2>
+            <p>{item.commentBody}</p>
+        </div>
+        )
         if (this.state.isLoadingBook==true) {
             return (
                 <Loader/>
@@ -116,8 +133,10 @@ class BookInfo extends Component {
                 </div>
                 <div className="book-tabs">
                     <Tabs defaultActiveKey={1} >
-                        <Tab eventKey={1} title="REVIEWS">
-                            <BookComments/>
+                        <Tab eventKey={1} title={"REVIEWS ("+this.state.commentCount+")"}>
+                            <div>
+                                {comment}
+                            </div>
                         </Tab>
                         <Tab eventKey={2} title="RELATED BOOKS" className="right-tab">
                             <RelatedBooks/>

@@ -3,10 +3,10 @@
     vertical-align: top;
 }
 .logo-container {
-    height: 155px;
-    width: 14%;
-    background-color: #85A64B;
-    border-bottom-right-radius: 25px;
+    height: 155px !important;
+    width: 14% !important;
+    background-color: #85A64B !important;
+    border-bottom-right-radius: 25px !important;
 }
 .navbar-items {
     height: 100px;
