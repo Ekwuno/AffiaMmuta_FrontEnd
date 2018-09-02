@@ -18,7 +18,11 @@ import logo from './Assets/Ikenga.png';
             <h2>What do you think about the Affia-Mmuta website?</h2>
             <p>Be sure to let us know down here</p>
             <Form>
-                <FormControl  componentClass="textarea" type="text" />
+                <Row>
+                    <FormControl type="text" className="review-name"  placeholder="Please, what is your name?" />
+                    <FormControl type="email" className="review-email" placeholder="Your e-mail address"/>
+                </Row>
+                <FormControl componentClass="textarea" type="text" placeholder="How was your experience on the app?" />
                 <Row>
                     <Button>Submit</Button>
                 </Row>

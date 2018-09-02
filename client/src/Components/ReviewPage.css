@@ -28,6 +28,9 @@
     width: 80% !important;
     height: 150px;
 }
+.review-jumbotron textarea::placeholder {
+    text-align: center;
+}
 .review-jumbotron button {
     width: 75%;
     background-color: #85A64B;
@@ -36,4 +39,23 @@
     font-family: 'Lato', sans-serif;
     font-size: 20px;
     margin-top: -5px;
+}
+.review-name {
+    width: 38% !important;
+}
+.review-email {
+    width: 38% !important;
+}
+.review-name::placeholder {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+.review-email::placeholder {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+.user-review-contents {
+    width: 75%;
+    height: auto;
+    margin: auto;
 }
