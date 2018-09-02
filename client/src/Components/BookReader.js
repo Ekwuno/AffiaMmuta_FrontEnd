@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { Document, Page } from 'react-pdf';
-import { Image, ProgressBar, Modal, Button } from 'react-bootstrap';
+import { Image, ProgressBar, Modal, Button, Navbar, NavItem, Nav } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import './BookReader.css';
 import comment from './Assets/Comment.png';
 import next from './Assets/Next.png';
 import previous from './Assets/Previous.png';
 import ikenga from './Assets/ikengaHead.png'
 import axios from 'axios';
+import library from './Assets/LibraryLogo.png';
+import cancel from './Assets/Cancel.png';
+import ReadNavbar from "./ReadNavbar";
 
 export default class BookReader extends Component {
     constructor(props, context) {
@@ -20,12 +24,19 @@ export default class BookReader extends Component {
             bookProgress: 0,
             show: false,
             comment: '',
-            bookLocation: ''
+            bookLocation: '',
+            bookTitle: '',
+            seekValue: ''
         }
     }
 
     handleClose() {
         this.setState({ show: false });
+    }
+    setSeekValue = event => {
+        this.setState({
+            seekValue: event.target.value
+        })
     }
 
     handleShow() {
@@ -59,11 +70,18 @@ export default class BookReader extends Component {
             this.pageProgress();
         }
     }
+    handleSeek = () => {
+        if (this.state.seekValue <= this.state.numPages) {
+            this.setState({ pageNumber: Number.parseInt(this.state.seekValue)   })
+            sessionStorage.setItem(this.props.match.params.id, this.state.seekValue);
+            this.pageProgress();
+        }
+    }
     increaseIkenga = () => {
         if (this.state.ikenga < 10) {
             this.setState({ ikenga: this.state.ikenga + 1 });
             this.showCounter();
-
+            axios.get(`https://affiammuta.herokuapp.com/profile/read/clap?book=${this.props.match.params.id}&ikenga=${Number.parseInt(this.state.ikenga)}`)
         }
 
         // console.log(this.state.ikenga);
@@ -94,6 +112,9 @@ export default class BookReader extends Component {
         } else if (e.key === "ArrowLeft") {
             this.handlePrevious();
         }
+        else if (e.key ==="Enter") {
+            this.handleSeek();
+        }
     }
     getComment = event => {
         this.setState({
@@ -106,7 +127,10 @@ export default class BookReader extends Component {
     componentDidMount() {
         axios.get(`https://affiammuta.herokuapp.com/books/book/${this.props.match.params.id}`)
             .then(res => {
-                this.setState({ bookLocation: res.data.book.bookContent });
+                this.setState({ 
+                    bookLocation: res.data.book.bookContent,
+                    bookTitle: res.data.book.title
+                 });
             })
     }
 
@@ -130,7 +154,32 @@ export default class BookReader extends Component {
 
         const { pageNumber, numPages } = this.state;
         return (
-            <div onKeyDown={this.handleKeyDown} className="reader-container">
+            <div>
+                <Navbar className="read-navbar">
+                    <Nav>
+                        <NavItem className="read-header-content-positon">
+                            <Link to="/library">
+                                <Button className="read-book-contents-btn" type="submit">
+                            <Image src={library} alt='Logo' className="library-in-image" />
+                                Library
+                            </Button>
+                            </Link>
+                        </NavItem>
+                        <NavItem className="read-header-text-positon">
+                                <h5>{this.state.bookTitle}</h5>
+                        </NavItem>
+                        <NavItem className="nav-cancel">
+                            <Link to="/library">
+                            <Button className="read-book-close" type="submit">
+                                Close
+                                <Image src={cancel} alt="cancel" />
+                            </Button>
+                            </Link>
+                        </NavItem>
+                    </Nav>
+                </Navbar>
+                <div onKeyDown={this.handleKeyDown} className="reader-container">
+                
                 <div className="readScreen">
                     <div>
                         <div className="previous-btn" onClick={this.handlePrevious}>
@@ -140,8 +189,9 @@ export default class BookReader extends Component {
                         <div className="ikenga-btn">
                             <Image src={ikenga} alt='Ikenga' className="ikenga" onClick={this.increaseIkenga} />
                         </div>
-                        <div className="comment-btn" onClick={this.handleShow}>
-                            <Image src={comment} alt='Comment' className="comment-image" />
+                        <div className="comment-btn" >
+                            <Image src={comment} alt='Comment' className="comment-image" onClick={this.handleShow}/>
+                            <input type="number" className="read-seek" onChange={this.setSeekValue}/> of {this.state.numPages}
                         </div>
                     </div>
                     <div>
@@ -169,8 +219,8 @@ export default class BookReader extends Component {
                         </Document>
                     </div>
                     <div className="bookProgress">
-                        <div className="pageNumber">Page {pageNumber} of {numPages} ({this.state.progress}%)</div>
-                        <ProgressBar className="book-bar" now={this.state.progress} />
+                        <div className="pageNumber">Page {pageNumber} of {numPages}</div>
+                        {/* <ProgressBar className="book-bar" now={this.state.progress} /> */}
                     </div>
                     <div>
                         <div className="next-btn" onClick={this.handleNext}>
@@ -180,6 +230,9 @@ export default class BookReader extends Component {
                 </div>
 
             </div>
+            </div>
+
+            
         );
     }
 }
