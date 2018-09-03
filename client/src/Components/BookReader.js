@@ -10,7 +10,6 @@ import ikenga from './Assets/ikengaHead.png'
 import axios from 'axios';
 import library from './Assets/LibraryLogo.png';
 import cancel from './Assets/Cancel.png';
-import ReadNavbar from "./ReadNavbar";
 
 export default class BookReader extends Component {
     constructor(props, context) {

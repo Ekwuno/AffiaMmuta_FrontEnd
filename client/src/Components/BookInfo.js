@@ -49,7 +49,7 @@ class BookInfo extends Component {
         if(sessionStorage.getItem("user")){
             const userId =sessionStorage.getItem("user");
             const book = this.props.match.params.id;
-            axios.get(`http://affiammuta.herokuapp.com/users/search?_id=${userId}`) 
+            axios.get(`https://affiammuta.herokuapp.com/users/search?_id=${userId}`) 
                 .then(res=>{
                     this.setState({email: res.data[0].email})
                     const PaystackPop = window.PaystackPop;
