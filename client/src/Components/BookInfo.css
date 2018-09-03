@@ -27,6 +27,9 @@
     margin: 0px 0px 10px 0px;
     color: #000000;
 }
+.book-des-title {
+    display: none;
+}
 .rate-title {
     font-family: 'Lato', sans-serif;
     font-style: normal;
@@ -115,13 +118,383 @@
 .book-tabs {
     width: 50%;
 }
-
-/* Responsiveness */
-@media only screen and (min-width : 321px) {
-
+strong {
+    color: #777
 }
 
+/* Responsiveness */
+@media screen and (min-width : 320px) {
+    .info-main {
+        padding: 10px 0px 0px 20px;
+        margin: 0px 0px 0px 0px;
+        width: 100%
+    }
+    .current-book {
+       display: block;
+       height: auto;
+       width: 100%
+    }
+    .read-cover {
+        height: 300px;
+        width: 70%;
+        margin: auto
+    }
+    .read-des h2 {
+        margin: 10px 0px 10px 10px;
+        color: #000000;
+        font-size: 30px;
+        text-align: center;
+    }
+    .rate-title {
+        font-size: 20px;
+        color: #000000;
+        text-align: center;
+    }
+    .rate-price {
+        font-size: 20px;
+        text-align: center;
+        margin: 20px 0px 10px 0px;
+    }
+    .button-rating {
+        margin: auto;
+        height: 45px;
+        width: 70%;
+        display: grid;
+        margin-bottom: 30px;
+        grid-template-columns: 100%;
+    }
+    .button-rating img {
+        display: none
+    }
+
+    .button-rating span {
+        display: none
+    }
+    .book-des {
+        text-align: center
+    }
+    .book-des-title {
+        display: inline;
+    }
+    .des-container {
+        width: 100%;
+        height: auto;
+    }
+    .book-tabs {
+        width: 100%
+    }
+}
+
+@media screen and (min-width : 400px) {
+    .read-cover {
+        width: 60%
+    }
+}
+@media screen and (min-width : 500px) {
+    .read-cover {
+        width: 50%
+    }
+}
+@media screen and (min-width : 600px) {
+    .current-book {
+        width: 80%;
+        margin: auto
+    }
+}
+@media screen and (min-width : 820px) {
+    .read-cover {
+        width: 60%;
+        height: 500px;
+    }
+}
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
-    
+@media only screen and (min-width : 953px) {
+    .info-main {
+        width: 80%;
+        margin: 50px 0px 0px 100px;
+    }
+
+    .current-book {
+        height: auto;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 40% 50%;
+        grid-gap: 5%;
+        margin: 0px 0px 70px 0px;
+    }
+
+    .read-cover {
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        height: 100%;
+        width: 100%;
+        margin: 0
+
+    }
+
+    .read-cover img {
+        height: inherit;
+        width: 100%;
+    }
+
+    .read-des h2 {
+        font-family: 'Lato', sans-serif;
+        font-size: 40px;
+        margin: 0px 0px 10px 0px;
+        color: #000000;
+        text-align: initial
+    }
+
+    .book-des-title {
+        display: none;
+    }
+    .rate-title {
+        text-align: initial;
+    }
+
+    .rate-price {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        line-height: normal;
+        font-size: 25px;
+        color: #7E9E47;
+        margin: 30px 0px 30px 0px;
+        text-align: initial;
+    }
+
+    .review-title {
+        height: 25px;
+        border-bottom: 1px solid black;
+    }
+
+    .review-title>h3 {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 14px;
+        color: #000000;
+        margin: 0px 0px 20px 0px;
+    }
+
+    .rating-review {
+        height: 12px;
+        width: 50%;
+        display: grid;
+        grid-template-columns: 40% 40%;
+        grid-gap: 10%;
+    }
+
+    .rating-review p {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .book-des {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 16px;
+        color: #000000;
+        margin: 20px 0px 0px 0px;
+        text-align: initial
+    }
+
+    .button-rating {
+        height: 45px;
+        width: 60%;
+        margin: 0px 0px 30px 0px;
+        display: grid;
+        grid-template-columns: 50% 23%;
+        grid-gap: 13%;
+    }
+    .button-rating span {
+        margin: -13px 0px 0px 20px;
+        background: #626A71;
+        display: block;
+        position: relative;
+    }
+    .button-rating img {
+        height: 80%;
+        width: 100%;
+        display: block;
+    }
+
+    .book-ratings {
+        display: inline;
+        padding-top: 2px;
+    }
+
+    .buy-book-btn {
+        height: 45px;
+        background: #85A64B;
+        border-radius: 8px;
+        border: none;
+        color: #FFFFFF;
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        font-size: 15px;
+    }
+
+    .book-tabs {
+        width: 50%;
+    }
+
+    strong {
+        color: #777
+    }
+}
+@media only screen and (min-width : 1400px) {
+    .info-main {
+        width: 80%;
+        margin: 50px 0px 0px 200px;
+    }
+
+    .current-book {
+        height: 400px;
+        width: 64%;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-gap: 2.5%;
+        margin: 0px 0px 70px 0px;
+    }
+
+    .read-cover {
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        height: inherit;
+    }
+
+    .read-cover img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .read-des {
+        margin: 0px 0px 0px 0px;
+    }
+
+    .read-des h2 {
+        font-family: 'Lato', sans-serif;
+        font-size: 40px;
+        margin: 0px 0px 10px 0px;
+        color: #000000;
+    }
+
+    .book-des-title {
+        display: none;
+    }
+
+    .rate-title {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        line-height: normal;
+        font-size: 20px;
+        color: #000000;
+    }
+
+    .rate-price {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        line-height: normal;
+        font-size: 25px;
+        color: #7E9E47;
+        margin: 30px 0px 30px 0px;
+    }
+
+    .review-title {
+        height: 25px;
+        border-bottom: 1px solid black;
+    }
+
+    .review-title>h3 {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 14px;
+        color: #000000;
+        margin: 0px 0px 20px 0px;
+    }
+
+    .rating-review {
+        height: 12px;
+        width: 50%;
+        display: grid;
+        grid-template-columns: 40% 40%;
+        grid-gap: 10%;
+    }
+
+    .rating-review p {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .book-des {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 16px;
+        color: #000000;
+        margin: 20px 0px 0px 0px;
+    }
+
+    .button-rating {
+        height: 45px;
+        width: 60%;
+        margin: 0px 0px 30px 0px;
+        display: grid;
+        grid-template-columns: 50% 23%;
+        grid-gap: 13%;
+    }
+
+    .button-rating img {
+        height: 80%;
+        width: 100%;
+    }
+
+    .button-rating span {
+        margin: -30px 0px 0px 30px;
+        background: #626A71;
+        height: 10px;
+        width: 10px;
+    }
+
+    .book-ratings {
+        display: inline;
+        padding-top: 2px;
+    }
+
+    .buy-book-btn {
+        height: 45px;
+        background: #85A64B;
+        border-radius: 8px;
+        border: none;
+        color: #FFFFFF;
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        font-size: 15px;
+    }
+
+    .book-tabs {
+        width: 50%;
+    }
+
+    strong {
+        color: #777
+    }
 }

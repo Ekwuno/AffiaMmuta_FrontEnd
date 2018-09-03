@@ -111,14 +111,14 @@ class BookInfo extends Component {
         }
         else {
             return (
-            <div className="info-main">
+                <div className="info-main">
                 <div className="current-book">
                     <div className="read-cover">
                         <img src={this.state.bookImage} alt='Logo' className="read-book-cover"/>
                     </div>
                     <div className="read-des">
                         <h2>{this.state.title}</h2>
-                        <p className="rate-title">{this.state.author}</p>
+                        <p className="rate-title">by <strong>{this.state.author}</strong></p>
                         <p className="rate-price">&#8358;{this.state.price}</p>
                         <div className="button-rating">
                                 <script src="https://js.paystack.co/v1/inline.js"></script>
@@ -128,7 +128,7 @@ class BookInfo extends Component {
                                 <Badge className="badge-rate">{this.state.ikenga}</Badge>
                             </div>
                         </div>
-                        <p className="book-des">{this.state.description}</p>
+                        <div className="des-container"> <p className="book-des"><strong className="book-des-title">Brief descripton: </strong>{this.state.description}Lorem ipsum dolor sit amet, movet iriure intellegebat nec an. Ut tantas ignota causae nec, no officiis insolens recusabo qui. Per scripta aliquid mnesarchum ut, tale tibique est ea, nec noster denique eu. Quem sanctus eos an. In tempor patrioque cum, ius homero ceteros delicatissimi ea. Ad eam mandamus adipiscing concludaturque. In nam civibus accumsan, vix illud liberavisse id, graeco doctus prompta nam ei.</p></div>
                     </div>
                 </div>
                 <div className="book-tabs">
@@ -144,6 +144,39 @@ class BookInfo extends Component {
                     </Tabs>
                 </div>
             </div>
+            // <div className="info-main">
+            //     <div className="current-book">
+            //         <div className="read-cover">
+            //             <img src={this.state.bookImage} alt='Logo' className="read-book-cover"/>
+            //         </div>
+            //         <div className="read-des">
+            //             <h2>{this.state.title}</h2>
+            //             <p className="rate-title">{this.state.author}</p>
+            //             <p className="rate-price">&#8358;{this.state.price}</p>
+            //             <div className="button-rating">
+            //                     <script src="https://js.paystack.co/v1/inline.js"></script>
+            //                     <button type="button" onClick={this.payWithPaystack} className="buy-book-btn"> Buy Now </button> 
+            //                 <div className="book-ratings">
+            //                     <img src={filled} alt="ratings" />
+            //                     <Badge className="badge-rate">{this.state.ikenga}</Badge>
+            //                 </div>
+            //             </div>
+            //             <p className="book-des">{this.state.description}</p>
+            //         </div>
+            //     </div>
+            //     <div className="book-tabs">
+            //         <Tabs defaultActiveKey={1} >
+            //             <Tab eventKey={1} title={"REVIEWS ("+this.state.commentCount+")"}>
+            //                 <div>
+            //                     {comment}
+            //                 </div>
+            //             </Tab>
+            //             <Tab eventKey={2} title="RELATED BOOKS" className="right-tab">
+            //                 <RelatedBooks/>
+            //             </Tab>
+            //         </Tabs>
+            //     </div>
+            // </div>
     );
         }
         
