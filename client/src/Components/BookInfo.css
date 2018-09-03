@@ -115,3 +115,13 @@
 .book-tabs {
     width: 50%;
 }
+
+/* Responsiveness */
+@media only screen and (min-width : 321px) {
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+    
+}
