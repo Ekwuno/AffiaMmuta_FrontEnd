@@ -6,19 +6,24 @@ import axios from "axios";
 import fbIcon from './Assets/TwitterLogo.png';
 import tIcon from './Assets/FbWhiteLogo.png';
 import filled from './Assets/IkengaFilled.png';
+import Loader from './Loader';
 
 
 
 export default class Library extends Component {
     state = {
-        userLibrary: []
+        userLibrary: [],
+        isLoadingLibrary: true  
     }
     
     componentDidMount(){
         const user = sessionStorage.getItem("user");
         axios.get(`https://affiammuta.herokuapp.com/profile/library?user=${user}`)
     .then(res=>{
-       this.setState({userLibrary: res.data.library.books});
+       this.setState({
+           userLibrary: res.data.library.books,
+           isLoadingLibrary: false
+        });
        console.log(res.data)
      })
     }
@@ -68,7 +73,13 @@ export default class Library extends Component {
                     </div>
                 </div>
     )
-    return (
+    if (this.state.isLoadingLibrary == true) {
+        return (
+            <Loader size="big"/>
+        )
+    }
+    else {
+        return (
         <div className="library-background">
             <div className="library-layout">
                 <div className="library-header">
@@ -77,6 +88,7 @@ export default class Library extends Component {
                 {userLibrary}
             </div>
         </div>
-    );
+        );
+    }
   }
 }
