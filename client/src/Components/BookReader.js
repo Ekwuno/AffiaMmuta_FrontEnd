@@ -156,14 +156,14 @@ export default class BookReader extends Component {
             <div>
                 <Navbar className="read-navbar">
                     <Nav>
-                        <NavItem className="read-header-content-positon">
+                        {/* <NavItem className="read-header-content-positon">
                             <Link to="/library">
                                 <Button className="read-book-contents-btn" type="submit">
                             <Image src={library} alt='Logo' className="library-in-image" />
                                 Library
                             </Button>
                             </Link>
-                        </NavItem>
+                        </NavItem> */}
                         <NavItem className="read-header-text-positon">
                                 <h5>{this.state.bookTitle}</h5>
                         </NavItem>
