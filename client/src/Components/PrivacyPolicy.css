@@ -127,8 +127,22 @@
     border-radius: 50%;
     position: relative;
     margin: auto;
-    background: url("./Assets/Osita.jpg");
+    background: url("./Assets/Ibe.jpg");
     background-size: 100% 100%;
+}
+.bimage1 {
+    background: url("./Assets/Ibe.jpg");
+    background-size: 100% 100%;
+}
+.bimage2 {
+    background: url("./Assets/Iheanyi.JPG");
+    background-size: 100% 100%;
+}
+.bimage3 {
+    background: url("./Assets/Nonso.jpg");
+    background-size: 100% 100%;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
 }
 .profile-description-container {
     width: 100%;

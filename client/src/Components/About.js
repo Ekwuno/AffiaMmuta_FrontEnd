@@ -31,24 +31,25 @@ import { Link } from 'react-router-dom';
           <h2>Our Team</h2>
           <div className="profiles">
             <div>
-              <div className="profile-image-container"></div>
+              <div className="profile-image-container bimage1"></div>
               <div className="profile-description-container">
-                <p>Ositadinma Nwangwu</p>
-                <h5>FOUNDER & CEO</h5>
+                <p>Ibe Ogele</p>
+                <h5>BACK-END WEB DEVELOPER</h5>
               </div>
             </div>
             <div>
-              <div className="profile-image-container"></div>
+              <div className="profile-image-container bimage2">
+              </div>
               <div className="profile-description-container">
-                <p>Ositadinma Nwangwu</p>
-                <h5>FOUNDER & CEO</h5>
+                <p>Iheanyi Ihekweaba</p>
+                <h5>FRONT-END WEB DEVELOPER</h5>
               </div>
             </div>
             <div>
-              <div className="profile-image-container"></div>
+              <div className="profile-image-container bimage3"></div>
               <div className="profile-description-container">
-                <p>Ositadinma Nwangwu</p>
-                <h5>FOUNDER & CEO</h5>
+                <p>Churchill Emmanuel</p>
+                <h5>BACK-END WEB DEVELOPER</h5>
               </div>
             </div>
           </div>
