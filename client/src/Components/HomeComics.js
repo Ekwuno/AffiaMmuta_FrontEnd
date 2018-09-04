@@ -2,19 +2,24 @@ import React, { Component } from 'react';
 import { Col, Row, Image, Grid, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loader from './Loader';
 
 
 export default class HomeComics extends Component {
     constructor(){
         super();
         this.state = {
-        homeComics: []
+        homeComics: [],
+        isLoading: true
         }
     }
     componentDidMount(){
         axios.get("https://affiammuta.herokuapp.com/books/Comics?count=5")
     .then(res=>{
-       this.setState({homeComics: res.data});
+       this.setState({
+            homeComics: res.data,
+            isLoading: false
+        });
        
      })
     }
@@ -32,8 +37,8 @@ export default class HomeComics extends Component {
             </Row>
             <Row className="books-bottom" >
                 <Col className="book-title" >
-                <span className= "title">{item.title}</span>
-                <span className="author" >{item.author}</span>
+                <span className= "title">{item.title.length<=20 ? item.title:item.title.slice(0,20)+' ...'}</span>
+                <span className="author" >{item.author.length<=20 ? item.author:item.author.slice(0,20)+' ...'}</span>
                 <span className="price" >&#8358;{item.price}</span>
                 </Col>
                 <Col className="book-price" >
@@ -45,14 +50,23 @@ export default class HomeComics extends Component {
             </Col>
         </Link>
         )
-    return (
-        <div>
-            <Grid className= "grid">
-                <Row className= "show-grid text-center">
-                {homeComics}          
-                </Row>
-            </Grid>
-        </div>
-    );
+        
+        if(this.state.isLoading==true) {
+            return (
+                <Loader size="big"/>
+            )
+        }
+        else {
+            return (
+                <div>
+                <Grid className= "grid">
+                    <Row className= "show-grid text-center">
+                    {homeComics}          
+                    </Row>
+                </Grid>
+            </div>
+            )
+            
+        }
   }
 }

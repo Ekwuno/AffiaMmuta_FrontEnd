@@ -4,32 +4,46 @@ import { Col, Row, Image, Grid, Button, Jumbotron } from "react-bootstrap";
 import udala from './Assets/UnderTheUdalaTree.jpg';
 import './SearchPage.css';
 import axios from "axios";
+import Loader from './Loader';
 
 
 export default class SearchPage extends Component {
-
+    state = {
+        searchResults: [],
+        isSearching: true
+    }
+    
+    componentDidMount() {
+        const { search } = this.props.match.params;
+        axios.get(`https://affiammuta.herokuapp.com/books/search?title=${search}`)
+        .then(res => {
+            this.setState({
+                searchResults: res.data,
+                isSearching: false
+            })
+            console.log(res.data)
+        })
+    }
+     componentDidUpdate() {
+        const { search } = this.props.match.params;
+        axios.get(`https://affiammuta.herokuapp.com/books/search?title=${search}`)
+        .then(res => {
+            this.setState({searchResults: res.data})
+        })
+    }
     render() {
-
-            
-    return (
-        <div>
-            <div className="search-header">
-                <h1>Search Results</h1>
-                <Jumbotron className="search-description"> <p>You searched for the fall of Zazu- 5 items found </p></Jumbotron>
-            </div>
-            <Grid className= "grid">
-                <Row className= "show-grid text-center">
-                    <Col xs={12} sm={4} className= "wrapper">
+        const searchResults = this.state.searchResults.map(item=> 
+            <Col xs={12} sm={4} className= "wrapper">
                         <Row className="books-top" >
                             <Col className="image-container" >
-                            <Image src={udala} alt='Logo' className="books-jpg" />
+                            <Image src={item.bookImage} alt='Logo' className="books-jpg" />
                             </Col>
                         </Row>
                         <Row className="books-bottom" >
                             <Col className="book-title" >
-                            <span className= "title">The fall of Zazu</span>
-                            <span className="author" >Chinonso Williams</span>
-                            <span className="price" >&#8358;3000</span>
+                            <span className= "title">{item.author}</span>
+                            <span className="author" >{item.title}</span>
+                            <span className="price" >&#8358;{item.price}</span>
                             </Col>
                             <Col className="book-price" >
                             <Button className="book-buttons" type="submit">
@@ -38,85 +52,28 @@ export default class SearchPage extends Component {
                             </Col>
                         </Row>
                     </Col>    
-                    <Col xs={12} sm={4} className= "wrapper">
-                        <Row className="books-top" >
-                            <Col className="image-container" >
-                            <Image src={udala} alt='Logo' className="books-jpg" />
-                            </Col>
+        )
+        if (this.state.isSearching == true ) {
+            console.log(this.state.isSearching)
+             return (
+                 <Loader size="big"/>
+             )
+        } 
+        else {
+            return (
+                <div>
+                    <div className="search-header">
+                        <h1>Search Results</h1>
+                        <Jumbotron className="search-description"> <p>You searched for <strong>{this.props.match.params.search}</strong>- {this.state.searchResults.length} items found </p></Jumbotron>
+                    </div>
+                    <Grid className= "grid">
+                        <Row className= "show-grid text-center">
+                            {searchResults}
                         </Row>
-                        <Row className="books-bottom" >
-                            <Col className="book-title" >
-                            <span className= "title">The fall of Zazu</span>
-                            <span className="author" >Chinonso Williams</span>
-                            <span className="price" >&#8358;3000</span>
-                            </Col>
-                            <Col className="book-price" >
-                            <Button className="book-buttons" type="submit">
-                                <p>Buy</p>
-                            </Button>
-                            </Col>
-                        </Row>
-                    </Col>
-                    <Col xs={12} sm={4} className= "wrapper">
-                        <Row className="books-top" >
-                            <Col className="image-container" >
-                            <Image src={udala} alt='Logo' className="books-jpg" />
-                            </Col>
-                        </Row>
-                        <Row className="books-bottom" >
-                            <Col className="book-title" >
-                            <span className= "title">The fall of Zazu</span>
-                            <span className="author" >Chinonso Williams</span>
-                            <span className="price" >&#8358;3000</span>
-                            </Col>
-                            <Col className="book-price" >
-                            <Button className="book-buttons" type="submit">
-                                <p>Buy</p>
-                            </Button>
-                            </Col>
-                        </Row>
-                    </Col>         
-                    <Col xs={12} sm={4} className= "wrapper">
-                        <Row className="books-top" >
-                            <Col className="image-container" >
-                            <Image src={udala} alt='Logo' className="books-jpg" />
-                            </Col>
-                        </Row>
-                        <Row className="books-bottom" >
-                            <Col className="book-title" >
-                            <span className= "title">The fall of Zazu</span>
-                            <span className="author" >Chinonso Williams</span>
-                            <span className="price" >&#8358;3000</span>
-                            </Col>
-                            <Col className="book-price" >
-                            <Button className="book-buttons" type="submit">
-                                <p>Buy</p>
-                            </Button>
-                            </Col>
-                        </Row>
-                    </Col>         
-                    <Col xs={12} sm={4} className= "wrapper">
-                        <Row className="books-top" >
-                            <Col className="image-container" >
-                            <Image src={udala} alt='Logo' className="books-jpg" />
-                            </Col>
-                        </Row>
-                        <Row className="books-bottom" >
-                            <Col className="book-title" >
-                            <span className= "title">The fall of Zazu</span>
-                            <span className="author" >Chinonso Williams</span>
-                            <span className="price" >&#8358;3000</span>
-                            </Col>
-                            <Col className="book-price" >
-                            <Button className="book-buttons" type="submit">
-                                <p>Buy</p>
-                            </Button>
-                            </Col>
-                        </Row>
-                    </Col>                       
-                </Row>
-            </Grid>
-        </div>
-    );
+                    </Grid>
+                </div>
+            );
+        }  
+    
   }
 }

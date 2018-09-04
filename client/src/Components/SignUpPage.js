@@ -7,6 +7,7 @@ import logo from './Assets/Ikenga.png';
 import user from './Assets/LogIn.png';
 import email from './Assets/EmailLogo.png';
 import lock from './Assets/Padlock.png';
+import Loader from './Loader';
 
 
 
@@ -16,6 +17,7 @@ export default class SignUpPage extends Component {
         email: "",
         password: "",
         confirmPassword: "",
+        isSigningUp: false
     }
 
     handleChange = event => {
@@ -24,6 +26,7 @@ export default class SignUpPage extends Component {
         });
     }
     handleSubmit = event => {
+        this.setState({isSigningUp: true}) 
         event.preventDefault();
         const data = {
             username: this.state.username,
@@ -37,7 +40,7 @@ export default class SignUpPage extends Component {
         else(
             axios
             .post("https://affiammuta.herokuapp.com/users/create", data)
-            .then(res =>{ 
+            .then(res =>{
                 if (res.data.message==="user created successfully"){
                     this.props.history.push("/login")
                 }
@@ -49,7 +52,75 @@ export default class SignUpPage extends Component {
     }
     
     render() {
-        return (
+        if (this.state.isSigningUp == true) {
+            return (
+                <div className="sign-up-background" >
+                <Jumbotron className= "jumbo">
+                    <img src={logo} alt='Logo'/>
+                    <h3>Let's setup your account</h3>
+                    <Form onSubmit= {this.handleSubmit}>
+                        <FormGroup className="style-formgroups" >
+                            <Row><p className="p">Pick a username</p></Row>
+                            <Row className="input-rows">
+
+                                <InputGroup className="login-input-group">
+                                    <InputGroup.Addon>
+                                        <img src={user} alt='Logo' className="form-title-logo"/>
+                                    </InputGroup.Addon>
+                                    <FormControl className="input-styles" id="username" onChange= {this.handleChange}  />
+                                </InputGroup>
+                            </Row>
+                        </FormGroup>
+
+                        <FormGroup className="style-formgroups">
+                            <Row><p>Enter your email</p></Row>
+                            <Row className="input-rows">
+                                <InputGroup className="login-input-group">
+                                    <InputGroup.Addon>
+                                        <img src={email} alt='Logo' className="form-title-logo"/>
+                                    </InputGroup.Addon>
+                                    <FormControl className="input-styles" id="email" onChange= {this.handleChange}/>
+                                </InputGroup>
+                            </Row>
+                        </FormGroup>
+
+                        <FormGroup className="style-formgroups">
+                            <Row><p>Pick a password</p></Row>
+                            <Row className="input-rows">
+                                <InputGroup className="login-input-group">
+                                    <InputGroup.Addon>
+                                        <img src={lock} alt='Logo' className="form-title-logo"/>
+                                    </InputGroup.Addon>
+                                    <FormControl className="input-styles" id= "password" type= "password" onChange= {this.handleChange}/>
+                                </InputGroup>
+                            </Row>
+                        </FormGroup>
+
+                        <FormGroup className="style-formgroups">
+                            
+                            <Row><p>Confirm your password</p></Row>
+                            <Row className="input-rows">
+                                <InputGroup className="login-input-group">
+                                    <InputGroup.Addon>
+                                        <img src={lock} alt='Logo' className="form-title-logo"/>
+                                    </InputGroup.Addon>
+                                    <FormControl className="input-styles" id="confirmPassword" type= "password" onChange= {this.handleChange}/>
+                                </InputGroup>
+                            </Row>
+                        </FormGroup>
+                        <FormGroup className="style-formgroups">
+                            <Row>
+                                <Button className="btn btn-success btn-get-started" type="submit">Let's Begin <Loader size="small"/></Button>
+                            </Row>
+                        </FormGroup>
+                        <p id="log-in" >Already got an account? <Link to="/login">Sign In</Link></p>
+                    </Form>
+                </Jumbotron>
+        </div>
+            )
+        }
+        else {
+            return (
             <div className="sign-up-background" >
                 <Jumbotron className= "jumbo">
                     <img src={logo} alt='Logo'/>
@@ -113,6 +184,8 @@ export default class SignUpPage extends Component {
                     </Form>
                 </Jumbotron>
         </div>
-    )
+        )
+    }
+        
   }
 }

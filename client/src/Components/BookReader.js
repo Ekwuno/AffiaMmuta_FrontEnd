@@ -188,8 +188,8 @@ export default class BookReader extends Component {
                         <div className="ikenga-btn">
                             <Image src={ikenga} alt='Ikenga' className="ikenga" onClick={this.increaseIkenga} />
                         </div>
-                        <div className="comment-btn" >
-                            <Image src={comment} alt='Comment' className="comment-image" onClick={this.handleShow}/>
+                        <div className="comment-btn">
+                            <Image src={comment} alt='Comment' className="comment-image" onClick={this.handleShow} />
                             <input type="number" className="read-seek" onChange={this.setSeekValue}/> of {this.state.numPages}
                         </div>
                     </div>
@@ -213,7 +213,8 @@ export default class BookReader extends Component {
 
                         <Document
                             file={this.state.bookLocation}
-                            onLoadSuccess={this.onDocumentLoad}>
+                            onLoadSuccess={this.onDocumentLoad}
+                            scale={10.0}>
                             <Page pageNumber={pageNumber} />
                         </Document>
                     </div>

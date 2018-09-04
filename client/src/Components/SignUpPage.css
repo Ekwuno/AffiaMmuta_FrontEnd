@@ -57,6 +57,7 @@
 .btn-get-started {
     background-color: #85A64B;
     background-image: none;
+    display: inline-block;
     border: #85A64B;
     width: 217px;
     height: 40px;

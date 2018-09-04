@@ -15,6 +15,7 @@
     display: none !important;
 } */
 
+<<<<<<< HEAD
 .react-pdf__Page__textContent{
     display: none !important;
 }
@@ -24,6 +25,9 @@
 }
 
 .readScreen {
+=======
+.readScreen{
+>>>>>>> 8942b94773791389b366a8f6760aff2165ca4dba
     width: 100% !important;
     height: 100% !important;
     background: #fff !important;

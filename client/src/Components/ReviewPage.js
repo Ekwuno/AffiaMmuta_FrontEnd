@@ -43,12 +43,13 @@ class ReviewPage extends Component {
         </InfoBackground>
         <Jumbotron className="review-jumbotron">
             <Image src={logo} alt='Logo'/>
-            <h2>What do you think about the Affia-Mmuta website?</h2>
-            <p>Be sure to let us know down here</p>
+            <h2 className="smallscreen-message">Drop your details and reviews here</h2>
+            <h2 className="bigscreen-message">What do you think about the Affia-Mmuta website?</h2>
+            <p className="bigscreen-message">Be sure to let us know down here</p>
             <Form>
                 <Row>
-                    <FormControl type="text" className="review-name" id="reviewName" placeholder="Please, what is your name?" onChange={this.handleChange} />
-                    <FormControl type="email" className="review-email" id="reviewEmail" placeholder="Your e-mail address" onChange={this.handleChange}/>
+                    <FormControl type="text" className="review-name" id="reviewName" placeholder="Name..." onChange={this.handleChange} />
+                    <FormControl type="email" className="review-email" id="reviewEmail" placeholder="E-mai..." onChange={this.handleChange}/>
                 </Row>
                 <FormControl componentClass="textarea" type="text" placeholder="How was your experience on the app?" id="reviewBody" onChange={this.handleChange} />
                 <Row>

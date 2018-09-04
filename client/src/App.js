@@ -49,7 +49,7 @@ class App extends Component {
             <AppRoute exact path="/about" Layout={MainLayout} Component={About} />
             <AppRoute exact path="/review" Layout={MainLayout} Component={ReviewPage} />
             <AppRoute exact path="/review/read" Layout={MainLayout} Component={GetReviews} />
-            <AppRoute exact path="/search" Layout={MainLayout} Component={SearchPage} />
+            <AppRoute exact path="/search/:search" Layout={MainLayout} Component={SearchPage} />
           </div>
       </Router>
     );

@@ -6,7 +6,6 @@ import search from './Assets/Search.png';
 import logIn from './Assets/LogIn.png';
 import market from './Assets/Market.png';
 import library from './Assets/LibraryLogo.png';
-import axios from "axios";
 import './SignUpPage.css';
 import './CustomNavbar.css';
 
@@ -23,12 +22,10 @@ import './CustomNavbar.css';
     }
 
     handleSearch = event => {
-      this.setState({search : event.target.value})
+      this.setState({search : event.target.value});
+      console.log(this.state.search)
     }
-
-    handleSubmit = event => {
-      axios.get(`https://affiammuta.herokuapp.com/books/search?title=${this.state.search}`)
-    }
+    
   render() {
     if (sessionStorage.getItem("user")){
       return(
@@ -59,10 +56,15 @@ import './CustomNavbar.css';
                   </NavItem>
                   <Navbar.Form>
                   <FormGroup>
-                    <FormControl type="text" id="search" placeholder="I am looking for..." className="search second-search" />
-                  <Button type="submit" className= "button">
-                    <Image src={search} alt='Logo'/>
-                  </Button>
+                    <FormControl type="text" id="search" placeholder="I am looking for..." className="search second-search" onChange={this.handleSearch} />
+                  <Link to={{
+                    pathname: `/search/${this.state.search}`,
+                    state: {search: this.state.search}
+                    }}>
+                    <Button type="submit" className= "button" >
+                      <Image src={search} alt='Logo'/>
+                    </Button>
+                  </Link>
                   </FormGroup>
                   <DropdownButton 
                     bsStyle
