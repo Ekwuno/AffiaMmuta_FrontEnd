@@ -6,19 +6,24 @@ import axios from "axios";
 import fbIcon from './Assets/TwitterLogo.png';
 import tIcon from './Assets/FbWhiteLogo.png';
 import filled from './Assets/IkengaFilled.png';
+import Loader from './Loader';
 
 
 
 export default class Library extends Component {
     state = {
-        userLibrary: []
+        userLibrary: [],
+        isLoadingLibrary: true  
     }
     
     componentDidMount(){
         const user = sessionStorage.getItem("user");
         axios.get(`https://affiammuta.herokuapp.com/profile/library?user=${user}`)
     .then(res=>{
-       this.setState({userLibrary: res.data.library.books});
+       this.setState({
+           userLibrary: res.data.library.books,
+           isLoadingLibrary: false
+        });
        console.log(res.data)
      })
     }
@@ -32,12 +37,11 @@ export default class Library extends Component {
                             </div>
                             <div className="library-book-des">
                                 <p className="library-book-name">{item.title}</p>
-                                <p className="library-book-author">{item.author}</p>
+                                <p className="library-book-author">by <strong>{item.author}</strong></p>
                                 <div className="ikenga-container">
                                     <Image src={filled} alt="ratings" />
                                     <Badge className="badge-rate">{item.ikenga}</Badge>
                                 </div>
-                                <p className="library-book-date">20/10/2018</p>
                                 <div className="button-connect">
                                     <div>
                                     <Link to={{
@@ -69,7 +73,13 @@ export default class Library extends Component {
                     </div>
                 </div>
     )
-    return (
+    if (this.state.isLoadingLibrary == true) {
+        return (
+            <Loader size="big"/>
+        )
+    }
+    else {
+        return (
         <div className="library-background">
             <div className="library-layout">
                 <div className="library-header">
@@ -78,6 +88,7 @@ export default class Library extends Component {
                 {userLibrary}
             </div>
         </div>
-    );
+        );
+    }
   }
 }
