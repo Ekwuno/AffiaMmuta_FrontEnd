@@ -1,4 +1,4 @@
-/* html{
+ html{
     padding: 0;
     margin: 0;
  }
@@ -74,19 +74,26 @@
 
  @media (min-width: 320px){
     .footer{
-        height: 650px;
+        height: 681px;
+    }
+    .fb-twitter{
+        display: none;
+    }
+    .footer-bottom {
+        height: 50px;
+        margin: 384px 0px 0px -17px;
+    }
+    .footer-bottom p {
+        margin: 27px 0px 0px 64px;
     }
  }
  @media (min-width: 540px){
  
-    .footer{
-        height: 400px;
-    }
  
     .footer-logo {
         width: 170px;
         height: 42.74px;
-        margin: -139px 0px 0px 40px;
+        margin: 58px 0px 0px 0px;
     }
  
     .footer-middle{
@@ -95,8 +102,8 @@
  
     .footer-bottom {
         height: 50px;
-        margin-top: 75px;
-    }
+        margin-top: 400px;
+    }    
  
     .fb-twitter {
         margin: -12px 0px 0px 0px;
@@ -105,19 +112,12 @@
     .footer-rows{
         margin-left: -55px;
     }
- 
-    @media (min-width: 540px){
- 
-
-    }
- }
- 
- 
+}
  
  @media (min-width: 750px){
 
     .footer{
-        height: 430px;
+        height: 513px;
     }
     .footer-contents {
         width: 330px;
@@ -134,7 +134,9 @@
     .footer-contents {
         width: 386px;
     }
- 
+    .footer-icon{
+        margin: -20px 0px 0px 130px;
+    }
     .footer-logo {
         width: 170px;
         height: 42.74px;
@@ -156,6 +158,9 @@
  }
  
  @media (min-width: 880px){
+    .footer {
+        height: 460px;
+    }
     .footer-contents {
         width: 300px !important;
         height: 100%;
@@ -165,12 +170,12 @@
     .footer-icon {
         height: 146px;
         width: 260px;
-        margin: -121px 0px 0px;
+        margin: -81px 28px 0px;
     }
  
     .footer-bottom {
         height: 50px;
-        margin-top: 116px;
+        margin-top: 215px;
     }
  
     .fb-twitter {
@@ -192,6 +197,15 @@
         height: 100%;
         padding: 30px 0px 0px 20px;
     }
+    .fData{
+        margin-top: -70px;
+    }
+    .footer-bottom {
+        margin-top: 8%;
+    }
+    .footer-icon {
+        margin: -122px 28px 0px;
+    }
  }
  
  @media (min-width: 1200px){
@@ -206,17 +220,33 @@
  }
  
  @media (min-width: 1291px){
-    .footer{
-        height: 400px;
+    .footer {
+        height: 264px;
+    }
+    .footer-icon {
+        height: 125px;
+        width: 235px;
+        margin: -66px 21px 0px;
+    }
+    .footer-bottom p {
+        margin: 79px 0px 0px 64px;
+        margin-left: -15px;
+    }
+    .footer-bottom {
+        height: 50px;
+        margin: 26px 0px 0px 0px;
     }
     .footer-contents {
-        min-width: 347px !important;
+        min-width: 25% !important;
         height: 100%;
         padding: 30px 0px 0px 0;
     }
- } */
+    .fb-twitter {
+        display: inline-block;
+     }
+ }
 
- .footer {
+ /* .footer {
     margin-top: 20px;
     margin-bottom: -20px ;
     height: 200px;
@@ -308,7 +338,7 @@
  }
 
     /* Responsiveness */
-
+/*
 @media (max-width: 1130px){
     .fb-twitter img {
         width: 25px;
@@ -321,4 +351,4 @@
     .footer-bottom-contents {
         background: #626A71;
     }
-}
+} */
