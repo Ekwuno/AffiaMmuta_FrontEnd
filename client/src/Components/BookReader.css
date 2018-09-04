@@ -15,13 +15,21 @@
     display: none !important;
 } */
 
-.readScreen{
-    width: 50% !important;
+.react-pdf__Page__textContent{
+    display: none !important;
+}
+
+.react-pdf__Page__textContent > div{
+    display: none !important;
+}
+
+.readScreen {
+    width: 100% !important;
     height: 100% !important;
     background: #fff !important;
     margin: auto;
     display: grid;
-    grid-template-columns: 20% 60% 20%; 
+    grid-template-columns: 10% 80% 10%;
 }
 .read-seek {
     width: 40px !important;
@@ -106,12 +114,14 @@ canvas {
 
 .comment-btn{
     width: 70px;
-    height: 70px;
+    height: 100px;
     margin-left: 1.4%;
     margin-top: 29%;
     border-radius: 50px;
     position: fixed;
+    border: 1px solid #000;
 }
+
 .ikenga{
     width: 47px;
     height: 35.94px;
