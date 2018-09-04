@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import { Row, Grid, Col, Jumbotron, Image, Button } from "react-bootstrap";
+import { Row, Grid, Col, Jumbotron, Image } from "react-bootstrap";
 import shelf from "./Assets/Shelf.png";
 import './HomeBody.css';
 import HomePopular from './HomePopular';
 import HomeNew from './HomeNew';
 import HomeComics from './HomeComics';
-// import tortoise from './Assets/FlyingTortoise.jpg';
-// import idioms from './Assets/IgboIdioms.gif';
-// import okowa from './Assets/Okowaokwu.jpg';
-// import phoenix from './Assets/BookOfPhoenix.jpg';
-// import concubine from './Assets/TheConcubine.jpg';
-// import fisherman from './Assets/TheFisherman.jpg';
-// import udala from './Assets/UnderTheUdalaTree.jpg';
-// import cart from './Assets/CustomCart.png';
 
 
   export default class HomeBody extends Component {
