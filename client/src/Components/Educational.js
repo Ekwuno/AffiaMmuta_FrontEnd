@@ -2,37 +2,32 @@ import React, { Component } from 'react';
 import { Col, Row, Image, Grid, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Loader from './Loader';
 
 
-export default class HomeComics extends Component {
+export default class Educational extends Component {
     constructor(){
         super();
         this.state = {
-        homeComics: [],
-        isLoading: true
+        mostRead: []
         }
     }
     componentDidMount(){
-        axios.get("https://affiammuta.herokuapp.com/books/Comics?count=5")
+        axios.get("https://affiammuta.herokuapp.com/books/Educational")
     .then(res=>{
-       this.setState({
-            homeComics: res.data,
-            isLoading: false
-        });
+       this.setState({mostRead: res.data});
        
-     })
+    })
     }
     render() {
-        const homeComics = this.state.homeComics.map(item=>
+        const mostRead = this.state.mostRead.map(item=>
         <Link to={{
             pathname:`/book/${item._id}`,
-            state: {homePopular: item._id}
+            state: {mostRead: item._id}
             }}>
             <Col xs={12} sm={4} className= "wrapper">
             <Row className="books-top" >
                 <Col className="image-container" >
-                <Image src={item.bookImage} alt='No image' className="books-jpg" />
+                <Image src={item.bookImage} alt='Logo' className="books-jpg" />
                 </Col>
             </Row>
             <Row className="books-bottom" >
@@ -50,23 +45,14 @@ export default class HomeComics extends Component {
             </Col>
         </Link>
         )
-        
-        if(this.state.isLoading==true) {
-            return (
-                <Loader size="big"/>
-            )
-        }
-        else {
-            return (
-                <div>
-                <Grid className= "grid">
-                    <Row className= "show-grid text-center">
-                    {homeComics}          
-                    </Row>
-                </Grid>
-            </div>
-            )
-            
-        }
+    return (
+        <div>
+            <Grid className= "grid">
+                <Row className= "show-grid text-center">
+                {mostRead}          
+                </Row>
+            </Grid>
+        </div>
+    );
   }
 }
