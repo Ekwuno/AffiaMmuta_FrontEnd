@@ -32,12 +32,11 @@ export default class Library extends Component {
                             </div>
                             <div className="library-book-des">
                                 <p className="library-book-name">{item.title}</p>
-                                <p className="library-book-author">{item.author}</p>
+                                <p className="library-book-author">by <strong>{item.author}</strong></p>
                                 <div className="ikenga-container">
                                     <Image src={filled} alt="ratings" />
                                     <Badge className="badge-rate">{item.ikenga}</Badge>
                                 </div>
-                                <p className="library-book-date">20/10/2018</p>
                                 <div className="button-connect">
                                     <div>
                                     <Link to={{
