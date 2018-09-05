@@ -192,8 +192,8 @@ export default class BookReader extends Component {
                             <div className="ikenga-btn">
                                 <Image src={ikenga} alt='Ikenga' className="ikenga" onClick={this.increaseIkenga} />
                             </div>
-                            <div className="comment-btn">
-                                <Image src={comment} alt='Comment' className="comment-image" onClick={this.handleShow} />
+                            <div className="comment-btn" onClick={this.handleShow}>
+                                <Image src={comment} alt='Comment' className="comment-image"  />
                             </div>
                             <div className="seeker"><input type="number" className="read-seek" onChange={this.setSeekValue} /> of {this.state.numPages}</div>
                         </div>
