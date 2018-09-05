@@ -24,34 +24,12 @@ import { Link } from 'react-router-dom';
             <p>AffiaMmuta is an edutech startup committed to massively increasing
                Igbo literacy in African diaspora using technology. We are a group of 
                people using innovative technology to help children learn Igbo language
-                with books .and videos.</p>
+                with books and videos.</p>
           </div>
         </div>
         <div className="our-team-container">
           <h2>Our Team</h2>
           <div className="profiles">
-            <div>
-              <div className="profile-image-container bimage1"></div>
-              <div className="profile-description-container">
-                <p>Ibe Ogele</p>
-                <h5>BACK-END WEB DEVELOPER</h5>
-              </div>
-            </div>
-            <div>
-              <div className="profile-image-container bimage2">
-              </div>
-              <div className="profile-description-container">
-                <p>Iheanyi Ihekweaba</p>
-                <h5>FRONT-END WEB DEVELOPER</h5>
-              </div>
-            </div>
-            <div>
-              <div className="profile-image-container bimage3"></div>
-              <div className="profile-description-container">
-                <p>Churchill Emmanuel</p>
-                <h5>BACK-END WEB DEVELOPER</h5>
-              </div>
-            </div>
           </div>
         </div>
         <div className="location">
