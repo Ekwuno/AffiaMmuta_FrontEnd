@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Col, Row, Image, Grid, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import cart from './Assets/CustomCart.png';
 
 
 export default class Recent extends Component {
