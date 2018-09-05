@@ -2,7 +2,6 @@ html, body{
     margin: 0;
     padding: 0;
 }
-
 .general-navbar {
     background-image: none;
     height: 100px;
@@ -17,6 +16,9 @@ html, body{
 }
 img {
     z-index: 1;
+}
+.search-nav {
+    margin-bottom: -42px !important
 }
 .buttons {
     background-color: #85A64B;
@@ -68,6 +70,7 @@ img {
 }
 .general-navbar-nav {
     min-width: auto;
+    width: 65% !important;
 }
 .search {
     width: 250px;
@@ -118,22 +121,25 @@ img {
     width: 43px;
     background: #626A71;
     border-radius: 50%;
-    margin: 0px 0px -10px 80px
+    margin: 0px 0px -80px 40px !important;
 }
 #dropdown-user img {
     height: 100%;
     width: 25px;
     margin: 0px 5px 0px -3px;
 }
-
     /*Responsiveness */
-
 @media (min-width: 320px){
     .form-control {
         width: 146px !important;
     }
+    #dropdown-user {
+        margin: 0px 0px 0px 250px !important
+    }
 }
+@media (min-width: 668px) {
 
+}
 @media (min-width: 768px){
     .navbar-form {
         width: 547px;
@@ -165,10 +171,10 @@ img {
         margin-left: -20px;
     }
     #dropdown-user {
-        margin: 0px 0px -20px 25px;
+        margin: -3px 5px 0px 353px !important;
+        display: none;
     }
 }
-
 @media (min-width: 1127px){
     .navbar-form {
     width: 719px;
@@ -180,14 +186,14 @@ img {
         width: 250px !important;
     }
     #dropdown-user {
-        margin: 0px 0px -20px 48px;
+       margin: -3px 5px 0px 353px !important;
+        /* display: none; */
     }
     .navbar-right {
         float: right!important;
         margin-right: -65px;
     }
 }
-
 @media (min-width: 1200px){
     .navbar-form {
         width: 779px;
@@ -199,9 +205,12 @@ img {
     .search {
         width: 250px !important;
     }
+    #dropdown-user {
+        display: block;
+        margin: -3px 5px 0px 353px !important;
+    }
     #dropdown-user img {
         height: 100%;
         width: 25px;
-        margin: 0px 5px 0px -3px;
     }
 }
