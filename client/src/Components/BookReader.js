@@ -8,8 +8,8 @@ import next from './Assets/Next.png';
 import previous from './Assets/Previous.png';
 import ikenga from './Assets/ikengaHead.png'
 import axios from 'axios';
-import library from './Assets/LibraryLogo.png';
 import cancel from './Assets/Cancel.png';
+import Loader from './Loader';
 
 export default class BookReader extends Component {
     constructor(props, context) {
@@ -26,7 +26,8 @@ export default class BookReader extends Component {
             bookLocation: '',
             bookTitle: '',
             seekValue: '',
-            bookAuthor: ''
+            bookAuthor: '',
+            isOpeningBook: true
         }
     }
 
@@ -71,7 +72,7 @@ export default class BookReader extends Component {
             this.pageProgress();
         }
     }
-    handleSeek = () => {
+    handleSeek = () => {        
         if (this.state.seekValue <= this.state.numPages) {
             this.setState({ pageNumber: Number.parseInt(this.state.seekValue) })
             sessionStorage.setItem(this.props.match.params.id, this.state.seekValue);
@@ -131,7 +132,8 @@ export default class BookReader extends Component {
         this.setState({
             bookLocation: res.data.book.bookContent,
             bookTitle: res.data.book.title,
-            bookAuthor: res.data.book.author
+            bookAuthor: res.data.book.author,
+            isOpeningBook: false
         });
         })
     }
@@ -155,7 +157,13 @@ export default class BookReader extends Component {
     render() {
 
         const { pageNumber, numPages } = this.state;
-        return (
+        if(this.state.isOpeningBook == true) {
+            return (
+                <Loader size= "big"/>
+            );
+        }
+        else {
+            return (
             <div>
                 <Navbar className="read-navbar">
                     <Nav>
@@ -238,5 +246,6 @@ export default class BookReader extends Component {
 
 
         );
+        }
     }
 }
