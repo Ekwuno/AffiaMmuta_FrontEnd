@@ -106,7 +106,7 @@ class BookInfo extends Component {
         )
         if (this.state.isLoadingBook==true) {
             return (
-                <Loader/>
+                <Loader size="big"/>
             )
         }
         else {
