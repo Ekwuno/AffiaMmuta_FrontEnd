@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import { FormGroup, FormControl, Button, Image, Form, Row, ProgressBar } from "react-bootstrap";
+import { FormGroup, FormControl, Button, Form, Row, ProgressBar } from "react-bootstrap";
 
  class AddBook extends Component {
     state = {
