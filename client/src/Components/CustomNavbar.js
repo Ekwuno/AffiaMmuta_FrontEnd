@@ -55,7 +55,7 @@ import './CustomNavbar.css';
                     </Link>
                   </NavItem>
                   <Navbar.Form>
-                  <FormGroup>
+                  <FormGroup className= "search-nav">
                     <FormControl type="text" id="search" placeholder="I am looking for..." className="search second-search" onChange={this.handleSearch} />
                   <Link to={{
                     pathname: `/search/${this.state.search}`,
@@ -108,11 +108,16 @@ import './CustomNavbar.css';
                     </Link>
                   </NavItem>
                   <Navbar.Form>
-                  <FormGroup>
+                  <FormGroup className= "search-nav">
                     <FormControl type="text" placeholder="I am looking for..." className="search search-default" onChange={this.handleSearch} />
-                  <Button type="submit" className= "button">
-                    <Image src={search} alt='Logo' />
-                  </Button>
+                  <Link to={{
+                    pathname: `/search/${this.state.search}`,
+                    state: {search: this.state.search}
+                    }}>
+                    <Button type="submit" className= "button" >
+                      <Image src={search} alt='Logo'/>
+                    </Button>
+                  </Link>
                   </FormGroup>
                   </Navbar.Form>
                 </Nav>
