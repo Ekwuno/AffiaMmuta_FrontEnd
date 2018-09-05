@@ -5,7 +5,6 @@ import './BookInfo.css';
 import filled from './Assets/IkengaFilled.png';
 import axios from 'axios';
 import RelatedBooks from './RelatedBooks';
-import BookComments from './BookComments';
 import Loader from './Loader';
 
 class BookInfo extends Component {
