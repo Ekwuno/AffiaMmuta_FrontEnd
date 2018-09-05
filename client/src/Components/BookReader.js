@@ -25,7 +25,8 @@ export default class BookReader extends Component {
             comment: '',
             bookLocation: '',
             bookTitle: '',
-            seekValue: ''
+            seekValue: '',
+            bookAuthor: ''
         }
     }
 
@@ -38,40 +39,41 @@ export default class BookReader extends Component {
         })
     }
 
-    handleShow() {
+    handleShow=()=> {
         this.setState({ show: true });
+        console.log("I clicked");
     }
 
     onDocumentLoad = ({ numPages }) => {
         this.setState({ numPages });
         console.log(this.state.numPages);
-        if (sessionStorage.getItem(this.props.match.params.id)){
-             this.setState({ pageNumber: Number.parseInt(sessionStorage.getItem(this.props.match.params.id))})
+        if (sessionStorage.getItem(this.props.match.params.id)) {
+            this.setState({ pageNumber: Number.parseInt(sessionStorage.getItem(this.props.match.params.id)) })
             console.log(sessionStorage.getItem(this.props.match.params.id));
         }
-          else {
-             sessionStorage.setItem(this.props.match.params.id, this.state.pageNumber);
-     }
+        else {
+            sessionStorage.setItem(this.props.match.params.id, this.state.pageNumber);
+        }
         this.pageProgress();
         this.removeCounter();
     }
     handleNext = () => {
         if (this.state.pageNumber < this.state.numPages) {
             this.setState({ pageNumber: this.state.pageNumber + 1 })
-            sessionStorage.setItem(this.props.match.params.id, this.state.pageNumber+1);
+            sessionStorage.setItem(this.props.match.params.id, this.state.pageNumber + 1);
             this.pageProgress();
         }
     }
     handlePrevious = () => {
         if (this.state.pageNumber > 1) {
             this.setState({ pageNumber: this.state.pageNumber - 1 });
-            sessionStorage.setItem(this.props.match.params.id, this.state.pageNumber-1);
+            sessionStorage.setItem(this.props.match.params.id, this.state.pageNumber - 1);
             this.pageProgress();
         }
     }
     handleSeek = () => {
         if (this.state.seekValue <= this.state.numPages) {
-            this.setState({ pageNumber: Number.parseInt(this.state.seekValue)   })
+            this.setState({ pageNumber: Number.parseInt(this.state.seekValue) })
             sessionStorage.setItem(this.props.match.params.id, this.state.seekValue);
             this.pageProgress();
         }
@@ -111,7 +113,7 @@ export default class BookReader extends Component {
         } else if (e.key === "ArrowLeft") {
             this.handlePrevious();
         }
-        else if (e.key ==="Enter") {
+        else if (e.key === "Enter") {
             this.handleSeek();
         }
     }
@@ -126,11 +128,12 @@ export default class BookReader extends Component {
     componentDidMount() {
         axios.get(`https://affiammuta.herokuapp.com/books/book/${this.props.match.params.id}`)
             .then(res => {
-                this.setState({ 
-                    bookLocation: res.data.book.bookContent,
-                    bookTitle: res.data.book.title
-                 });
-            })
+        this.setState({
+            bookLocation: res.data.book.bookContent,
+            bookTitle: res.data.book.title,
+            bookAuthor: res.data.book.author
+        });
+        })
     }
 
     sendComment = () => {
@@ -165,74 +168,75 @@ export default class BookReader extends Component {
                             </Link>
                         </NavItem> */}
                         <NavItem className="read-header-text-positon">
-                                <h5>{this.state.bookTitle}</h5>
+                            <h5>{this.state.bookTitle}</h5>
+                            <h6>{this.state.bookAuthor}</h6>
                         </NavItem>
                         <NavItem className="nav-cancel">
                             <Link to="/library">
-                            <Button className="read-book-close" type="submit">
-                                Close
+                                <Button className="read-book-close" type="submit">
+                                    Close
                                 <Image src={cancel} alt="cancel" />
-                            </Button>
+                                </Button>
                             </Link>
                         </NavItem>
                     </Nav>
                 </Navbar>
                 <div onKeyDown={this.handleKeyDown} className="reader-container">
-                
-                <div className="readScreen">
-                    <div>
-                        <div className="previous-btn" onClick={this.handlePrevious}>
-                            <Image src={previous} alt='Previous' className="prev-arrow" onClick={this.handlePrevious} />
+                    <div className="footer-backdrop"></div>
+                    <div className="readScreen">
+                        <div>
+                            <div className="previous-btn" onClick={this.handlePrevious}>
+                                <Image src={previous} alt='Previous' className="prev-arrow" onClick={this.handlePrevious} />
+                            </div>
+                            <div className="counter" id="count">+{this.state.ikenga}</div>
+                            <div className="ikenga-btn">
+                                <Image src={ikenga} alt='Ikenga' className="ikenga" onClick={this.increaseIkenga} />
+                            </div>
+                            <div className="comment-btn">
+                                <Image src={comment} alt='Comment' className="comment-image" onClick={this.handleShow} />
+                            </div>
+                            <div className="seeker"><input type="number" className="read-seek" onChange={this.setSeekValue} /> of {this.state.numPages}</div>
                         </div>
-                        <div className="counter" id="count">+{this.state.ikenga}</div>
-                        <div className="ikenga-btn">
-                            <Image src={ikenga} alt='Ikenga' className="ikenga" onClick={this.increaseIkenga} />
-                        </div>
-                        <div className="comment-btn">
-                            <Image src={comment} alt='Comment' className="comment-image" onClick={this.handleShow} />
-                            <input type="number" className="read-seek" onChange={this.setSeekValue}/> of {this.state.numPages}
-                        </div>
-                    </div>
-                    <div>
+                        <div>
 
 
-                        <Modal show={this.state.show} onHide={this.handleClose}>
-                            <Modal.Header closeButton>
-                                <div className="logo-container"><Image src={ikenga} alt='Affiammuta Logo' className="ikengaModal" /></div>
-                                <Modal.Title>Comment on this book</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <textarea className="modalText" id="modalText" cols="40" rows="10" onChange={this.getComment}></textarea>
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button className="submit" onClick={this.sendComment}>Submit</Button>
-                                <Button className="closeBtn" onClick={this.handleClose}>Close</Button>
-                            </Modal.Footer>
-                        </Modal>
+                            <Modal show={this.state.show} onHide={this.handleClose}>
+                                <Modal.Header closeButton>
+                                    <div className="logo-container"><Image src={ikenga} alt='Affiammuta Logo' className="ikengaModal" /></div>
+                                    <Modal.Title>Comment on this book</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                    <textarea className="modalText" id="modalText" cols="40" rows="10" onChange={this.getComment}></textarea>
+                                </Modal.Body>
+                                <Modal.Footer>
+                                    <Button className="submit" onClick={this.sendComment}>Submit</Button>
+                                    <Button className="closeBtn" onClick={this.handleClose}>Close</Button>
+                                </Modal.Footer>
+                            </Modal>
 
 
-                        <Document
-                            file={this.state.bookLocation}
-                            onLoadSuccess={this.onDocumentLoad}
-                            scale={10.0}>
-                            <Page pageNumber={pageNumber} />
-                        </Document>
-                    </div>
-                    <div className="bookProgress">
-                        <div className="pageNumber">Page {pageNumber} of {numPages}</div>
-                        {/* <ProgressBar className="book-bar" now={this.state.progress} /> */}
-                    </div>
-                    <div>
-                        <div className="next-btn" onClick={this.handleNext}>
-                            <Image src={next} alt='Next' className="next-arrow" onClick={this.handleNext} />
+                            <Document
+                                file={this.state.bookLocation}
+                                onLoadSuccess={this.onDocumentLoad}
+                                scale={10.0}>
+                                <Page pageNumber={pageNumber} />
+                            </Document>
+                        </div>
+                        <div className="bookProgress">
+                            <div className="pageNumber">Page {pageNumber} of {numPages}</div>
+                            {/* <ProgressBar className="book-bar" now={this.state.progress} /> */}
+                        </div>
+                        <div>
+                            <div className="next-btn" onClick={this.handleNext}>
+                                <Image src={next} alt='Next' className="next-arrow" onClick={this.handleNext} />
+                            </div>
                         </div>
                     </div>
+
                 </div>
-
-            </div>
             </div>
 
-            
+
         );
     }
 }
