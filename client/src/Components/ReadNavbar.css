@@ -46,8 +46,8 @@
     font-style: normal;
     font-weight: bold;
     line-height: normal;
-    font-size: 18px;
-    width: 325px;
+    font-size: 33px;
+    width: 607px;
     margin-right: 340px;
     color: #7E9E47;
 }
@@ -60,7 +60,8 @@
 
 @media (min-width: 250px){
 .read-book-close {
-        width: 51px;
+        display: none;
+        /* width: 51px;
         height: 22px;
         padding: 2px 8px 8px 3px;
         font-size: 12px;
@@ -69,21 +70,11 @@
         color: #FFFFFF;
         border: none;
         -webkit-box-shadow: 0px 3px #627B37;
-        box-shadow: 0px 3px #627B37;
+        box-shadow: 0px 3px #627B37; */
     }
 .read-book-close > img {
         height: 85%;
         margin-left: 5px;
-    }
-.read-navbar h5 {
-        font-family: 'Lato', sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        line-height: normal;
-        font-size: 13px;
-        width: 106px;
-        margin-right: 0px;
-        color: #7E9E47;
     }
 .read-book-contents-btn {
         width: 66px;
@@ -93,15 +84,22 @@
         
     }
 .read-header-text-positon{
-    width: 100px;
+    width: inherit;
     }
+.read-navbar h5 {
+    font-size: 16px;
+    width: 254px;
+    margin-top: -7px;
+    text-align: center;
+}
+.read-navbar h6 {
+    text-align: center;
+}
+
 .read-header-text-positon > [role=button] {
     cursor: pointer;
-    width: 135px;
-    margin-left: -14px;
-    }
-.read-header-text-positon h5{
-    font-size: 12px;
+    width: inherit;
+    margin-left: -34px;
     }
 .read-header-content-positon {
     margin-left: -10px;
@@ -123,19 +121,29 @@
     width: 65px;
     }
 }
-
-@media (min-width: 320px){
+@media (min-width: 280px){
+.read-book-close {
+    width: 84px;
+    height: 28px;
+    padding: 3px 8px 8px 3px;
+    font-size: 15px;
+    margin-left: 80px;
+    }
+.read-header-text-positon{
+        width: inherit;
+    }
+.read-header-text-positon > [role=button] {
+        cursor: pointer;
+        width: inherit;
+        margin-left: -14px;
+    }
+}
+@media (min-width: 321px){
 .read-header-text-positon {
-    width: 140px;
+    width: inherit;
     }
 .library-in-image {
     width: 20px;
-    }
-.read-navbar h5 {
-    width: 142px;
-    }
-.read-header-text-positon h5 {
-    font-size: 15px;
     }
 .read-header-text-positon > [role=button] {
     margin-left: 0px;
@@ -151,19 +159,21 @@
     height: 28px;
     padding: 3px 8px 8px 3px;
     font-size: 15px;
+    margin-left: 80px;
     }
 .read-book-close > img {
     height: 100%;
     margin-left: 9px;
         }
 }
+
 @media (min-width: 420px){
 .read-header-text-positon {
     width: 233px;
     }
-    .read-header-text-positon h5 {
-        font-size: 17px;
-        width: 170px;
+.read-header-text-positon h5 {
+    font-size: 17px;
+    width: 100%;
     }
 .read-book-contents-btn {
     width: 100px;
@@ -179,21 +189,21 @@
     margin-bottom: 1px;
     }
     .read-header-text-positon > [role=button] {
-        margin-left: 33px;
-        width: 200px;
+        margin-left: 27px;
+        width: 336px;
     }
 }
 
 @media (min-width: 500px){
-    .read-header-text-positon h5 {
-    font-size: 22px;
-    width: 215px;
-    }
+    
     .read-header-text-positon {
         width: 315px;
     }
     .read-header-text-positon > [role=button] {
-        margin-left: 65px;
+        margin-left: 115px;
+    }
+    .read-book-close {
+        margin-left: 127px;
     }
 }
 
@@ -214,6 +224,7 @@
         height: 40px;
         padding: 7px 8px 8px 3px;
         font-size: 18px;
+        margin-left: 127px;
         font-family: 'Lato', sans-serif;
         background: #85A64B;
         color: #FFFFFF;
@@ -229,13 +240,23 @@
         font-style: normal;
         font-weight: bold;
         line-height: normal;
-        font-size: 18px;
+        font-size: 22px;
         margin-right: 340px;
         color: #7E9E47;
+    }
+    .read-header-text-positon > [role=button] {
+        margin-left: 40px;
+        width: 568px;
     }
     .read-header-content-positon {
         margin-left: 15px;
         margin-right: 70px;
+    }
+}
+
+@media (min-width: 668px){
+    .read-book-close {
+        margin-left: 150px;
     }
 }
 
@@ -247,16 +268,26 @@
     .read-header-text-positon > [role=button] {
         margin-left: 5px;
     }
+    .read-book-close {
+        margin-left: 250px;
+        display: block;
+    }
+}
+
+@media (min-width: 811px){
+    .read-book-close {
+        margin-left: 250px;
+    }
 }
 
 @media (min-width: 992px){
     .read-book-close {
-        margin-left: 322px;
+        margin-left: 450px;
     }
 }
 
 @media (min-width: 1200px){
-    .read-book-close{
-        margin-left: 465px;
+    .read-book-close {
+        margin-left: 617px;
     }
 }
