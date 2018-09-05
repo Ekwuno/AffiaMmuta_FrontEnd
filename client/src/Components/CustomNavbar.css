@@ -142,7 +142,7 @@ img {
 }
 @media (min-width: 768px){
     .navbar-form {
-        width: 547px;
+        width: 485px;
     }
     .search {
         width: 140px !important;

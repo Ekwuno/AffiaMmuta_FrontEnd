@@ -188,6 +188,10 @@ in-line {
         margin-top: -38px;
         font-size: 65px;
     }
+    .head {
+        display: inline-block;
+        width: 260px;
+    }
 }
 
 @media (max-width: 319px){
@@ -196,4 +200,5 @@ in-line {
         width: 286px;
         margin-left: 43%;
     }
+    
 }
