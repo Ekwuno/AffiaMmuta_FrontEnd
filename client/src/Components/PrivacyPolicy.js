@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { ListGroup, ListGroupItem, Badge } from "react-bootstrap";
 import InfoBackground from './InfoBackground';
 
  export default class PrivacyPolicy extends Component {

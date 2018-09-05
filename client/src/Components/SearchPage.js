@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Col, Row, Image, Grid, Button, Jumbotron } from "react-bootstrap";
-// import { Link } from "react-router-dom";
-import udala from './Assets/UnderTheUdalaTree.jpg';
 import './SearchPage.css';
 import axios from "axios";
 import Loader from './Loader';
