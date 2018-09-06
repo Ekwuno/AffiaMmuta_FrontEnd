@@ -144,6 +144,7 @@ in-line {
 .price {
     color: #7E9E47;
     font-size: 14px;
+    font-weight: bold;
 }
 
 /* Responsiveness */
@@ -180,6 +181,9 @@ in-line {
         margin-top: -18px;
         font-size: 65px;
     }
+    .book-title {
+        margin-left: 15px
+    }
 }
 
 @media (max-width: 476px){
@@ -195,6 +199,9 @@ in-line {
     .head {
         display: inline-block;
         width: 260px;
+    }
+    .book-title {
+        margin-left: 5px;
     }
 }
 

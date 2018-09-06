@@ -351,6 +351,9 @@ strong {
     strong {
         color: #777
     }
+    .des-container {
+        width: 100%;
+    }
 }
 @media only screen and (min-width : 1440px) {
     .info-main {
@@ -497,5 +500,8 @@ strong {
 
     strong {
         color: #777
+    }
+    .des-container {
+        width: 100%
     }
 }
