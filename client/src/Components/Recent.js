@@ -34,7 +34,7 @@ export default class Recent extends Component {
                 <Col className="book-title" >
                 <span className= "title">{item.title.length<=20 ? item.title:item.title.slice(0,20)+' ...'}</span>
                 <span className="author" >{item.author.length<=20 ? item.author:item.author.slice(0,20)+' ...'}</span>
-                <span className="price" >&#8358;{item.price}</span>
+                <span className="price" >&#8358;{Intl.NumberFormat().format(item.price)}</span>
                 </Col>
                 <Col className="book-price" >
                 <Button className="book-buttons" type="submit">
