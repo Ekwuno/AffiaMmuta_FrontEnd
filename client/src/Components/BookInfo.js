@@ -118,7 +118,7 @@ class BookInfo extends Component {
                     <div className="read-des">
                         <h2>{this.state.title}</h2>
                         <p className="rate-title">by <strong>{this.state.author}</strong></p>
-                        <p className="rate-price">&#8358;{this.state.price}</p>
+                        <p className="rate-price">&#8358;{Intl.NumberFormat().format(this.state.price)}</p>
                         <div className="button-rating">
                                 <script src="https://js.paystack.co/v1/inline.js"></script>
                                 <button type="button" onClick={this.payWithPaystack} className="buy-book-btn"> Buy Now </button> 
