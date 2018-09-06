@@ -80,14 +80,14 @@ export default class Library extends Component {
     }
     else {
         return (
-        <div className="library-background">
-            <div className="library-layout">
-                <div className="library-header">
-                    <h2>Library</h2>
+            <div className="library-background">
+                <div className="library-layout">
+                    <div className="library-header">
+                        <h2>Library</h2>
+                    </div>
+                    {userLibrary}
                 </div>
-                {userLibrary}
             </div>
-        </div>
         );
     }
   }
