@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Row, Image, Grid, Button, Jumbotron } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import './SearchPage.css';
 import axios from "axios";
 import Loader from './Loader';
@@ -31,6 +32,10 @@ export default class SearchPage extends Component {
     }
     render() {
         const searchResults = this.state.searchResults.map(item=> 
+            <Link to={{
+            pathname:`/book/${item._id}`,
+            state: {comics: item._id}
+            }}>
             <Col xs={12} sm={4} className= "wrapper">
                         <Row className="books-top" >
                             <Col className="image-container" >
@@ -49,7 +54,8 @@ export default class SearchPage extends Component {
                             </Button>
                             </Col>
                         </Row>
-                    </Col>    
+                    </Col>  
+                </Link>  
         )
         if (this.state.isSearching == true ) {
             console.log(this.state.isSearching)
