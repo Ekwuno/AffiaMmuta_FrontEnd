@@ -127,7 +127,7 @@ class BookInfo extends Component {
                                 <Badge className="badge-rate">{this.state.ikenga}</Badge>
                             </div>
                         </div>
-                        <div className="des-container"> <p className="book-des"><strong className="book-des-title">Brief descripton: </strong>{this.state.description}Lorem ipsum dolor sit amet, movet iriure intellegebat nec an. Ut tantas ignota causae nec, no officiis insolens recusabo qui. Per scripta aliquid mnesarchum ut, tale tibique est ea, nec noster denique eu. Quem sanctus eos an. In tempor patrioque cum, ius homero ceteros delicatissimi ea. Ad eam mandamus adipiscing concludaturque. In nam civibus accumsan, vix illud liberavisse id, graeco doctus prompta nam ei.</p></div>
+                        <div className="des-container"> <p className="book-des"><strong className="book-des-title">Brief descripton: </strong>{this.state.description}</p></div>
                     </div>
                 </div>
                 <div className="book-tabs">
