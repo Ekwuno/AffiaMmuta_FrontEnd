@@ -70,7 +70,7 @@ export default class SearchPage extends Component {
                         <h1>Search Results</h1>
                         <Jumbotron className="search-description"> <p>You searched for <strong>{this.props.match.params.search}</strong>- {this.state.searchResults.length} items found </p></Jumbotron>
                     </div>
-                    <Grid className= "grid">
+                    <Grid className="search-grid grid">
                         <Row className= "show-grid text-center">
                             {searchResults}
                         </Row>

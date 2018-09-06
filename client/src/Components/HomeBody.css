@@ -36,6 +36,10 @@ html, body{
 .show-grid {
     margin-top: 70px;
 }
+.search-grid{
+    z-index: -1;
+    position: relative;
+}
 .new-release-books {
     box-shadow: 5px 7px 7px rgba(0, 0, 0, 0.25);
     /* border-top: 1px #258043; */
@@ -188,6 +192,10 @@ in-line {
         margin-top: -38px;
         font-size: 65px;
     }
+    .head {
+        display: inline-block;
+        width: 260px;
+    }
 }
 
 @media (max-width: 319px){
@@ -196,4 +204,5 @@ in-line {
         width: 286px;
         margin-left: 43%;
     }
+    
 }
